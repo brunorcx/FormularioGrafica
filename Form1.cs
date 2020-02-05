@@ -17,6 +17,7 @@ namespace FormularioGrafica {
         private void textBox1_TextChanged(object sender, EventArgs e) {
             int a;
             a = 1;
+            a = a + 2;
         }
 
         private void label1_Click(object sender, EventArgs e) {
