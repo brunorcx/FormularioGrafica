@@ -81,5 +81,30 @@ namespace FormularioGrafica {
         private void checkBox3_CheckedChanged(object sender, EventArgs e) {
 
         }
+
+        private void Form1_Load(object sender, EventArgs e) {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+            panelSelect.Height = button1.Height;
+            panelSelect.Top = button1.Top;
+        }
+
+        private void button2_Click(object sender, EventArgs e) {
+            panelSelect.Height = button2.Height;
+            panelSelect.Top = button2.Top;
+        }
+
+        private void button3_Click(object sender, EventArgs e) {
+            panelSelect.Height = button3.Height;
+            panelSelect.Top = button3.Top;
+        }
+
+        private void button4_Click(object sender, EventArgs e) {
+            panelSelect.Height = button4.Height;
+            panelSelect.Top = button4.Top;
+        }
     }
 }
+// Site ícones https://www.flaticon.com/free-icon/home_25694
