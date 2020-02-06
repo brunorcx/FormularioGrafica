@@ -52,10 +52,46 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pagina1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagina1.Designer.cs">
+      <DependentUpon>Pagina1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagina2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagina2.Designer.cs">
+      <DependentUpon>Pagina2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagina3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagina3.Designer.cs">
+      <DependentUpon>Pagina3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagina4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagina4.Designer.cs">
+      <DependentUpon>Pagina4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagina1.resx">
+      <DependentUpon>Pagina1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagina2.resx">
+      <DependentUpon>Pagina2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagina3.resx">
+      <DependentUpon>Pagina3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagina4.resx">
+      <DependentUpon>Pagina4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
