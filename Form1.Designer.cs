@@ -43,22 +43,24 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.panelSelect = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -101,7 +103,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(451, 129);
+            this.label3.Location = new System.Drawing.Point(443, 129);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 19);
             this.label3.TabIndex = 5;
@@ -109,16 +111,16 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(516, 126);
+            this.textBox3.Location = new System.Drawing.Point(499, 126);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(160, 27);
+            this.textBox3.Size = new System.Drawing.Size(155, 27);
             this.textBox3.TabIndex = 4;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(695, 129);
+            this.label4.Location = new System.Drawing.Point(660, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 19);
             this.label4.TabIndex = 7;
@@ -126,9 +128,9 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(760, 126);
+            this.textBox4.Location = new System.Drawing.Point(719, 126);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(160, 27);
+            this.textBox4.Size = new System.Drawing.Size(158, 27);
             this.textBox4.TabIndex = 6;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -171,7 +173,7 @@
             // 
             this.textBox7.Location = new System.Drawing.Point(716, 172);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(160, 27);
+            this.textBox7.Size = new System.Drawing.Size(160, 20);
             this.textBox7.TabIndex = 12;
             this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
@@ -208,7 +210,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(197, 224);
+            this.checkBox1.Location = new System.Drawing.Point(198, 221);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(134, 23);
             this.checkBox1.TabIndex = 20;
@@ -218,7 +220,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(462, 225);
+            this.dateTimePicker1.Location = new System.Drawing.Point(677, 221);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 27);
             this.dateTimePicker1.TabIndex = 21;
@@ -227,24 +229,15 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(344, 225);
+            this.label9.Location = new System.Drawing.Point(624, 227);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(47, 19);
             this.label9.TabIndex = 22;
             this.label9.Text = "Data:";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(305, 261);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(107, 19);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "Data Adesivo:";
-            // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(423, 261);
+            this.dateTimePicker2.Location = new System.Drawing.Point(677, 255);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 27);
             this.dateTimePicker2.TabIndex = 24;
@@ -253,7 +246,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(158, 261);
+            this.checkBox2.Location = new System.Drawing.Point(198, 251);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(150, 23);
             this.checkBox2.TabIndex = 23;
@@ -264,7 +257,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(155, 301);
+            this.label11.Location = new System.Drawing.Point(194, 316);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(78, 19);
             this.label11.TabIndex = 27;
@@ -272,16 +265,16 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(238, 298);
+            this.textBox5.Location = new System.Drawing.Point(277, 313);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(600, 27);
+            this.textBox5.Size = new System.Drawing.Size(604, 27);
             this.textBox5.TabIndex = 26;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(158, 280);
+            this.checkBox3.Location = new System.Drawing.Point(197, 283);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(131, 23);
             this.checkBox3.TabIndex = 28;
@@ -302,13 +295,73 @@
             this.panel1.Size = new System.Drawing.Size(149, 450);
             this.panel1.TabIndex = 29;
             // 
-            // panel2
+            // button4
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(149, 265);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(744, 185);
-            this.panel2.TabIndex = 30;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Constantia", 11F);
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(3, 336);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(146, 75);
+            this.button4.TabIndex = 35;
+            this.button4.Text = "Dashboard";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Constantia", 11F);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(3, 265);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(146, 75);
+            this.button3.TabIndex = 34;
+            this.button3.Text = "Dashboard";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Constantia", 11F);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(1, 188);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(146, 75);
+            this.button2.TabIndex = 33;
+            this.button2.Text = "Dashboard";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Constantia", 11F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(0, 119);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(146, 75);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "Dashboard";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
@@ -330,73 +383,13 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "M";
             // 
-            // button1
+            // panel2
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Constantia", 11F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(0, 119);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 75);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "Dashboard";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Constantia", 11F);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(1, 188);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(146, 75);
-            this.button2.TabIndex = 33;
-            this.button2.Text = "Dashboard";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Constantia", 11F);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(3, 265);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(146, 75);
-            this.button3.TabIndex = 34;
-            this.button3.Text = "Dashboard";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Constantia", 11F);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(3, 336);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(146, 75);
-            this.button4.TabIndex = 35;
-            this.button4.Text = "Dashboard";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(149, 346);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(744, 104);
+            this.panel2.TabIndex = 30;
             // 
             // label13
             // 
@@ -415,11 +408,42 @@
             this.panelSelect.Size = new System.Drawing.Size(10, 75);
             this.panelSelect.TabIndex = 32;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.Location = new System.Drawing.Point(780, 9);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(71, 19);
+            this.label14.TabIndex = 33;
+            this.label14.Text = "Nº 00001";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(768, 28);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(102, 19);
+            this.label15.TabIndex = 34;
+            this.label15.Text = "ATENDENTE";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(549, 261);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(122, 19);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Data de Entrega";
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(893, 450);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.panelSelect);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.panel2);
@@ -483,7 +507,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Label label11;
@@ -499,6 +522,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelSelect;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label10;
     }
 }
 

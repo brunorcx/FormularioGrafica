@@ -89,6 +89,11 @@ namespace FormularioGrafica {
             panelSelect.Height = button4.Height;
             panelSelect.Top = button4.Top;
         }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
