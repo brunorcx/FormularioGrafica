@@ -125,11 +125,11 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Constantia", 12F);
-            this.label10.Location = new System.Drawing.Point(369, 252);
+            this.label10.Location = new System.Drawing.Point(365, 252);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(122, 19);
+            this.label10.Size = new System.Drawing.Size(126, 19);
             this.label10.TabIndex = 56;
-            this.label10.Text = "Data de Entrega";
+            this.label10.Text = "Data de Entrega:";
             // 
             // dateTimePicker2
             // 
