@@ -11,8 +11,8 @@ using System.Windows.Forms;
 namespace FormularioGrafica {
 
     public partial class Form1 : Form {
+        private string icons_path = "";
 
-        string icons_path = "";
         public Form1() {
             InitializeComponent();
 
@@ -89,8 +89,8 @@ namespace FormularioGrafica {
             pagina41.Hide();
 
             //Troca a cor dos icones
-            button1.Image = Image.FromFile(icons_path + @"\icons\online_store_30px_white.png");
-            button2.Image = Image.FromFile(icons_path + @"\icons\clipboard_30px_yellow.png");
+            //button1.Image = Image.FromFile(icons_path + @"\icons\online_store_30px_white.png");
+            //button2.Image = Image.FromFile(icons_path + @"\icons\clipboard_30px_yellow.png");
         }
 
         private void button2_Click(object sender, EventArgs e) {
@@ -104,8 +104,8 @@ namespace FormularioGrafica {
             pagina41.Hide();
 
             //Troca a cor dos icones
-            button1.Image = Image.FromFile(icons_path + @"\icons\online_store_30px_yellow.png");
-            button2.Image = Image.FromFile(icons_path + @"\icons\clipboard_30px_white.png");
+            //button1.Image = Image.FromFile(icons_path + @"\icons\online_store_30px_yellow.png");
+            //button2.Image = Image.FromFile(icons_path + @"\icons\clipboard_30px_white.png");
         }
 
         private void button3_Click(object sender, EventArgs e) {
@@ -119,8 +119,8 @@ namespace FormularioGrafica {
             pagina41.Hide();
 
             //Troca a cor dos icones
-            button1.Image = Image.FromFile(icons_path + @"\icons\online_store_30px_yellow.png");
-            button2.Image = Image.FromFile(icons_path + @"\icons\clipboard_30px_yellow.png");
+            //button1.Image = Image.FromFile(icons_path + @"\icons\online_store_30px_yellow.png");
+            //button2.Image = Image.FromFile(icons_path + @"\icons\clipboard_30px_yellow.png");
         }
 
         private void button4_Click(object sender, EventArgs e) {
@@ -134,8 +134,8 @@ namespace FormularioGrafica {
             pagina41.Show();
 
             //Troca a cor dos icones
-            button1.Image = Image.FromFile(icons_path + @"\icons\online_store_30px_yellow.png");
-            button2.Image = Image.FromFile(icons_path + @"\icons\clipboard_30px_yellow.png");
+            //button1.Image = Image.FromFile(icons_path + @"\icons\online_store_30px_yellow.png");
+            //button2.Image = Image.FromFile(icons_path + @"\icons\clipboard_30px_yellow.png");
         }
 
         private void label15_Click(object sender, EventArgs e) {
@@ -173,3 +173,4 @@ namespace FormularioGrafica {
 // Site ícones https://www.flaticon.com/free-icon/home_25694
 //Conectar com o banco https://www.guru99.com/c-sharp-access-database.html
 //Bug na pagina um data de entrega sai do lugar
+// this.close() fechar a windows form
