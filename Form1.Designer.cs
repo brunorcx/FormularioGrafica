@@ -108,7 +108,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(146, 75);
             this.button2.TabIndex = 33;
-            this.button2.Text = "Dashboard";
+            this.button2.Text = "Relatorio";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button2.UseVisualStyleBackColor = true;
@@ -125,7 +125,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(146, 75);
             this.button1.TabIndex = 32;
-            this.button1.Text = "Dashboard";
+            this.button1.Text = "Venda";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button1.UseVisualStyleBackColor = true;
