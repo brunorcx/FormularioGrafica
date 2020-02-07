@@ -12,8 +12,11 @@ namespace FormularioGrafica {
 
     public partial class Form1 : Form {
 
+        string icons_path = "";
         public Form1() {
             InitializeComponent();
+
+            icons_path = Application.StartupPath;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e) {
@@ -85,6 +88,9 @@ namespace FormularioGrafica {
             pagina31.Hide();
             pagina41.Hide();
 
+            //Troca a cor dos icones
+            button1.Image = Image.FromFile(icons_path + @"\icons\online_store_30px_white.png");
+            button2.Image = Image.FromFile(icons_path + @"\icons\clipboard_30px_yellow.png");
         }
 
         private void button2_Click(object sender, EventArgs e) {
@@ -96,6 +102,10 @@ namespace FormularioGrafica {
             pagina21.Show();
             pagina31.Hide();
             pagina41.Hide();
+
+            //Troca a cor dos icones
+            button1.Image = Image.FromFile(icons_path + @"\icons\online_store_30px_yellow.png");
+            button2.Image = Image.FromFile(icons_path + @"\icons\clipboard_30px_white.png");
         }
 
         private void button3_Click(object sender, EventArgs e) {
@@ -107,6 +117,10 @@ namespace FormularioGrafica {
             pagina21.Hide();
             pagina31.Show();
             pagina41.Hide();
+
+            //Troca a cor dos icones
+            button1.Image = Image.FromFile(icons_path + @"\icons\online_store_30px_yellow.png");
+            button2.Image = Image.FromFile(icons_path + @"\icons\clipboard_30px_yellow.png");
         }
 
         private void button4_Click(object sender, EventArgs e) {
@@ -118,6 +132,10 @@ namespace FormularioGrafica {
             pagina21.Hide();
             pagina31.Hide();
             pagina41.Show();
+
+            //Troca a cor dos icones
+            button1.Image = Image.FromFile(icons_path + @"\icons\online_store_30px_yellow.png");
+            button2.Image = Image.FromFile(icons_path + @"\icons\clipboard_30px_yellow.png");
         }
 
         private void label15_Click(object sender, EventArgs e) {
