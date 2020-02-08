@@ -70,6 +70,7 @@
             this.label15.Size = new System.Drawing.Size(102, 19);
             this.label15.TabIndex = 63;
             this.label15.Text = "ATENDENTE";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // label14
             // 

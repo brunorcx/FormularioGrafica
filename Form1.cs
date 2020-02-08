@@ -16,7 +16,7 @@ namespace FormularioGrafica {
         public Form1() {
             InitializeComponent();
 
-            icons_path = Application.StartupPath;
+            icons_path = Application.ExecutablePath;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e) {
@@ -89,8 +89,8 @@ namespace FormularioGrafica {
             pagina41.Hide();
 
             //Troca a cor dos icones
-            //button1.Image = Image.FromFile(icons_path + @"\icons\online_store_30px_white.png");
-            //button2.Image = Image.FromFile(icons_path + @"\icons\clipboard_30px_yellow.png");
+            button1.Image = Properties.Resources.online_store_30px_white;
+            button2.Image = Properties.Resources.clipboard_30px_yellow;
         }
 
         private void button2_Click(object sender, EventArgs e) {
@@ -104,8 +104,8 @@ namespace FormularioGrafica {
             pagina41.Hide();
 
             //Troca a cor dos icones
-            //button1.Image = Image.FromFile(icons_path + @"\icons\online_store_30px_yellow.png");
-            //button2.Image = Image.FromFile(icons_path + @"\icons\clipboard_30px_white.png");
+            button1.Image = Properties.Resources.online_store_30px_yellow;
+            button2.Image = Properties.Resources.clipboard_30px_white;
         }
 
         private void button3_Click(object sender, EventArgs e) {
@@ -119,8 +119,8 @@ namespace FormularioGrafica {
             pagina41.Hide();
 
             //Troca a cor dos icones
-            //button1.Image = Image.FromFile(icons_path + @"\icons\online_store_30px_yellow.png");
-            //button2.Image = Image.FromFile(icons_path + @"\icons\clipboard_30px_yellow.png");
+            button1.Image = Properties.Resources.online_store_30px_yellow;
+            button2.Image = Properties.Resources.clipboard_30px_yellow;
         }
 
         private void button4_Click(object sender, EventArgs e) {
@@ -134,8 +134,8 @@ namespace FormularioGrafica {
             pagina41.Show();
 
             //Troca a cor dos icones
-            //button1.Image = Image.FromFile(icons_path + @"\icons\online_store_30px_yellow.png");
-            //button2.Image = Image.FromFile(icons_path + @"\icons\clipboard_30px_yellow.png");
+            button1.Image = Properties.Resources.online_store_30px_yellow;
+            button2.Image = Properties.Resources.clipboard_30px_yellow;
         }
 
         private void label15_Click(object sender, EventArgs e) {
