@@ -167,8 +167,18 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <None Include="Resources\icones\clipboard_30px_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icones\clipboard_30px_yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icones\online_store_30px_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icones\online_store_30px_yellow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
