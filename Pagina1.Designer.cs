@@ -30,10 +30,8 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -51,6 +49,8 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox9
@@ -77,7 +77,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Constantia", 12F);
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(600, 0);
+            this.label14.Location = new System.Drawing.Point(117, 45);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(71, 19);
             this.label14.TabIndex = 62;
@@ -89,9 +89,9 @@
             this.label13.Font = new System.Drawing.Font("Constantia", 12F);
             this.label13.Location = new System.Drawing.Point(14, 45);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(97, 19);
+            this.label13.Size = new System.Drawing.Size(58, 19);
             this.label13.TabIndex = 60;
-            this.label13.Text = "Título menu";
+            this.label13.Text = "Pedido";
             // 
             // checkBox3
             // 
@@ -122,16 +122,6 @@
             this.textBox5.Size = new System.Drawing.Size(604, 27);
             this.textBox5.TabIndex = 57;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Constantia", 12F);
-            this.label10.Location = new System.Drawing.Point(365, 252);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(126, 19);
-            this.label10.TabIndex = 56;
-            this.label10.Text = "Data de Entrega:";
-            // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("Constantia", 12F);
@@ -150,16 +140,6 @@
             this.checkBox2.TabIndex = 54;
             this.checkBox2.Text = "Retirada de Placa";
             this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Constantia", 12F);
-            this.label9.Location = new System.Drawing.Point(444, 218);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 19);
-            this.label9.TabIndex = 53;
-            this.label9.Text = "Data:";
             // 
             // dateTimePicker1
             // 
@@ -294,6 +274,7 @@
             this.label2.Size = new System.Drawing.Size(83, 19);
             this.label2.TabIndex = 39;
             this.label2.Text = "CPF/CNPJ:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBox2
             // 
@@ -320,12 +301,35 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(600, 27);
             this.textBox1.TabIndex = 36;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Constantia", 12F);
+            this.label10.Location = new System.Drawing.Point(365, 218);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(127, 19);
+            this.label10.TabIndex = 56;
+            this.label10.Text = "Data de Entrega:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Constantia", 12F);
+            this.label9.Location = new System.Drawing.Point(365, 252);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(127, 19);
+            this.label9.TabIndex = 65;
+            this.label9.Text = "Entrega:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // Pagina1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -333,10 +337,8 @@
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.comboBox1);
@@ -371,10 +373,8 @@
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -392,5 +392,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
     }
 }

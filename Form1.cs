@@ -111,7 +111,6 @@ namespace FormularioGrafica {
         private void button3_Click(object sender, EventArgs e) {
             //panelSelect.Height = button3.Height;
             //panelSelect.Top = button3.Top;
-
             //Esconder userControls(páginas)
             pagina11.Hide();
             pagina21.Hide();
