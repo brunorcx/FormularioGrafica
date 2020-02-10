@@ -23,7 +23,7 @@ namespace FormularioGrafica {
             DBConnect dB = new DBConnect();
             List<string>[] list = new List<string>[2];
 
-            list = dB.Select("SELECT Nome,Senha FROM funcionarios WHERE (Nome =\'" + login + "\') AND (Senha =\'" + senha + "\')");
+            list = dB.Select("SELECT Nome,Senha FROM funcionarios WHERE  (BINARY Nome = BINARY\'" + login + "\') AND  (BINARY Senha = BINARY\'" + senha + "\')");
             if (list[0].Count() == 0) {
                 MessageBox.Show("Login ou Senha incorretos");
             }
