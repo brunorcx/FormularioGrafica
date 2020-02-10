@@ -80,3 +80,5 @@ namespace FormularioGrafica {
         }
     }
 }
+
+//Não diferencia maísculo no banco 
