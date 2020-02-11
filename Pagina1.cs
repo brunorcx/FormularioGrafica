@@ -14,9 +14,7 @@ namespace FormularioGrafica {
 
         public Pagina1() {
             InitializeComponent();
-        }
-
-        private void label15_Click(object sender, EventArgs e) {
+            labelAtendente.Text = Login.login;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e) {
@@ -24,5 +22,6 @@ namespace FormularioGrafica {
 
         private void label2_Click(object sender, EventArgs e) {
         }
+
     }
 }

@@ -50,7 +50,6 @@
             this.textBoxUsuario.Size = new System.Drawing.Size(267, 24);
             this.textBoxUsuario.TabIndex = 2;
             this.textBoxUsuario.Text = "Usuário";
-            this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBoxUsuario_TextChanged);
             this.textBoxUsuario.Enter += new System.EventHandler(this.Usuario_Enter);
             this.textBoxUsuario.Leave += new System.EventHandler(this.Usuario_Leave);
             // 

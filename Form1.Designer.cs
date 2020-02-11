@@ -47,7 +47,6 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(160, 20);
             this.textBox7.TabIndex = 12;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // panel1
             // 
@@ -61,7 +60,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(149, 728);
             this.panel1.TabIndex = 29;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button4
             // 
@@ -140,7 +138,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(149, 78);
             this.panel3.TabIndex = 31;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label12
             // 
@@ -151,7 +148,6 @@
             this.label12.Size = new System.Drawing.Size(100, 96);
             this.label12.TabIndex = 0;
             this.label12.Text = "M";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // panel2
             // 
@@ -160,7 +156,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1211, 104);
             this.panel2.TabIndex = 30;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // pagina41
             // 
@@ -173,7 +168,6 @@
             this.pagina41.Name = "pagina41";
             this.pagina41.Size = new System.Drawing.Size(1211, 624);
             this.pagina41.TabIndex = 36;
-            this.pagina41.Load += new System.EventHandler(this.pagina41_Load);
             // 
             // pagina31
             // 
@@ -185,7 +179,6 @@
             this.pagina31.Name = "pagina31";
             this.pagina31.Size = new System.Drawing.Size(1211, 624);
             this.pagina31.TabIndex = 35;
-            this.pagina31.Load += new System.EventHandler(this.pagina31_Load);
             // 
             // pagina21
             // 
@@ -197,7 +190,6 @@
             this.pagina21.Name = "pagina21";
             this.pagina21.Size = new System.Drawing.Size(1211, 624);
             this.pagina21.TabIndex = 34;
-            this.pagina21.Load += new System.EventHandler(this.pagina21_Load);
             // 
             // pagina11
             // 
@@ -209,7 +201,6 @@
             this.pagina11.Name = "pagina11";
             this.pagina11.Size = new System.Drawing.Size(1211, 624);
             this.pagina11.TabIndex = 33;
-            this.pagina11.Load += new System.EventHandler(this.pagina11_Load);
             // 
             // Form1
             // 

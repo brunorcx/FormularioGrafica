@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.labelAtendente = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
@@ -61,22 +61,22 @@
             this.textBox9.Size = new System.Drawing.Size(33, 27);
             this.textBox9.TabIndex = 64;
             // 
-            // label15
+            // labelAtendente
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Constantia", 12F);
-            this.label15.Location = new System.Drawing.Point(588, 19);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(102, 19);
-            this.label15.TabIndex = 63;
-            this.label15.Text = "ATENDENTE";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
+            this.labelAtendente.AutoSize = true;
+            this.labelAtendente.Font = new System.Drawing.Font("Constantia", 12F);
+            this.labelAtendente.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.labelAtendente.Location = new System.Drawing.Point(588, 19);
+            this.labelAtendente.Name = "labelAtendente";
+            this.labelAtendente.Size = new System.Drawing.Size(102, 19);
+            this.labelAtendente.TabIndex = 63;
+            this.labelAtendente.Text = "ATENDENTE";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Constantia", 12F);
-            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label14.Location = new System.Drawing.Point(117, 45);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(71, 19);
@@ -331,7 +331,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.labelAtendente);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.checkBox3);
@@ -367,7 +367,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label labelAtendente;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.CheckBox checkBox3;

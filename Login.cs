@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace FormularioGrafica {
 
     public partial class Login : Form {
-        private string login;
+        public static string login;
         private string senha;
 
         public Login() {
@@ -76,8 +76,6 @@ namespace FormularioGrafica {
 
         }
 
-        private void textBoxUsuario_TextChanged(object sender, EventArgs e) {
-        }
     }
 }
 

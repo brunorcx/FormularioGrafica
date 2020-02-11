@@ -15,59 +15,7 @@ namespace FormularioGrafica {
 
         public Form1() {
             InitializeComponent();
-
             icons_path = Application.ExecutablePath;
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e) {
-        }
-
-        private void label1_Click(object sender, EventArgs e) {
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e) {
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e) {
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e) {
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e) {
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e) {
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e) {
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e) {
-        }
-
-        private void textBox8_TextChanged(object sender, EventArgs e) {
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e) {
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e) {
-        }
-
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e) {
-        }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e) {
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e) {
-        }
-
-        private void checkBox3_CheckedChanged(object sender, EventArgs e) {
         }
 
         private void Form1_Load(object sender, EventArgs e) {
@@ -137,35 +85,6 @@ namespace FormularioGrafica {
             button2.Image = Properties.Resources.clipboard_30px_yellow;
         }
 
-        private void label15_Click(object sender, EventArgs e) {
-        }
-
-        private void pagina41_Load(object sender, EventArgs e) {
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e) {
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e) {
-        }
-
-        private void label12_Click(object sender, EventArgs e) {
-        }
-
-        private void panelSelect_Paint(object sender, PaintEventArgs e) {
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e) {
-        }
-
-        private void pagina11_Load(object sender, EventArgs e) {
-        }
-
-        private void pagina21_Load(object sender, EventArgs e) {
-        }
-
-        private void pagina31_Load(object sender, EventArgs e) {
-        }
     }
 }
 
