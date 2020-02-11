@@ -15,4 +15,7 @@
 #Banco de dados
 - [x] Implementar conexão com o banco de dados
 
+#UI
+- [ ] Alterar as cores dos botões para azul e amarelho(quando selecionado)
+- [ ] Criar tema branco
 
