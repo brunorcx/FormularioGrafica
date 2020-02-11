@@ -23,7 +23,7 @@ namespace FormularioGrafica {
         private void label1_Click(object sender, EventArgs e) {
         }
 
-        private void buttonRegistrar_Click(object sender, EventArgs e) {
+        private void buttonCadastrar_Click(object sender, EventArgs e) {
             string nome = textBoxNomeRegistro.Text;
             string preco = textBoxPrecoRegistro.Text.Replace(',', '.');// Aceitar vírgulas
             string tamanhoX = textBoxTamanhoXRegistro.Text.Replace(',', '.');// Aceitar vírgulas
@@ -36,7 +36,7 @@ namespace FormularioGrafica {
                     "VALUES('" + nome + "','" + preco + "', '" + tamanhoX + "', '" + tamanhoY + "') ");
             }
             //List<string>[] list = new List<string>[2];
-
         }
+
     }
 }
