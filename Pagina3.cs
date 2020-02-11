@@ -28,11 +28,13 @@ namespace FormularioGrafica {
             string preco = textBoxPrecoRegistro.Text.Replace(',', '.');// Aceitar vírgulas
             string tamanhoX = textBoxTamanhoXRegistro.Text.Replace(',', '.');// Aceitar vírgulas
             string tamanhoY = textBoxTamanhoYRegistro.Text.Replace(',', '.');// Aceitar vírgulas
-
-            dB = new DBConnect();
-            dB.Insert("INSERT INTO servicos (Nome, Preco, TamanhoX, TamanhoY) " +
-                "VALUES('" + nome + "','" + preco + "', '" + tamanhoX + "', '" + tamanhoY + "') ");
-
+            if (preco.Length == 0 || nome.Length == 0 || tamanhoX.Length == 0 || tamanhoY.Length == 0) // Verificar campos em branco
+                MessageBox.Show("Por favor, preencha todos os campos.");
+            else {
+                dB = new DBConnect();
+                dB.Insert("INSERT INTO servicos (Nome, Preco, TamanhoX, TamanhoY) " +
+                    "VALUES('" + nome + "','" + preco + "', '" + tamanhoX + "', '" + tamanhoY + "') ");
+            }
             //List<string>[] list = new List<string>[2];
 
         }

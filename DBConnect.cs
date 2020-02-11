@@ -93,7 +93,7 @@ namespace FormularioGrafica {
                     MessageBox.Show("O nome deste serviço ultrapassou o limite de 30 caracteres! Por favor, registre um nome menor.");
                 }
                 catch (MySqlException ex) when (ex.Number == 1265) {//Caracter em campo float
-                    MessageBox.Show("Este(s) campo(s) aceita(m) somente números! Por favor, modifique o campo incorreto.");
+                    MessageBox.Show("Os campos Preço e Tamanho aceitam somente números! Por favor, modifique o(s) campo(s) incorreto(s).");
                 }
                 catch (MySqlException ex) when (ex.Number == 1264) {//Caracter em campo float
                     MessageBox.Show("Os campos Preço ou Tamanho ultrapassaram o limite de memória! Por favor, registre um valor menor.");
