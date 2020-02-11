@@ -32,7 +32,7 @@
             this.textBoxPrecoRegistro = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxNomeRegistro = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonRemover = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.buttonCadastrar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -53,9 +53,11 @@
             // 
             this.textBoxTamanhoYRegistro.Font = new System.Drawing.Font("Constantia", 12F);
             this.textBoxTamanhoYRegistro.Location = new System.Drawing.Point(367, 131);
+            this.textBoxTamanhoYRegistro.MaxLength = 100;
             this.textBoxTamanhoYRegistro.Name = "textBoxTamanhoYRegistro";
-            this.textBoxTamanhoYRegistro.Size = new System.Drawing.Size(22, 27);
+            this.textBoxTamanhoYRegistro.Size = new System.Drawing.Size(25, 27);
             this.textBoxTamanhoYRegistro.TabIndex = 91;
+            this.textBoxTamanhoYRegistro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -81,9 +83,11 @@
             // 
             this.textBoxTamanhoXRegistro.Font = new System.Drawing.Font("Constantia", 12F);
             this.textBoxTamanhoXRegistro.Location = new System.Drawing.Point(314, 131);
+            this.textBoxTamanhoXRegistro.MaxLength = 100;
             this.textBoxTamanhoXRegistro.Name = "textBoxTamanhoXRegistro";
-            this.textBoxTamanhoXRegistro.Size = new System.Drawing.Size(22, 27);
+            this.textBoxTamanhoXRegistro.Size = new System.Drawing.Size(25, 27);
             this.textBoxTamanhoXRegistro.TabIndex = 88;
+            this.textBoxTamanhoXRegistro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -99,9 +103,11 @@
             // 
             this.textBoxPrecoRegistro.Font = new System.Drawing.Font("Constantia", 12F);
             this.textBoxPrecoRegistro.Location = new System.Drawing.Point(97, 131);
+            this.textBoxPrecoRegistro.MaxLength = 100;
             this.textBoxPrecoRegistro.Name = "textBoxPrecoRegistro";
             this.textBoxPrecoRegistro.Size = new System.Drawing.Size(103, 27);
             this.textBoxPrecoRegistro.TabIndex = 86;
+            this.textBoxPrecoRegistro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
@@ -117,21 +123,23 @@
             // 
             this.textBoxNomeRegistro.Font = new System.Drawing.Font("Constantia", 12F);
             this.textBoxNomeRegistro.Location = new System.Drawing.Point(97, 83);
+            this.textBoxNomeRegistro.MaxLength = 110;
             this.textBoxNomeRegistro.Name = "textBoxNomeRegistro";
             this.textBoxNomeRegistro.Size = new System.Drawing.Size(600, 27);
             this.textBoxNomeRegistro.TabIndex = 84;
             // 
-            // button3
+            // buttonRemover
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(410, 269);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(267, 34);
-            this.button3.TabIndex = 99;
-            this.button3.Text = "Remover";
-            this.button3.UseVisualStyleBackColor = false;
+            this.buttonRemover.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRemover.Location = new System.Drawing.Point(410, 269);
+            this.buttonRemover.Name = "buttonRemover";
+            this.buttonRemover.Size = new System.Drawing.Size(267, 34);
+            this.buttonRemover.TabIndex = 99;
+            this.buttonRemover.Text = "Remover";
+            this.buttonRemover.UseVisualStyleBackColor = false;
+            this.buttonRemover.Click += new System.EventHandler(this.buttonRemover_Click);
             // 
             // button2
             // 
@@ -175,7 +183,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.buttonRemover);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.buttonCadastrar);
             this.Controls.Add(this.button1);
@@ -206,7 +214,7 @@
         private System.Windows.Forms.TextBox textBoxPrecoRegistro;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxNomeRegistro;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonRemover;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button buttonCadastrar;
         private System.Windows.Forms.Button button1;

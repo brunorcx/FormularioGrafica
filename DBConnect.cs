@@ -73,9 +73,10 @@ namespace FormularioGrafica {
         }
 
         //Insert statement
-        public void Insert(string queryInsert) {
+        public void Insert(string nome, string preco, string tamanhoX, string tamanhoY) {
             //string query = "INSERT INTO tableinfo (name, age) VALUES('John Smith', '33')";
-            string query = String.Copy(queryInsert);
+            string query = "INSERT INTO servicos (Nome, Preco, TamanhoX, TamanhoY) " +
+                    "VALUES('" + nome + "','" + preco + "', '" + tamanhoX + "', '" + tamanhoY + "')";
 
             //open connection
             if (this.OpenConnection() == true) {
@@ -126,12 +127,27 @@ namespace FormularioGrafica {
         }
 
         //Delete statement
-        public void Delete() {
-            string query = "DELETE FROM tableinfo WHERE name='John Smith'";
-
+        public void Delete(string nome, string preco, string tamanhoX, string tamanhoY) {
+            //string query = "DELETE FROM tableinfo WHERE name='John Smith'";
+            string query = "DELETE FROM servicos " +
+                "WHERE (Nome='" + nome + "')AND(Preco= '" + preco + "')AND(TamanhoX='" + tamanhoX + "')AND(TamanhoY= '" + tamanhoY + "')";
             if (this.OpenConnection() == true) {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
+                try {
+                    //Execute command
+                    cmd.ExecuteNonQuery();// Caso ocorra uma exception a execução pula a linha abaixo
+                    if (cmd.Parameters.Count == 0)
+                        MessageBox.Show("Serviço não encontrado!");
+                    else
+                        MessageBox.Show("Serviço removido com sucesso!");
+                }
+                catch (MySqlException ex) when (ex.Number == 1292) {//Caracter em campo float
+                    MessageBox.Show("Os campos Preço e Tamanho aceitam somente números! Por favor, modifique o(s) campo(s) incorreto(s).");
+                }
+                catch (MySqlException ex) when (ex.Number == 1264) {//Ultrapassar 32 bits do float
+                    MessageBox.Show("Os campos Preço ou Tamanho ultrapassaram o limite de memória! Por favor, registre um valor menor.");
+                }
+                //close connection
                 this.CloseConnection();
             }
         }

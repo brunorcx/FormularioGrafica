@@ -32,11 +32,22 @@ namespace FormularioGrafica {
                 MessageBox.Show("Por favor, preencha todos os campos.");
             else {
                 dB = new DBConnect();
-                dB.Insert("INSERT INTO servicos (Nome, Preco, TamanhoX, TamanhoY) " +
-                    "VALUES('" + nome + "','" + preco + "', '" + tamanhoX + "', '" + tamanhoY + "') ");
+                dB.Insert(nome, preco, tamanhoX, tamanhoY);
             }
             //List<string>[] list = new List<string>[2];
         }
 
+        private void buttonRemover_Click(object sender, EventArgs e) {
+            string nome = textBoxNomeRegistro.Text;
+            string preco = textBoxPrecoRegistro.Text.Replace(',', '.');// Aceitar vírgulas
+            string tamanhoX = textBoxTamanhoXRegistro.Text.Replace(',', '.');// Aceitar vírgulas
+            string tamanhoY = textBoxTamanhoYRegistro.Text.Replace(',', '.');// Aceitar vírgulas
+            if (preco.Length == 0 || nome.Length == 0 || tamanhoX.Length == 0 || tamanhoY.Length == 0) // Verificar campos em branco
+                MessageBox.Show("Por favor, preencha todos os campos.");
+            else {
+                dB = new DBConnect();
+                dB.Delete(nome, preco, tamanhoX, tamanhoY);
+            }
+        }
     }
 }
