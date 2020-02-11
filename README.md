@@ -2,7 +2,7 @@
 #Serviços
 - [x] Implementar registro de serviços
 - [ ] Implementar pesquisa de serviços
-- [ ] Implementar remoção de serviços
+- [x] Implementar remoção de serviços
 
 #Clientes
 - [ ] Implementar registro de clientes
