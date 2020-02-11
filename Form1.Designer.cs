@@ -89,7 +89,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(146, 75);
             this.button3.TabIndex = 34;
-            this.button3.Text = "Dashboard";
+            this.button3.Text = "Serviços";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button3.UseVisualStyleBackColor = true;
@@ -106,7 +106,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(146, 75);
             this.button2.TabIndex = 33;
-            this.button2.Text = "Relatorio";
+            this.button2.Text = "Cliente";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button2.UseVisualStyleBackColor = true;
@@ -131,7 +131,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel3.BackColor = System.Drawing.Color.DarkOrange;
             this.panel3.Controls.Add(this.label12);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
@@ -145,9 +145,9 @@
             this.label12.Font = new System.Drawing.Font("Segoe MDL2 Assets", 72F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(20, -27);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(100, 96);
+            this.label12.Size = new System.Drawing.Size(92, 96);
             this.label12.TabIndex = 0;
-            this.label12.Text = "M";
+            this.label12.Text = "R";
             // 
             // panel2
             // 

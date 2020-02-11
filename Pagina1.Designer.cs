@@ -87,6 +87,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Constantia", 12F);
+            this.label13.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label13.Location = new System.Drawing.Point(14, 45);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(58, 19);
@@ -274,7 +275,6 @@
             this.label2.Size = new System.Drawing.Size(83, 19);
             this.label2.TabIndex = 39;
             this.label2.Text = "CPF/CNPJ:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBox2
             // 
@@ -320,7 +320,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(127, 19);
             this.label9.TabIndex = 65;
-            this.label9.Text = "Entrega:";
+            this.label9.Text = "Entrada:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // Pagina1

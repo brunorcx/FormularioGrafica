@@ -81,13 +81,27 @@ namespace FormularioGrafica {
             if (this.OpenConnection() == true) {
                 //create command and assign the query and connection from the constructor
                 MySqlCommand cmd = new MySqlCommand(query, connection);
-
-                //Execute command
-                cmd.ExecuteNonQuery();
-
+                try {
+                    //Execute command
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Serviço registrado com sucesso!");
+                }
+                catch (MySqlException ex) when (ex.Number == 1062) {//Duplicate key
+                    MessageBox.Show("O nome deste serviço já existe! Por favor, registre um nome diferente.");
+                }
+                catch (MySqlException ex) when (ex.Number == 1406) {//Nome muito longo
+                    MessageBox.Show("O nome deste serviço ultrapassou o limite de 30 caracteres! Por favor, registre um nome menor.");
+                }
+                catch (MySqlException ex) when (ex.Number == 1265) {//Caracter em campo float
+                    MessageBox.Show("Este(s) campo(s) aceita(m) somente números! Por favor, modifique o campo incorreto.");
+                }
+                catch (MySqlException ex) when (ex.Number == 1264) {//Caracter em campo float
+                    MessageBox.Show("Os campos Preço ou Tamanho ultrapassaram o limite de memória! Por favor, registre um valor menor.");
+                }
                 //close connection
                 this.CloseConnection();
             }
+
         }
 
         //Update statement
