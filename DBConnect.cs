@@ -53,7 +53,7 @@ namespace FormularioGrafica {
                         break;
 
                     case 1045:
-                        MessageBox.Show("usuário ou senha incorreta, por favor tente novamente");
+                        MessageBox.Show("usuário ou senha incorretos, por favor tente novamente");
                         break;
                 }
                 return false;
@@ -83,7 +83,7 @@ namespace FormularioGrafica {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 try {
                     //Execute command
-                    cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();// Caso ocorra uma exception a execução pula a linha abaixo
                     MessageBox.Show("Serviço registrado com sucesso!");
                 }
                 catch (MySqlException ex) when (ex.Number == 1062) {//Duplicate key
@@ -95,7 +95,7 @@ namespace FormularioGrafica {
                 catch (MySqlException ex) when (ex.Number == 1265) {//Caracter em campo float
                     MessageBox.Show("Os campos Preço e Tamanho aceitam somente números! Por favor, modifique o(s) campo(s) incorreto(s).");
                 }
-                catch (MySqlException ex) when (ex.Number == 1264) {//Caracter em campo float
+                catch (MySqlException ex) when (ex.Number == 1264) {//Ultrapassar 32 bits do float
                     MessageBox.Show("Os campos Preço ou Tamanho ultrapassaram o limite de memória! Por favor, registre um valor menor.");
                 }
                 //close connection
