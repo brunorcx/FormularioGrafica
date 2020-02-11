@@ -18,4 +18,8 @@
 #UI
 - [ ] Alterar as cores dos botões para azul e amarelho(quando selecionado)
 - [ ] Criar tema branco
+- [ ] Colocar ícones para botões na página de serviços
+- [ ] Colocar ícones para botões na página de clientes
+- [ ] Colocar ícones para botões na página de vendas
+
 
