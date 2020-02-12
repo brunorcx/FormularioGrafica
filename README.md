@@ -27,12 +27,22 @@
 
 #Nomes
 Rodrigues Tech
+
 Dev Rodrigues
+
 Rodrigues Project
+
 Liderança Rodrigues
+
 Rodrigues Inteligência
+
 Rodrigues Studio
+
 Rodrigues Code
+
 Fundação Rodrigues
+
 Rodrigues Inovação
+
 Rodrigues TI
+
