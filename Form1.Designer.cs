@@ -32,7 +32,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.pagina41 = new FormularioGrafica.Pagina4();
             this.pagina31 = new FormularioGrafica.Pagina3();
             this.pagina21 = new FormularioGrafica.Pagina2();
@@ -131,7 +130,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel3.BackColor = System.Drawing.Color.Chartreuse;
             this.panel3.Controls.Add(this.label12);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
@@ -149,14 +148,6 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "R";
             // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(149, 624);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1211, 104);
-            this.panel2.TabIndex = 30;
-            // 
             // pagina41
             // 
             this.pagina41.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -166,7 +157,7 @@
             this.pagina41.Location = new System.Drawing.Point(149, 0);
             this.pagina41.Margin = new System.Windows.Forms.Padding(0);
             this.pagina41.Name = "pagina41";
-            this.pagina41.Size = new System.Drawing.Size(1211, 624);
+            this.pagina41.Size = new System.Drawing.Size(1211, 728);
             this.pagina41.TabIndex = 36;
             // 
             // pagina31
@@ -177,7 +168,7 @@
             this.pagina31.Location = new System.Drawing.Point(149, 0);
             this.pagina31.Margin = new System.Windows.Forms.Padding(0);
             this.pagina31.Name = "pagina31";
-            this.pagina31.Size = new System.Drawing.Size(1211, 624);
+            this.pagina31.Size = new System.Drawing.Size(1211, 728);
             this.pagina31.TabIndex = 35;
             // 
             // pagina21
@@ -188,7 +179,7 @@
             this.pagina21.Location = new System.Drawing.Point(149, 0);
             this.pagina21.Margin = new System.Windows.Forms.Padding(0);
             this.pagina21.Name = "pagina21";
-            this.pagina21.Size = new System.Drawing.Size(1211, 624);
+            this.pagina21.Size = new System.Drawing.Size(1211, 728);
             this.pagina21.TabIndex = 34;
             // 
             // pagina11
@@ -199,7 +190,7 @@
             this.pagina11.Location = new System.Drawing.Point(149, 0);
             this.pagina11.Margin = new System.Windows.Forms.Padding(0);
             this.pagina11.Name = "pagina11";
-            this.pagina11.Size = new System.Drawing.Size(1211, 624);
+            this.pagina11.Size = new System.Drawing.Size(1211, 728);
             this.pagina11.TabIndex = 33;
             // 
             // Form1
@@ -211,7 +202,6 @@
             this.Controls.Add(this.pagina31);
             this.Controls.Add(this.pagina21);
             this.Controls.Add(this.pagina11);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
@@ -235,7 +225,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Panel panel2;
         private Pagina1 pagina11;
         private Pagina2 pagina21;
         private Pagina3 pagina31;

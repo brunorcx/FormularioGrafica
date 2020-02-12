@@ -19,11 +19,14 @@ namespace FormularioGrafica {
         }
 
         private void Form1_Load(object sender, EventArgs e) {
-            pagina11.Hide();
+            pagina11.Show();
             pagina21.Hide();
             pagina31.Hide();
             pagina41.Hide();
 
+            //Troca a cor dos icones
+            button1.Image = Properties.Resources.online_store_30px_white;
+            button2.Image = Properties.Resources.clipboard_30px_yellow;
         }
 
         private void button1_Click(object sender, EventArgs e) {
@@ -84,7 +87,6 @@ namespace FormularioGrafica {
             button1.Image = Properties.Resources.online_store_30px_yellow;
             button2.Image = Properties.Resources.clipboard_30px_yellow;
         }
-
     }
 }
 
