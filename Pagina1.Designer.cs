@@ -217,6 +217,7 @@
             this.label7.Size = new System.Drawing.Size(97, 19);
             this.label7.TabIndex = 47;
             this.label7.Text = "Quantidade:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label6
             // 
@@ -227,6 +228,7 @@
             this.label6.Size = new System.Drawing.Size(79, 19);
             this.label6.TabIndex = 46;
             this.label6.Text = "Tamanho:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // textBox6
             // 

@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
+using System.Collections;
+using System.Data;
 
 namespace FormularioGrafica {
 
@@ -155,7 +157,7 @@ namespace FormularioGrafica {
         //Select statement
         public List<string>[] Select(string querySelect) {
             // string query = "SELECT * FROM funcionarios";
-            string query = String.Copy(querySelect);
+            string query = querySelect;
 
             //Create a list to store the result
             List<string>[] list = new List<string>[2];
@@ -190,6 +192,37 @@ namespace FormularioGrafica {
             else {
                 return list;
             }
+
+        }
+
+        public DataTable Select(string nome, string preco, string tamanhoX, string tamanhoY) {
+            DataTable tabela = new DataTable();
+            string query = "SELECT nome,preco,tamanhoX,tamanhoY FROM servicos " +
+                "WHERE (Nome LIKE '" + nome + "%')AND(Preco LIKE '" + preco + "%')" +
+                "AND(TamanhoX LIKE'" + tamanhoX + "%')AND(TamanhoY LIKE '" + tamanhoY + "%')";
+
+            if (this.OpenConnection() == true) {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                try {
+                    MySqlDataAdapter mySQLadaptador = new MySqlDataAdapter(query, connection);
+                    mySQLadaptador.Fill(tabela);
+
+                }
+                catch (MySqlException ex) when (ex.Number == 1406) {//Nome muito longo
+                    MessageBox.Show("O nome deste serviço ultrapassou o limite de 30 caracteres! Por favor, registre um nome menor.");
+                }
+                catch (MySqlException ex) when (ex.Number == 1292) {//Caracter em campo float
+                    MessageBox.Show("Os campos Preço e Tamanho aceitam somente números! Por favor, modifique o(s) campo(s) incorreto(s).");
+                }
+                catch (MySqlException ex) when (ex.Number == 1264) {//Ultrapassar 32 bits do float
+                    MessageBox.Show("Os campos Preço ou Tamanho ultrapassaram o limite de memória! Por favor, registre um valor menor.");
+                }
+                //close connection
+                this.CloseConnection();
+
+            }
+            return tabela;
 
         }
 

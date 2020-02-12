@@ -130,7 +130,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Chartreuse;
+            this.panel3.BackColor = System.Drawing.Color.DarkGreen;
             this.panel3.Controls.Add(this.label12);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);

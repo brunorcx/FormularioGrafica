@@ -23,6 +23,10 @@
         /// o conteúdo deste método com o editor de código.
         /// </summary>
         private void InitializeComponent() {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxTamanhoYRegistro = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -33,9 +37,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxNomeRegistro = new System.Windows.Forms.TextBox();
             this.buttonRemover = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonPesquisar = new System.Windows.Forms.Button();
             this.buttonCadastrar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAlterar = new System.Windows.Forms.Button();
+            this.dataGridTabelaServicos = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTabelaServicos)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -52,7 +62,7 @@
             // textBoxTamanhoYRegistro
             // 
             this.textBoxTamanhoYRegistro.Font = new System.Drawing.Font("Constantia", 12F);
-            this.textBoxTamanhoYRegistro.Location = new System.Drawing.Point(367, 131);
+            this.textBoxTamanhoYRegistro.Location = new System.Drawing.Point(368, 119);
             this.textBoxTamanhoYRegistro.MaxLength = 100;
             this.textBoxTamanhoYRegistro.Name = "textBoxTamanhoYRegistro";
             this.textBoxTamanhoYRegistro.Size = new System.Drawing.Size(25, 27);
@@ -63,7 +73,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Constantia", 12F);
-            this.label3.Location = new System.Drawing.Point(343, 138);
+            this.label3.Location = new System.Drawing.Point(344, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(20, 19);
             this.label3.TabIndex = 90;
@@ -73,7 +83,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Constantia", 12F);
-            this.label4.Location = new System.Drawing.Point(224, 134);
+            this.label4.Location = new System.Drawing.Point(225, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 19);
             this.label4.TabIndex = 89;
@@ -82,7 +92,7 @@
             // textBoxTamanhoXRegistro
             // 
             this.textBoxTamanhoXRegistro.Font = new System.Drawing.Font("Constantia", 12F);
-            this.textBoxTamanhoXRegistro.Location = new System.Drawing.Point(314, 131);
+            this.textBoxTamanhoXRegistro.Location = new System.Drawing.Point(315, 119);
             this.textBoxTamanhoXRegistro.MaxLength = 100;
             this.textBoxTamanhoXRegistro.Name = "textBoxTamanhoXRegistro";
             this.textBoxTamanhoXRegistro.Size = new System.Drawing.Size(25, 27);
@@ -93,7 +103,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Constantia", 12F);
-            this.label6.Location = new System.Drawing.Point(14, 134);
+            this.label6.Location = new System.Drawing.Point(15, 122);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 19);
             this.label6.TabIndex = 87;
@@ -102,7 +112,7 @@
             // textBoxPrecoRegistro
             // 
             this.textBoxPrecoRegistro.Font = new System.Drawing.Font("Constantia", 12F);
-            this.textBoxPrecoRegistro.Location = new System.Drawing.Point(97, 131);
+            this.textBoxPrecoRegistro.Location = new System.Drawing.Point(98, 119);
             this.textBoxPrecoRegistro.MaxLength = 100;
             this.textBoxPrecoRegistro.Name = "textBoxPrecoRegistro";
             this.textBoxPrecoRegistro.Size = new System.Drawing.Size(103, 27);
@@ -113,7 +123,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Constantia", 12F);
-            this.label8.Location = new System.Drawing.Point(14, 86);
+            this.label8.Location = new System.Drawing.Point(15, 74);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(56, 19);
             this.label8.TabIndex = 85;
@@ -122,10 +132,10 @@
             // textBoxNomeRegistro
             // 
             this.textBoxNomeRegistro.Font = new System.Drawing.Font("Constantia", 12F);
-            this.textBoxNomeRegistro.Location = new System.Drawing.Point(97, 83);
+            this.textBoxNomeRegistro.Location = new System.Drawing.Point(98, 71);
             this.textBoxNomeRegistro.MaxLength = 110;
             this.textBoxNomeRegistro.Name = "textBoxNomeRegistro";
-            this.textBoxNomeRegistro.Size = new System.Drawing.Size(600, 27);
+            this.textBoxNomeRegistro.Size = new System.Drawing.Size(295, 27);
             this.textBoxNomeRegistro.TabIndex = 84;
             // 
             // buttonRemover
@@ -133,60 +143,144 @@
             this.buttonRemover.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.buttonRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRemover.Location = new System.Drawing.Point(410, 269);
+            this.buttonRemover.Location = new System.Drawing.Point(585, 136);
             this.buttonRemover.Name = "buttonRemover";
-            this.buttonRemover.Size = new System.Drawing.Size(267, 34);
+            this.buttonRemover.Size = new System.Drawing.Size(133, 34);
             this.buttonRemover.TabIndex = 99;
             this.buttonRemover.Text = "Remover";
             this.buttonRemover.UseVisualStyleBackColor = false;
             this.buttonRemover.Click += new System.EventHandler(this.buttonRemover_Click);
             // 
-            // button2
+            // buttonPesquisar
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(96, 210);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(267, 34);
-            this.button2.TabIndex = 98;
-            this.button2.Text = "Pesquisar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.buttonPesquisar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPesquisar.Location = new System.Drawing.Point(414, 71);
+            this.buttonPesquisar.Name = "buttonPesquisar";
+            this.buttonPesquisar.Size = new System.Drawing.Size(133, 34);
+            this.buttonPesquisar.TabIndex = 98;
+            this.buttonPesquisar.Text = "Pesquisar";
+            this.buttonPesquisar.UseVisualStyleBackColor = false;
+            this.buttonPesquisar.Click += new System.EventHandler(this.buttonPesquisar_Click);
             // 
             // buttonCadastrar
             // 
             this.buttonCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.buttonCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCadastrar.Location = new System.Drawing.Point(96, 269);
+            this.buttonCadastrar.Location = new System.Drawing.Point(585, 71);
             this.buttonCadastrar.Name = "buttonCadastrar";
-            this.buttonCadastrar.Size = new System.Drawing.Size(267, 34);
+            this.buttonCadastrar.Size = new System.Drawing.Size(133, 34);
             this.buttonCadastrar.TabIndex = 97;
             this.buttonCadastrar.Text = "Cadastrar";
             this.buttonCadastrar.UseVisualStyleBackColor = false;
             this.buttonCadastrar.Click += new System.EventHandler(this.buttonCadastrar_Click);
             // 
-            // button1
+            // buttonAlterar
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(410, 210);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(267, 34);
-            this.button1.TabIndex = 96;
-            this.button1.Text = "Alterar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAlterar.Location = new System.Drawing.Point(414, 136);
+            this.buttonAlterar.Name = "buttonAlterar";
+            this.buttonAlterar.Size = new System.Drawing.Size(133, 34);
+            this.buttonAlterar.TabIndex = 96;
+            this.buttonAlterar.Text = "Alterar";
+            this.buttonAlterar.UseVisualStyleBackColor = false;
+            // 
+            // dataGridTabelaServicos
+            // 
+            this.dataGridTabelaServicos.AllowUserToAddRows = false;
+            this.dataGridTabelaServicos.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Wheat;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.dataGridTabelaServicos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridTabelaServicos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridTabelaServicos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridTabelaServicos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.dataGridTabelaServicos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridTabelaServicos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridTabelaServicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridTabelaServicos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            dataGridViewCellStyle3.NullValue = "Algo";
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridTabelaServicos.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridTabelaServicos.EnableHeadersVisualStyles = false;
+            this.dataGridTabelaServicos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.dataGridTabelaServicos.Location = new System.Drawing.Point(98, 193);
+            this.dataGridTabelaServicos.Name = "dataGridTabelaServicos";
+            this.dataGridTabelaServicos.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridTabelaServicos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridTabelaServicos.RowTemplate.Height = 25;
+            this.dataGridTabelaServicos.Size = new System.Drawing.Size(536, 150);
+            this.dataGridTabelaServicos.TabIndex = 100;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Nome";
+            this.Column1.HeaderText = "Nome";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Preco";
+            this.Column2.HeaderText = "Preço";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "TamanhoX";
+            this.Column3.HeaderText = "Largura";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "TamanhoY";
+            this.Column4.HeaderText = "Altura";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Pagina3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.Controls.Add(this.dataGridTabelaServicos);
             this.Controls.Add(this.buttonRemover);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonPesquisar);
             this.Controls.Add(this.buttonCadastrar);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.textBoxTamanhoYRegistro);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
@@ -199,6 +293,7 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.Name = "Pagina3";
             this.Size = new System.Drawing.Size(744, 346);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTabelaServicos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,8 +310,13 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxNomeRegistro;
         private System.Windows.Forms.Button buttonRemover;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonPesquisar;
         private System.Windows.Forms.Button buttonCadastrar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAlterar;
+        private System.Windows.Forms.DataGridView dataGridTabelaServicos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
