@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Collections;
 using System.Data;
+using System.Globalization;
 
 namespace FormularioGrafica {
 
@@ -77,13 +78,20 @@ namespace FormularioGrafica {
         //Insert statement
         public void Insert(string nome, string preco, string tamanhoX, string tamanhoY) {
             //string query = "INSERT INTO tableinfo (name, age) VALUES('John Smith', '33')";
-            string query = "INSERT INTO servicos (Nome, Preco, TamanhoX, TamanhoY) " +
-                    "VALUES('" + nome + "','" + preco + "', '" + tamanhoX + "', '" + tamanhoY + "')";
+
+            string query = "INSERT INTO servicos(Nome, Preco, TamanhoX, TamanhoY)" +
+                "VALUES(@Nome,@Preco,@TamanhoX,@TamanhoY)";
 
             //open connection
             if (this.OpenConnection() == true) {
                 //create command and assign the query and connection from the constructor
                 MySqlCommand cmd = new MySqlCommand(query, connection);
+                //Adicionar parâmetros
+                cmd.Parameters.AddWithValue("@Nome", nome);
+                cmd.Parameters.AddWithValue("@Preco", Convert.ToDecimal(preco, CultureInfo.InvariantCulture));// aceitar ',' ou '.'
+                cmd.Parameters.AddWithValue("@TamanhoX", Convert.ToDecimal(tamanhoX, CultureInfo.InvariantCulture));
+                cmd.Parameters.AddWithValue("@TamanhoY", Convert.ToDecimal(tamanhoY, CultureInfo.InvariantCulture));
+
                 try {
                     //Execute command
                     cmd.ExecuteNonQuery();// Caso ocorra uma exception a execução pula a linha abaixo
@@ -100,6 +108,9 @@ namespace FormularioGrafica {
                 }
                 catch (MySqlException ex) when (ex.Number == 1264) {//Ultrapassar 32 bits do float
                     MessageBox.Show("Os campos Preço ou Tamanho ultrapassaram o limite de memória! Por favor, registre um valor menor.");
+                }
+                catch (MySqlException ex) {
+                    MessageBox.Show("Erro desconhecido! Por favor, contate o administrador.");
                 }
                 //close connection
                 this.CloseConnection();
@@ -124,31 +135,45 @@ namespace FormularioGrafica {
                 dadosNovos[3] = dadosAtuais[3];
 
             string query = "UPDATE servicos SET " +
-                "Nome='" + dadosNovos[0] + "', " +
-                "Preco='" + dadosNovos[1] + "', " +
-                "TamanhoX='" + dadosNovos[2] + "'," +
-                "TamanhoY= '" + dadosNovos[3] + "' " +
-                "WHERE (Nome='" + dadosAtuais[0] + "')" +
-                "AND(Preco= '" + dadosAtuais[1] + "')" +
-                "AND(TamanhoX='" + dadosAtuais[2] + "')" +
-                "AND(TamanhoY= '" + dadosAtuais[3] + "')";
+                "Nome=@novoNome, Preco=@novoPreco, TamanhoX=@novoTamanhoX, TamanhoY=@novoTamanhoY " +
+                "WHERE Nome=@Nome " +
+                "AND Preco=@Preco " +
+                "AND TamanhoX=@tamanhoX " +
+                "AND TamanhoY=@tamanhoY";
+
             //Open connection
             if (this.OpenConnection() == true) {
                 //create mysql command
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
+                //Adicionar parâmentros atuais
+
+                cmd.Parameters.AddWithValue("@Nome", dadosAtuais[0]);
+                cmd.Parameters.AddWithValue("@Preco", (dadosAtuais[1]));
+                cmd.Parameters.AddWithValue("@tamanhoX", dadosAtuais[2]);
+                cmd.Parameters.AddWithValue("@tamanhoY", dadosAtuais[3]);
+
+                //Adicionar parâmetros novos
+                cmd.Parameters.AddWithValue("@novoNome", dadosNovos[0]);
+                cmd.Parameters.AddWithValue("@novoPreco", dadosNovos[1]);
+                cmd.Parameters.AddWithValue("@novoTamanhoX", dadosNovos[2]);
+                cmd.Parameters.AddWithValue("@novoTamanhoY", dadosNovos[3]);
+
                 try {
                     cmd.ExecuteNonQuery();// Caso ocorra uma exception a execução pula a linha abaixo
-                    if (cmd.Parameters.Count == 0) // Mudar o if para pegar quando o comando executa
-                        MessageBox.Show("Não foi possível atualizar! Será que o nome deste serviço já existe?");
-                    else
-                        MessageBox.Show("Serviço atualizado com sucesso!");
+                    MessageBox.Show("Serviço atualizado com sucesso!");
+                }
+                catch (MySqlException ex) when (ex.Number == 1062) {//Duplicate key
+                    MessageBox.Show("O nome deste serviço já existe! Por favor, registre um nome diferente.");
                 }
                 catch (MySqlException ex) when (ex.Number == 1292) {//Caracter em campo float
                     MessageBox.Show("Os campos Preço e Tamanho aceitam somente números! Por favor, modifique o(s) campo(s) incorreto(s).");
                 }
                 catch (MySqlException ex) when (ex.Number == 1264) {//Ultrapassar 32 bits do float
                     MessageBox.Show("Os campos Preço ou Tamanho ultrapassaram o limite de memória! Por favor, registre um valor menor.");
+                }
+                catch (MySqlException ex) {
+                    MessageBox.Show("Erro desconhecido! Por favor, contate o administrador.");
                 }
                 //close connection
                 this.CloseConnection();
@@ -175,6 +200,9 @@ namespace FormularioGrafica {
                 }
                 catch (MySqlException ex) when (ex.Number == 1264) {//Ultrapassar 32 bits do float
                     MessageBox.Show("Os campos Preço ou Tamanho ultrapassaram o limite de memória! Por favor, registre um valor menor.");
+                }
+                catch (MySqlException ex) {
+                    MessageBox.Show("Erro desconhecido! Por favor, contate o administrador.");
                 }
                 //close connection
                 this.CloseConnection();
@@ -244,6 +272,9 @@ namespace FormularioGrafica {
                 }
                 catch (MySqlException ex) when (ex.Number == 1264) {//Ultrapassar 32 bits do float
                     MessageBox.Show("Os campos Preço ou Tamanho ultrapassaram o limite de memória! Por favor, registre um valor menor.");
+                }
+                catch (MySqlException ex) {
+                    MessageBox.Show("Erro desconhecido! Por favor, contate o administrador.");
                 }
                 //close connection
                 this.CloseConnection();
