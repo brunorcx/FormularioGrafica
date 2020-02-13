@@ -14,28 +14,22 @@ namespace FormularioGrafica {
     public partial class Login : Form {
         public static string login;
         private string senha;
+        private DBConnect dB;
 
         public Login() {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            DBConnect dB = new DBConnect();
-            List<string>[] list = new List<string>[2];
+            dB = new DBConnect();
 
-            list = dB.Select("SELECT Nome,Senha FROM funcionarios WHERE  (BINARY Nome = BINARY\'" + login + "\') AND  (BINARY Senha = BINARY\'" + senha + "\')");
-            if (list[0].Count() == 0) {
+            if (!dB.Select(textBoxUsuario.Text, textBoxSenha.Text))
                 MessageBox.Show("Login ou Senha incorretos");
-            }
             else {
                 this.Hide();
                 Form1 form = new Form1();
                 form.Show();
             }
-            //foreach (var el in list) {
-            //    buscaLogin = el[0];
-            //}
-            //dB.Insert("INSERT INTO funcionarios (CPF, Nome,Senha) VALUES(04548965149, 'Mario', 'minhaSenha')");
         }
 
         private void Usuario_Enter(object sender, EventArgs e) {

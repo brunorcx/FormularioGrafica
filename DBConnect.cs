@@ -183,17 +183,25 @@ namespace FormularioGrafica {
         //Delete statement
         public void Delete(string nome, string preco, string tamanhoX, string tamanhoY) {
             //string query = "DELETE FROM tableinfo WHERE name='John Smith'";
+
             string query = "DELETE FROM servicos " +
-                "WHERE (Nome='" + nome + "')AND(Preco= '" + preco + "')AND(TamanhoX='" + tamanhoX + "')AND(TamanhoY= '" + tamanhoY + "')";
+                "WHERE Nome=@Nome " +
+                "AND Preco=@Preco " +
+                "AND TamanhoX=@TamanhoX " +
+                "AND TamanhoY=@TamanhoY";
+
             if (this.OpenConnection() == true) {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                cmd.Parameters.AddWithValue("@Nome", nome);
+                cmd.Parameters.AddWithValue("@Preco", preco);
+                cmd.Parameters.AddWithValue("@TamanhoX", tamanhoX);
+                cmd.Parameters.AddWithValue("@TamanhoY", tamanhoY);
+
                 try {
                     //Execute command
                     cmd.ExecuteNonQuery();// Caso ocorra uma exception a execução pula a linha abaixo
-                    if (cmd.Parameters.Count == 0)
-                        MessageBox.Show("Serviço não encontrado!");
-                    else
-                        MessageBox.Show("Serviço removido com sucesso!");
+                    MessageBox.Show("Serviço removido com sucesso!");
                 }
                 catch (MySqlException ex) when (ex.Number == 1292) {//Caracter em campo float
                     MessageBox.Show("Os campos Preço e Tamanho aceitam somente números! Por favor, modifique o(s) campo(s) incorreto(s).");
@@ -250,17 +258,68 @@ namespace FormularioGrafica {
 
         }
 
-        public DataTable Select(string nome, string preco, string tamanhoX, string tamanhoY) {
-            DataTable tabela = new DataTable();
-            string query = "SELECT nome,preco,tamanhoX,tamanhoY FROM servicos " +
-                "WHERE (Nome LIKE '" + nome + "%')AND(Preco LIKE '" + preco + "%')" +
-                "AND(TamanhoX LIKE'" + tamanhoX + "%')AND(TamanhoY LIKE '" + tamanhoY + "%')";
+        public bool Select(string nome, string senha) {
+            string query = "SELECT Nome, Senha FROM funcionarios " +
+                "WHERE Nome=@Nome AND Senha=@Senha";
 
             if (this.OpenConnection() == true) {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
+                cmd.Parameters.AddWithValue("@Nome", nome);
+                cmd.Parameters.AddWithValue("@Senha", senha);
+
+                try {
+                    //Execute command
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+                    while (dataReader.Read()) {//While serve para esperar terminar a leitura
+                        if (nome == dataReader["Nome"] + "")
+                            if (senha == dataReader["Senha"] + "")
+                                return true;
+                    }
+
+                    //close Data Reader
+                    dataReader.Close();
+                }
+                catch (MySqlException ex) when (ex.Number == 1292) {//Caracter em campo float
+                    MessageBox.Show("Os campos Preço e Tamanho aceitam somente números! Por favor, modifique o(s) campo(s) incorreto(s).");
+                }
+                catch (MySqlException ex) when (ex.Number == 1264) {//Ultrapassar 32 bits do float
+                    MessageBox.Show("Os campos Preço ou Tamanho ultrapassaram o limite de memória! Por favor, registre um valor menor.");
+                }
+                catch (MySqlException ex) {
+                    MessageBox.Show("Erro desconhecido! Por favor, contate o administrador.");
+                }
+                //close connection
+                this.CloseConnection();
+            }
+            return false;
+
+        }
+
+        public DataTable Select(string nome, string preco, string tamanhoX, string tamanhoY) {
+            DataTable tabela = new DataTable();
+            //string query = "SELECT nome,preco,tamanhoX,tamanhoY FROM servicos " +
+            //    "WHERE (Nome LIKE '" + nome + "%')AND(Preco LIKE '" + preco + "%')" +
+            //    "AND(TamanhoX LIKE'" + tamanhoX + "%')AND(TamanhoY LIKE '" + tamanhoY + "%')";
+
+            string query = "SELECT * FROM servicos" +
+                " WHERE Nome LIKE @Nome" +
+                " AND Preco LIKE @Preco" +
+                " AND TamanhoX LIKE @TamanhoX" +
+                " AND TamanhoY LIKE @TamanhoY";
+
+            if (this.OpenConnection() == true) {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                //Adicionar parâmetros
+                cmd.Parameters.AddWithValue("@Nome", nome + '%');
+                cmd.Parameters.AddWithValue("@Preco", preco + '%');
+                cmd.Parameters.AddWithValue("@TamanhoX", tamanhoX + '%');
+                cmd.Parameters.AddWithValue("@TamanhoY", tamanhoY + '%');
+
                 try {
                     MySqlDataAdapter mySQLadaptador = new MySqlDataAdapter(query, connection);
+                    mySQLadaptador.SelectCommand = cmd;
                     mySQLadaptador.Fill(tabela);
 
                 }
