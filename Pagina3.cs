@@ -23,6 +23,15 @@ namespace FormularioGrafica {
         public Pagina3() {
             InitializeComponent();
             dataGridTabelaServicos.Hide();
+            labelNovosDados.Hide();
+            labelNovoNome.Hide();
+            labelNovoPreco.Hide();
+            labelNovoTamanho.Hide();
+            labelNovoX.Hide();
+            textBoxNovoNome.Hide();
+            textBoxNovoPreco.Hide();
+            textBoxNTamanhoX.Hide();
+            textBoxNTamanhoY.Hide();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e) {
@@ -32,6 +41,16 @@ namespace FormularioGrafica {
         }
 
         private void buttonCadastrar_Click(object sender, EventArgs e) {
+            labelNovosDados.Hide();
+            labelNovoNome.Hide();
+            labelNovoPreco.Hide();
+            labelNovoTamanho.Hide();
+            labelNovoX.Hide();
+            textBoxNovoNome.Hide();
+            textBoxNovoPreco.Hide();
+            textBoxNTamanhoX.Hide();
+            textBoxNTamanhoY.Hide();
+
             nome = textBoxNomeRegistro.Text;
             preco = textBoxPrecoRegistro.Text.Replace(',', '.');// Aceitar vírgulas
             tamanhoX = textBoxTamanhoXRegistro.Text.Replace(',', '.');// Aceitar vírgulas
@@ -46,6 +65,16 @@ namespace FormularioGrafica {
         }
 
         private void buttonRemover_Click(object sender, EventArgs e) {
+            labelNovosDados.Hide();
+            labelNovoNome.Hide();
+            labelNovoPreco.Hide();
+            labelNovoTamanho.Hide();
+            labelNovoX.Hide();
+            textBoxNovoNome.Hide();
+            textBoxNovoPreco.Hide();
+            textBoxNTamanhoX.Hide();
+            textBoxNTamanhoY.Hide();
+
             nome = textBoxNomeRegistro.Text;
             preco = textBoxPrecoRegistro.Text.Replace(',', '.');// Aceitar vírgulas
             tamanhoX = textBoxTamanhoXRegistro.Text.Replace(',', '.');// Aceitar vírgulas
@@ -59,16 +88,86 @@ namespace FormularioGrafica {
         }
 
         private void buttonPesquisar_Click(object sender, EventArgs e) {
-            dataGridTabelaServicos.Show();
+            labelNovosDados.Hide();
+            labelNovoNome.Hide();
+            labelNovoPreco.Hide();
+            labelNovoTamanho.Hide();
+            labelNovoX.Hide();
+            textBoxNovoNome.Hide();
+            textBoxNovoPreco.Hide();
+            textBoxNTamanhoX.Hide();
+            textBoxNTamanhoY.Hide();
+
             nome = textBoxNomeRegistro.Text;
             preco = textBoxPrecoRegistro.Text.Replace(',', '.');// Aceitar vírgulas
             tamanhoX = textBoxTamanhoXRegistro.Text.Replace(',', '.');// Aceitar vírgulas
             tamanhoY = textBoxTamanhoYRegistro.Text.Replace(',', '.');// Aceitar vírgulas
+
             if (preco.Length == 0 && nome.Length == 0 && tamanhoX.Length == 0 && tamanhoY.Length == 0) // Verificar campos em branco
                 MessageBox.Show("Por favor, preencha pelo menos um dos campos.");
             else {
+                dataGridTabelaServicos.Show();
+
                 tabela = dB.Select(nome, preco, tamanhoX, tamanhoY);
                 dataGridTabelaServicos.DataSource = tabela;
+            }
+        }
+
+        private void buttonAlterar_Click(object sender, EventArgs e) {
+            dataGridTabelaServicos.Hide();
+
+            labelNovosDados.Show();
+            labelNovoNome.Show();
+            labelNovoPreco.Show();
+            labelNovoTamanho.Show();
+            labelNovoX.Show();
+            textBoxNovoNome.Show();
+            textBoxNovoPreco.Show();
+            textBoxNTamanhoX.Show();
+            textBoxNTamanhoY.Show();
+
+            List<string> dadosNovos = new List<string>();
+            List<string> dadosAtuais = new List<string>();
+            string novoNome;
+            string novoPreco;
+            string novoTamanhoX;
+            string novoTamanhoY;
+
+            nome = textBoxNomeRegistro.Text;
+            preco = textBoxPrecoRegistro.Text.Replace(',', '.');// Aceitar vírgulas
+            tamanhoX = textBoxTamanhoXRegistro.Text.Replace(',', '.');// Aceitar vírgulas
+            tamanhoY = textBoxTamanhoYRegistro.Text.Replace(',', '.');// Aceitar vírgulas
+            //Novos valores
+            novoNome = textBoxNovoNome.Text;
+            novoPreco = textBoxNovoPreco.Text.Replace(',', '.');// Aceitar vírgulas
+            novoTamanhoX = textBoxNTamanhoX.Text.Replace(',', '.');// Aceitar vírgulas
+            novoTamanhoY = textBoxNTamanhoY.Text.Replace(',', '.');// Aceitar vírgulas
+
+            if (preco.Length == 0 || nome.Length == 0 || tamanhoX.Length == 0 || tamanhoY.Length == 0) // Verificar campos em branco
+                MessageBox.Show("Por favor, preencha todos os campos iniciais da busca");
+            else {
+                if (novoPreco.Length == 0 && novoNome.Length == 0 && novoTamanhoX.Length == 0 && novoTamanhoY.Length == 0) // Verificar campos em branco
+                    MessageBox.Show("Por favor, preencha pelo menos um campo a ser atualizado");
+                else {
+                    //Inserir dados atuais
+                    dadosAtuais.Add(nome);
+                    dadosAtuais.Add(preco);
+                    dadosAtuais.Add(tamanhoX);
+                    dadosAtuais.Add(tamanhoY);
+                    //Inserir dados novos na arrayList
+                    dadosNovos.Add(novoNome);
+                    dadosNovos.Add(novoPreco);
+                    dadosNovos.Add(novoTamanhoX);
+                    dadosNovos.Add(novoTamanhoY);
+                    //dar update
+                    dB.Update(dadosAtuais, dadosNovos);
+
+                    //Resetar os textos
+                    textBoxNovoNome.ResetText();
+                    textBoxNovoPreco.ResetText();
+                    textBoxNTamanhoX.ResetText();
+                    textBoxNTamanhoY.ResetText();
+                }
             }
         }
     }

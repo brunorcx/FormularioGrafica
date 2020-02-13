@@ -108,12 +108,34 @@ namespace FormularioGrafica {
         }
 
         //Update statement
-        public void Update() {
-            string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
+        public void Update(List<string> dadosAtuais, List<string> dadosNovos) {
+            //string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
 
+            if (dadosNovos[0] == "")
+                dadosNovos[0] = dadosAtuais[0];
+
+            if (dadosNovos[1] == "")
+                dadosNovos[1] = dadosAtuais[1];
+
+            if (dadosNovos[2] == "")
+                dadosNovos[2] = dadosAtuais[2];
+
+            if (dadosNovos[3] == "")
+                dadosNovos[3] = dadosAtuais[3];
+
+            string query = "UPDATE servicos SET " +
+                "Nome='" + dadosNovos[0] + "', " +
+                "Preco='" + dadosNovos[1] + "', " +
+                "TamanhoX='" + dadosNovos[2] + "'," +
+                "TamanhoY= '" + dadosNovos[3] + "' " +
+                "WHERE (Nome='" + dadosAtuais[0] + "')" +
+                "AND(Preco= '" + dadosAtuais[1] + "')" +
+                "AND(TamanhoX='" + dadosAtuais[2] + "')" +
+                "AND(TamanhoY= '" + dadosAtuais[3] + "')";
             //Open connection
             if (this.OpenConnection() == true) {
                 //create mysql command
+                //MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlCommand cmd = new MySqlCommand();
                 //Assign the query using CommandText
                 cmd.CommandText = query;
@@ -121,8 +143,21 @@ namespace FormularioGrafica {
                 cmd.Connection = connection;
 
                 //Execute query
-                cmd.ExecuteNonQuery();
+                // cmd.ExecuteNonQuery();
 
+                try {
+                    cmd.ExecuteNonQuery();// Caso ocorra uma exception a execução pula a linha abaixo
+                    if (cmd.Parameters.Count == 0) // Mudar o if para pegar quando o comando executa
+                        MessageBox.Show("Não foi possível atualizar! Será que o nome deste serviço já existe?");
+                    else
+                        MessageBox.Show("Serviço atualizado com sucesso!");
+                }
+                catch (MySqlException ex) when (ex.Number == 1292) {//Caracter em campo float
+                    MessageBox.Show("Os campos Preço e Tamanho aceitam somente números! Por favor, modifique o(s) campo(s) incorreto(s).");
+                }
+                catch (MySqlException ex) when (ex.Number == 1264) {//Ultrapassar 32 bits do float
+                    MessageBox.Show("Os campos Preço ou Tamanho ultrapassaram o limite de memória! Por favor, registre um valor menor.");
+                }
                 //close connection
                 this.CloseConnection();
             }

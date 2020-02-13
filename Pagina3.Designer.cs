@@ -45,6 +45,15 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBoxNTamanhoY = new System.Windows.Forms.TextBox();
+            this.labelNovoX = new System.Windows.Forms.Label();
+            this.labelNovoTamanho = new System.Windows.Forms.Label();
+            this.textBoxNTamanhoX = new System.Windows.Forms.TextBox();
+            this.labelNovoPreco = new System.Windows.Forms.Label();
+            this.textBoxNovoPreco = new System.Windows.Forms.TextBox();
+            this.labelNovoNome = new System.Windows.Forms.Label();
+            this.textBoxNovoNome = new System.Windows.Forms.TextBox();
+            this.labelNovosDados = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridTabelaServicos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -188,6 +197,7 @@
             this.buttonAlterar.TabIndex = 96;
             this.buttonAlterar.Text = "Alterar";
             this.buttonAlterar.UseVisualStyleBackColor = false;
+            this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
             // dataGridTabelaServicos
             // 
@@ -271,11 +281,110 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
+            // textBoxNTamanhoY
+            // 
+            this.textBoxNTamanhoY.Font = new System.Drawing.Font("Constantia", 12F);
+            this.textBoxNTamanhoY.Location = new System.Drawing.Point(368, 307);
+            this.textBoxNTamanhoY.MaxLength = 100;
+            this.textBoxNTamanhoY.Name = "textBoxNTamanhoY";
+            this.textBoxNTamanhoY.Size = new System.Drawing.Size(25, 27);
+            this.textBoxNTamanhoY.TabIndex = 108;
+            this.textBoxNTamanhoY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelNovoX
+            // 
+            this.labelNovoX.AutoSize = true;
+            this.labelNovoX.Font = new System.Drawing.Font("Constantia", 12F);
+            this.labelNovoX.Location = new System.Drawing.Point(344, 314);
+            this.labelNovoX.Name = "labelNovoX";
+            this.labelNovoX.Size = new System.Drawing.Size(20, 19);
+            this.labelNovoX.TabIndex = 107;
+            this.labelNovoX.Text = "X";
+            // 
+            // labelNovoTamanho
+            // 
+            this.labelNovoTamanho.AutoSize = true;
+            this.labelNovoTamanho.Font = new System.Drawing.Font("Constantia", 12F);
+            this.labelNovoTamanho.Location = new System.Drawing.Point(225, 310);
+            this.labelNovoTamanho.Name = "labelNovoTamanho";
+            this.labelNovoTamanho.Size = new System.Drawing.Size(79, 19);
+            this.labelNovoTamanho.TabIndex = 106;
+            this.labelNovoTamanho.Text = "Tamanho:";
+            // 
+            // textBoxNTamanhoX
+            // 
+            this.textBoxNTamanhoX.Font = new System.Drawing.Font("Constantia", 12F);
+            this.textBoxNTamanhoX.Location = new System.Drawing.Point(315, 307);
+            this.textBoxNTamanhoX.MaxLength = 100;
+            this.textBoxNTamanhoX.Name = "textBoxNTamanhoX";
+            this.textBoxNTamanhoX.Size = new System.Drawing.Size(25, 27);
+            this.textBoxNTamanhoX.TabIndex = 105;
+            this.textBoxNTamanhoX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelNovoPreco
+            // 
+            this.labelNovoPreco.AutoSize = true;
+            this.labelNovoPreco.Font = new System.Drawing.Font("Constantia", 12F);
+            this.labelNovoPreco.Location = new System.Drawing.Point(15, 310);
+            this.labelNovoPreco.Name = "labelNovoPreco";
+            this.labelNovoPreco.Size = new System.Drawing.Size(52, 19);
+            this.labelNovoPreco.TabIndex = 104;
+            this.labelNovoPreco.Text = "Preço:";
+            // 
+            // textBoxNovoPreco
+            // 
+            this.textBoxNovoPreco.Font = new System.Drawing.Font("Constantia", 12F);
+            this.textBoxNovoPreco.Location = new System.Drawing.Point(98, 307);
+            this.textBoxNovoPreco.MaxLength = 100;
+            this.textBoxNovoPreco.Name = "textBoxNovoPreco";
+            this.textBoxNovoPreco.Size = new System.Drawing.Size(103, 27);
+            this.textBoxNovoPreco.TabIndex = 103;
+            this.textBoxNovoPreco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelNovoNome
+            // 
+            this.labelNovoNome.AutoSize = true;
+            this.labelNovoNome.Font = new System.Drawing.Font("Constantia", 12F);
+            this.labelNovoNome.Location = new System.Drawing.Point(15, 262);
+            this.labelNovoNome.Name = "labelNovoNome";
+            this.labelNovoNome.Size = new System.Drawing.Size(56, 19);
+            this.labelNovoNome.TabIndex = 102;
+            this.labelNovoNome.Text = "Nome:";
+            // 
+            // textBoxNovoNome
+            // 
+            this.textBoxNovoNome.Font = new System.Drawing.Font("Constantia", 12F);
+            this.textBoxNovoNome.Location = new System.Drawing.Point(98, 259);
+            this.textBoxNovoNome.MaxLength = 110;
+            this.textBoxNovoNome.Name = "textBoxNovoNome";
+            this.textBoxNovoNome.Size = new System.Drawing.Size(295, 27);
+            this.textBoxNovoNome.TabIndex = 101;
+            // 
+            // labelNovosDados
+            // 
+            this.labelNovosDados.AutoSize = true;
+            this.labelNovosDados.Font = new System.Drawing.Font("Constantia", 12F);
+            this.labelNovosDados.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.labelNovosDados.Location = new System.Drawing.Point(15, 224);
+            this.labelNovosDados.Name = "labelNovosDados";
+            this.labelNovosDados.Size = new System.Drawing.Size(185, 19);
+            this.labelNovosDados.TabIndex = 109;
+            this.labelNovosDados.Text = "Novos dados a modificar:";
+            // 
             // Pagina3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.Controls.Add(this.labelNovosDados);
+            this.Controls.Add(this.textBoxNTamanhoY);
+            this.Controls.Add(this.labelNovoX);
+            this.Controls.Add(this.labelNovoTamanho);
+            this.Controls.Add(this.textBoxNTamanhoX);
+            this.Controls.Add(this.labelNovoPreco);
+            this.Controls.Add(this.textBoxNovoPreco);
+            this.Controls.Add(this.labelNovoNome);
+            this.Controls.Add(this.textBoxNovoNome);
             this.Controls.Add(this.dataGridTabelaServicos);
             this.Controls.Add(this.buttonRemover);
             this.Controls.Add(this.buttonPesquisar);
@@ -318,5 +427,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.TextBox textBoxNTamanhoY;
+        private System.Windows.Forms.Label labelNovoX;
+        private System.Windows.Forms.Label labelNovoTamanho;
+        private System.Windows.Forms.TextBox textBoxNTamanhoX;
+        private System.Windows.Forms.Label labelNovoPreco;
+        private System.Windows.Forms.TextBox textBoxNovoPreco;
+        private System.Windows.Forms.Label labelNovoNome;
+        private System.Windows.Forms.TextBox textBoxNovoNome;
+        private System.Windows.Forms.Label labelNovosDados;
     }
 }
