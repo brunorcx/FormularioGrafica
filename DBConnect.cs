@@ -135,15 +135,7 @@ namespace FormularioGrafica {
             //Open connection
             if (this.OpenConnection() == true) {
                 //create mysql command
-                //MySqlCommand cmd = new MySqlCommand(query, connection);
-                MySqlCommand cmd = new MySqlCommand();
-                //Assign the query using CommandText
-                cmd.CommandText = query;
-                //Assign the connection using Connection
-                cmd.Connection = connection;
-
-                //Execute query
-                // cmd.ExecuteNonQuery();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
 
                 try {
                     cmd.ExecuteNonQuery();// Caso ocorra uma exception a execução pula a linha abaixo
