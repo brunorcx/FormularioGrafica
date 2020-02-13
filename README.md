@@ -6,10 +6,10 @@
 - [x] Implementar remoção de serviços
 
 #Clientes
-- [ ] Implementar registro de clientes
-- [ ] Implementar pesquisa de clientes
-- [ ] Implementar atualização de clientes
-- [ ] Implementar remoção de clientes
+- [x] Implementar registro de clientes
+- [x] Implementar pesquisa de clientes
+- [x] Implementar atualização de clientes
+- [x] Implementar remoção de clientes
 
 #Vendas
 - [ ] Implementar página de vendas
