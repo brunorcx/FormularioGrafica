@@ -101,7 +101,7 @@
             this.button2.Font = new System.Drawing.Font("Constantia", 11F);
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(1, 188);
+            this.button2.Location = new System.Drawing.Point(3, 188);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(146, 75);
             this.button2.TabIndex = 33;
@@ -118,7 +118,7 @@
             this.button1.Font = new System.Drawing.Font("Constantia", 11F);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(0, 119);
+            this.button1.Location = new System.Drawing.Point(3, 111);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(146, 75);
             this.button1.TabIndex = 32;
