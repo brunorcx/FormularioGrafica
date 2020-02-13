@@ -94,8 +94,10 @@ namespace FormularioGrafica {
 
                 try {
                     //Execute command
-                    cmd.ExecuteNonQuery();// Caso ocorra uma exception a execução pula a linha abaixo
-                    MessageBox.Show("Serviço registrado com sucesso!");
+                    if (cmd.ExecuteNonQuery() == 0)// Caso ocorra uma exception a execução pula a linha abaixo
+                        MessageBox.Show("Serviço não cadastrado! Por favor, verifique os campos e tente novamente.");
+                    else
+                        MessageBox.Show("Serviço registrado com sucesso!");
                 }
                 catch (MySqlException ex) when (ex.Number == 1062) {//Duplicate key
                     MessageBox.Show("O nome deste serviço já existe! Por favor, registre um nome diferente.");
@@ -136,8 +138,10 @@ namespace FormularioGrafica {
 
                 try {
                     //Execute command
-                    cmd.ExecuteNonQuery();// Caso ocorra uma exception a execução pula a linha abaixo
-                    MessageBox.Show("Cliente registrado com sucesso!");
+                    if (cmd.ExecuteNonQuery() == 0)// Caso ocorra uma exception a execução pula a linha abaixo
+                        MessageBox.Show("Cliente não cadastrado! Por favor, verifique os campos e tente novamente.");
+                    else
+                        MessageBox.Show("Cliente registrado com sucesso!");
                 }
                 catch (MySqlException ex) when (ex.Number == 1062) {//Duplicate key
                     MessageBox.Show("O nome deste cliente já existe! Por favor, registre um nome diferente.");
@@ -202,8 +206,10 @@ namespace FormularioGrafica {
                 cmd.Parameters.AddWithValue("@novoTamanhoY", dadosNovos[3]);
 
                 try {
-                    cmd.ExecuteNonQuery();// Caso ocorra uma exception a execução pula a linha abaixo
-                    MessageBox.Show("Serviço atualizado com sucesso!");
+                    if (cmd.ExecuteNonQuery() == 0)// Caso ocorra uma exception a execução pula a linha abaixo
+                        MessageBox.Show("Serviço não foi atualizado! Por favor verifique os campos e tente novamente.");
+                    else
+                        MessageBox.Show("Serviço atualizado com sucesso!");
                 }
                 catch (MySqlException ex) when (ex.Number == 1062) {//Duplicate key
                     MessageBox.Show("O nome deste serviço já existe! Por favor, registre um nome diferente.");
@@ -222,7 +228,64 @@ namespace FormularioGrafica {
             }
         }
 
-        //Delete statement
+        //Update clientes
+        public void Update(string nome, string CPF, string telefone, string novoNome, string novoCPF, string novoTelefone) {
+            //string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
+
+            if (novoNome == "")
+                novoNome = nome;
+
+            if (novoCPF == "")
+                novoCPF = CPF;
+
+            if (novoTelefone == "")
+                novoTelefone = telefone;
+
+            string query = "UPDATE clientes SET " +
+                "CPF=@novoCPF, Nome=@novoNome, Telefone=@novoTelefone " +
+                "WHERE Nome=@Nome " +
+                "AND CPF=@CPF " +
+                "AND Telefone=@Telefone ";
+
+            //Open connection
+            if (this.OpenConnection() == true) {
+                //create mysql command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                //Adicionar parâmentros atuais
+                cmd.Parameters.AddWithValue("@Nome", nome);
+                cmd.Parameters.AddWithValue("@CPF", CPF);
+                cmd.Parameters.AddWithValue("@telefone", telefone);
+
+                //Adicionar parâmetros novos
+                cmd.Parameters.AddWithValue("@novoNome", novoNome);
+                cmd.Parameters.AddWithValue("@novoCPF", novoCPF);
+                cmd.Parameters.AddWithValue("@novoTelefone", novoTelefone);
+
+                try {
+                    if (cmd.ExecuteNonQuery() == 0)// Caso ocorra uma exception a execução pula a linha abaixo
+                        MessageBox.Show("Cliente não foi atualizado! Por favor verifique os campos e tente novamente.");
+                    else
+                        MessageBox.Show("Cliente atualizado com sucesso!");
+                }
+                catch (MySqlException ex) when (ex.Number == 1062) {//Duplicate key
+                    MessageBox.Show("O CPF deste cliente já existe! Por favor, cadastre um novo CPF.");
+                }
+                catch (MySqlException ex) when (ex.Number == 1292) {//Caracter em campo float
+                    MessageBox.Show("Os campos CPF e Telefone aceitam somente números! Por favor, modifique o(s) campo(s) incorreto(s).");
+                }
+                catch (MySqlException ex) when (ex.Number == 1264) {//Ultrapassar 32 bits do float
+                    MessageBox.Show("Os campos CPF ou Telefone ultrapassaram o limite de memória! Por favor, registre um valor menor.");
+                }
+                catch (MySqlException ex) {
+                    MessageBox.Show("Erro desconhecido! Por favor, contate o administrador.");
+                }
+                //close connection
+                this.CloseConnection();
+            }
+        }
+
+        //Delete serviços
         public void Delete(string nome, string preco, string tamanhoX, string tamanhoY) {
             //string query = "DELETE FROM tableinfo WHERE name='John Smith'";
 
@@ -242,14 +305,51 @@ namespace FormularioGrafica {
 
                 try {
                     //Execute command
-                    cmd.ExecuteNonQuery();// Caso ocorra uma exception a execução pula a linha abaixo
-                    MessageBox.Show("Serviço removido com sucesso!");
+                    if (cmd.ExecuteNonQuery() == 0)// Caso ocorra uma exception a execução pula a linha abaixo
+                        MessageBox.Show("Serviço não foi removido! Por favor verifique os campos e tente novamente.");
+                    else
+                        MessageBox.Show("Serviço removido com sucesso!");
                 }
                 catch (MySqlException ex) when (ex.Number == 1292) {//Caracter em campo float
                     MessageBox.Show("Os campos Preço e Tamanho aceitam somente números! Por favor, modifique o(s) campo(s) incorreto(s).");
                 }
                 catch (MySqlException ex) when (ex.Number == 1264) {//Ultrapassar 32 bits do float
                     MessageBox.Show("Os campos Preço ou Tamanho ultrapassaram o limite de memória! Por favor, registre um valor menor.");
+                }
+                catch (MySqlException ex) {
+                    MessageBox.Show("Erro desconhecido! Por favor, contate o administrador.");
+                }
+                //close connection
+                this.CloseConnection();
+            }
+        }
+
+        //Delete clientes
+        public void Delete(string CPF, string nome, string telefone) {
+            //string query = "DELETE FROM tableinfo WHERE name='John Smith'";
+
+            string query = "DELETE FROM clientes " +
+                "WHERE CPF=@CPF " +
+                "AND Nome=@Nome ";
+
+            if (this.OpenConnection() == true) {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                cmd.Parameters.AddWithValue("@CPF", CPF);
+                cmd.Parameters.AddWithValue("@Nome", nome);
+
+                try {
+                    //Execute command
+                    if (cmd.ExecuteNonQuery() == 0)// Caso ocorra uma exception a execução pula a linha abaixo
+                        MessageBox.Show("Cliente não encontrado!");
+                    else
+                        MessageBox.Show("Serviço removido com sucesso!");
+                }
+                catch (MySqlException ex) when (ex.Number == 1292) {//Caracter em campo float
+                    MessageBox.Show("O campo CPF aceita somente números! Por favor, modifique o(s) campo(s) incorreto(s).");
+                }
+                catch (MySqlException ex) when (ex.Number == 1264) {//Ultrapassar 32 bits do float
+                    MessageBox.Show("Os campos CPF ou Telefone ultrapassaram o limite de memória! Por favor, registre um valor menor.");
                 }
                 catch (MySqlException ex) {
                     MessageBox.Show("Erro desconhecido! Por favor, contate o administrador.");
