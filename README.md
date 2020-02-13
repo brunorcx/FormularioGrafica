@@ -24,6 +24,11 @@
 - [ ] Colocar ícones para botões na página de clientes
 - [ ] Colocar ícones para botões na página de vendas
 
+#Toques finais
+
+- [ ] Adicionar autocomplete https://www.c-sharpcorner.com/article/autocomplete-textbox-in-C-Sharp/
+
+
 
 #Nomes
 
