@@ -1,8 +1,8 @@
 # FormularioGrafica
 #Serviços
 - [x] Implementar registro de serviços
-- [ ] Implementar pesquisa de serviços
-- [ ] Implementar atualização de serviços
+- [x] Implementar pesquisa de serviços
+- [x] Implementar atualização de serviços
 - [x] Implementar remoção de serviços
 
 #Clientes
