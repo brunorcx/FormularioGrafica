@@ -72,7 +72,7 @@
             // 
             this.textBoxTamanhoYRegistro.Font = new System.Drawing.Font("Constantia", 12F);
             this.textBoxTamanhoYRegistro.Location = new System.Drawing.Point(368, 119);
-            this.textBoxTamanhoYRegistro.MaxLength = 100;
+            this.textBoxTamanhoYRegistro.MaxLength = 10;
             this.textBoxTamanhoYRegistro.Name = "textBoxTamanhoYRegistro";
             this.textBoxTamanhoYRegistro.Size = new System.Drawing.Size(25, 27);
             this.textBoxTamanhoYRegistro.TabIndex = 91;
@@ -102,7 +102,7 @@
             // 
             this.textBoxTamanhoXRegistro.Font = new System.Drawing.Font("Constantia", 12F);
             this.textBoxTamanhoXRegistro.Location = new System.Drawing.Point(315, 119);
-            this.textBoxTamanhoXRegistro.MaxLength = 100;
+            this.textBoxTamanhoXRegistro.MaxLength = 10;
             this.textBoxTamanhoXRegistro.Name = "textBoxTamanhoXRegistro";
             this.textBoxTamanhoXRegistro.Size = new System.Drawing.Size(25, 27);
             this.textBoxTamanhoXRegistro.TabIndex = 88;
@@ -122,7 +122,7 @@
             // 
             this.textBoxPrecoRegistro.Font = new System.Drawing.Font("Constantia", 12F);
             this.textBoxPrecoRegistro.Location = new System.Drawing.Point(98, 119);
-            this.textBoxPrecoRegistro.MaxLength = 100;
+            this.textBoxPrecoRegistro.MaxLength = 20;
             this.textBoxPrecoRegistro.Name = "textBoxPrecoRegistro";
             this.textBoxPrecoRegistro.Size = new System.Drawing.Size(103, 27);
             this.textBoxPrecoRegistro.TabIndex = 86;
@@ -142,7 +142,7 @@
             // 
             this.textBoxNomeRegistro.Font = new System.Drawing.Font("Constantia", 12F);
             this.textBoxNomeRegistro.Location = new System.Drawing.Point(98, 71);
-            this.textBoxNomeRegistro.MaxLength = 110;
+            this.textBoxNomeRegistro.MaxLength = 40;
             this.textBoxNomeRegistro.Name = "textBoxNomeRegistro";
             this.textBoxNomeRegistro.Size = new System.Drawing.Size(295, 27);
             this.textBoxNomeRegistro.TabIndex = 84;
@@ -285,7 +285,7 @@
             // 
             this.textBoxNTamanhoY.Font = new System.Drawing.Font("Constantia", 12F);
             this.textBoxNTamanhoY.Location = new System.Drawing.Point(368, 307);
-            this.textBoxNTamanhoY.MaxLength = 100;
+            this.textBoxNTamanhoY.MaxLength = 10;
             this.textBoxNTamanhoY.Name = "textBoxNTamanhoY";
             this.textBoxNTamanhoY.Size = new System.Drawing.Size(25, 27);
             this.textBoxNTamanhoY.TabIndex = 108;
@@ -315,7 +315,7 @@
             // 
             this.textBoxNTamanhoX.Font = new System.Drawing.Font("Constantia", 12F);
             this.textBoxNTamanhoX.Location = new System.Drawing.Point(315, 307);
-            this.textBoxNTamanhoX.MaxLength = 100;
+            this.textBoxNTamanhoX.MaxLength = 10;
             this.textBoxNTamanhoX.Name = "textBoxNTamanhoX";
             this.textBoxNTamanhoX.Size = new System.Drawing.Size(25, 27);
             this.textBoxNTamanhoX.TabIndex = 105;
@@ -335,7 +335,7 @@
             // 
             this.textBoxNovoPreco.Font = new System.Drawing.Font("Constantia", 12F);
             this.textBoxNovoPreco.Location = new System.Drawing.Point(98, 307);
-            this.textBoxNovoPreco.MaxLength = 100;
+            this.textBoxNovoPreco.MaxLength = 20;
             this.textBoxNovoPreco.Name = "textBoxNovoPreco";
             this.textBoxNovoPreco.Size = new System.Drawing.Size(103, 27);
             this.textBoxNovoPreco.TabIndex = 103;
@@ -355,7 +355,7 @@
             // 
             this.textBoxNovoNome.Font = new System.Drawing.Font("Constantia", 12F);
             this.textBoxNovoNome.Location = new System.Drawing.Point(98, 259);
-            this.textBoxNovoNome.MaxLength = 110;
+            this.textBoxNovoNome.MaxLength = 40;
             this.textBoxNovoNome.Name = "textBoxNovoNome";
             this.textBoxNovoNome.Size = new System.Drawing.Size(295, 27);
             this.textBoxNovoNome.TabIndex = 101;

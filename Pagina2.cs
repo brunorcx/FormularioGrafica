@@ -9,9 +9,70 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FormularioGrafica {
+
     public partial class Pagina2 : UserControl {
+        private string nome;
+        private string CPF;
+        private string telefone;
+
+        private DBConnect dB = new DBConnect();
+        private DataTable tabela = new DataTable();
+
         public Pagina2() {
             InitializeComponent();
+            dataGridTabelaClientes.Hide();
+            labelNovosDados.Hide();
+            labelNovoNome.Hide();
+            labelNovoCPF.Hide();
+            labelNovoTelefone.Hide();
+            textBoxNovoCPF.Hide();
+            textBoxNovoNome.Hide();
+            textBoxNovoTelefone.Hide();
+        }
+
+        private void buttonCadastrar_Click(object sender, EventArgs e) {
+            labelNovosDados.Hide();
+            labelNovoNome.Hide();
+            labelNovoCPF.Hide();
+            labelNovoTelefone.Hide();
+            textBoxNovoCPF.Hide();
+            textBoxNovoNome.Hide();
+            textBoxNovoTelefone.Hide();
+
+            nome = textBoxNome.Text.Trim();
+            CPF = textBoxCPF.Text.Replace(" ", string.Empty);
+            telefone = textBoxTelefone.Text.Replace(" ", string.Empty);
+            // Remover espaços em branco no começo e no final da palavra usar Trim()
+
+            if (nome.Length == 0 || CPF.Length == 0) // Verificar campos em branco
+                MessageBox.Show("Por favor, preencha os campos de Nome e CPF.");
+            else {
+                //dB = new DBConnect();
+                dB.Insert(CPF, nome, telefone);
+            }
+        }
+
+        private void buttonPesquisar_Click(object sender, EventArgs e) {
+            labelNovosDados.Hide();
+            labelNovoNome.Hide();
+            labelNovoCPF.Hide();
+            labelNovoTelefone.Hide();
+            textBoxNovoCPF.Hide();
+            textBoxNovoNome.Hide();
+            textBoxNovoTelefone.Hide();
+
+            nome = textBoxNome.Text.Trim();
+            CPF = textBoxCPF.Text.Replace(" ", string.Empty);
+            telefone = textBoxTelefone.Text.Replace(" ", string.Empty);
+
+            if (CPF.Length == 0 && nome.Length == 0 && telefone.Length == 0) // Verificar campos em branco
+                MessageBox.Show("Por favor, preencha pelo menos um dos campos.");
+            else {
+                dataGridTabelaClientes.Show();
+
+                tabela = dB.Select(CPF, nome, telefone);
+                dataGridTabelaClientes.DataSource = tabela;
+            }
         }
     }
 }

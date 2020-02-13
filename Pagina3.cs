@@ -51,10 +51,10 @@ namespace FormularioGrafica {
             textBoxNTamanhoX.Hide();
             textBoxNTamanhoY.Hide();
 
-            nome = textBoxNomeRegistro.Text;
-            preco = textBoxPrecoRegistro.Text.Replace(',', '.');// Aceitar vírgulas
-            tamanhoX = textBoxTamanhoXRegistro.Text.Replace(',', '.');// Aceitar vírgulas
-            tamanhoY = textBoxTamanhoYRegistro.Text.Replace(',', '.');// Aceitar vírgulas
+            nome = textBoxNomeRegistro.Text.Trim();
+            preco = textBoxPrecoRegistro.Text.Replace(',', '.').Replace(" ", string.Empty);// Aceitar vírgulas
+            tamanhoX = textBoxTamanhoXRegistro.Text.Replace(',', '.').Replace(" ", string.Empty);// Aceitar vírgulas
+            tamanhoY = textBoxTamanhoYRegistro.Text.Replace(',', '.').Replace(" ", string.Empty);// Aceitar vírgulas
             if (preco.Length == 0 || nome.Length == 0 || tamanhoX.Length == 0 || tamanhoY.Length == 0) // Verificar campos em branco
                 MessageBox.Show("Por favor, preencha todos os campos.");
             else {
@@ -75,10 +75,10 @@ namespace FormularioGrafica {
             textBoxNTamanhoX.Hide();
             textBoxNTamanhoY.Hide();
 
-            nome = textBoxNomeRegistro.Text;
-            preco = textBoxPrecoRegistro.Text.Replace(',', '.');// Aceitar vírgulas
-            tamanhoX = textBoxTamanhoXRegistro.Text.Replace(',', '.');// Aceitar vírgulas
-            tamanhoY = textBoxTamanhoYRegistro.Text.Replace(',', '.');// Aceitar vírgulas
+            nome = textBoxNomeRegistro.Text.Trim();
+            preco = textBoxPrecoRegistro.Text.Replace(',', '.').Replace(" ", string.Empty);// Aceitar vírgulas
+            tamanhoX = textBoxTamanhoXRegistro.Text.Replace(',', '.').Replace(" ", string.Empty);// Aceitar vírgulas
+            tamanhoY = textBoxTamanhoYRegistro.Text.Replace(',', '.').Replace(" ", string.Empty);// Aceitar vírgulas
             if (preco.Length == 0 || nome.Length == 0 || tamanhoX.Length == 0 || tamanhoY.Length == 0) // Verificar campos em branco
                 MessageBox.Show("Por favor, preencha todos os campos.");
             else {
@@ -87,6 +87,7 @@ namespace FormularioGrafica {
             }
         }
 
+        //Pesquisar
         private void buttonPesquisar_Click(object sender, EventArgs e) {
             labelNovosDados.Hide();
             labelNovoNome.Hide();
@@ -98,10 +99,10 @@ namespace FormularioGrafica {
             textBoxNTamanhoX.Hide();
             textBoxNTamanhoY.Hide();
 
-            nome = textBoxNomeRegistro.Text;
-            preco = textBoxPrecoRegistro.Text.Replace(',', '.');// Aceitar vírgulas
-            tamanhoX = textBoxTamanhoXRegistro.Text.Replace(',', '.');// Aceitar vírgulas
-            tamanhoY = textBoxTamanhoYRegistro.Text.Replace(',', '.');// Aceitar vírgulas
+            nome = textBoxNomeRegistro.Text.Trim();
+            preco = textBoxPrecoRegistro.Text.Replace(',', '.').Replace(" ", string.Empty);// Aceitar vírgulas
+            tamanhoX = textBoxTamanhoXRegistro.Text.Replace(',', '.').Replace(" ", string.Empty);// Aceitar vírgulas
+            tamanhoY = textBoxTamanhoYRegistro.Text.Replace(',', '.').Replace(" ", string.Empty);// Aceitar vírgulas
 
             if (preco.Length == 0 && nome.Length == 0 && tamanhoX.Length == 0 && tamanhoY.Length == 0) // Verificar campos em branco
                 MessageBox.Show("Por favor, preencha pelo menos um dos campos.");
@@ -133,15 +134,15 @@ namespace FormularioGrafica {
             string novoTamanhoX;
             string novoTamanhoY;
 
-            nome = textBoxNomeRegistro.Text;
-            preco = textBoxPrecoRegistro.Text.Replace(',', '.');// Aceitar vírgulas
-            tamanhoX = textBoxTamanhoXRegistro.Text.Replace(',', '.');// Aceitar vírgulas
-            tamanhoY = textBoxTamanhoYRegistro.Text.Replace(',', '.');// Aceitar vírgulas
+            nome = textBoxNomeRegistro.Text.Trim();
+            preco = textBoxPrecoRegistro.Text.Replace(',', '.').Replace(" ", string.Empty);// Aceitar vírgulas
+            tamanhoX = textBoxTamanhoXRegistro.Text.Replace(',', '.').Replace(" ", string.Empty);// Aceitar vírgulas
+            tamanhoY = textBoxTamanhoYRegistro.Text.Replace(',', '.').Replace(" ", string.Empty);// Aceitar vírgulas
             //Novos valores
             novoNome = textBoxNovoNome.Text;
-            novoPreco = textBoxNovoPreco.Text.Replace(',', '.');// Aceitar vírgulas
-            novoTamanhoX = textBoxNTamanhoX.Text.Replace(',', '.');// Aceitar vírgulas
-            novoTamanhoY = textBoxNTamanhoY.Text.Replace(',', '.');// Aceitar vírgulas
+            novoPreco = textBoxNovoPreco.Text.Replace(',', '.').Replace(" ", string.Empty);// Aceitar vírgulas
+            novoTamanhoX = textBoxNTamanhoX.Text.Replace(',', '.').Replace(" ", string.Empty);// Aceitar vírgulas
+            novoTamanhoY = textBoxNTamanhoY.Text.Replace(',', '.').Replace(" ", string.Empty);// Aceitar vírgulas
 
             if (preco.Length == 0 || nome.Length == 0 || tamanhoX.Length == 0 || tamanhoY.Length == 0) // Verificar campos em branco
                 MessageBox.Show("Por favor, preencha todos os campos iniciais da busca");

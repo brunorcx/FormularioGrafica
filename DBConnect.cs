@@ -75,7 +75,7 @@ namespace FormularioGrafica {
             }
         }
 
-        //Insert statement
+        //Insert serviços
         public void Insert(string nome, string preco, string tamanhoX, string tamanhoY) {
             //string query = "INSERT INTO tableinfo (name, age) VALUES('John Smith', '33')";
 
@@ -118,7 +118,49 @@ namespace FormularioGrafica {
 
         }
 
-        //Update statement
+        //Insert clientes
+        public void Insert(string CPF, string nome, string telefone) {
+            //string query = "INSERT INTO tableinfo (name, age) VALUES('John Smith', '33')";
+
+            string query = "INSERT INTO clientes(CPF, Nome, Telefone)" +
+                "VALUES(@CPF,@Nome,@Telefone)";
+
+            //open connection
+            if (this.OpenConnection() == true) {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //Adicionar parâmetros
+                cmd.Parameters.AddWithValue("@CPF", CPF);
+                cmd.Parameters.AddWithValue("@Nome", nome);
+                cmd.Parameters.AddWithValue("@Telefone", telefone);
+
+                try {
+                    //Execute command
+                    cmd.ExecuteNonQuery();// Caso ocorra uma exception a execução pula a linha abaixo
+                    MessageBox.Show("Cliente registrado com sucesso!");
+                }
+                catch (MySqlException ex) when (ex.Number == 1062) {//Duplicate key
+                    MessageBox.Show("O nome deste cliente já existe! Por favor, registre um nome diferente.");
+                }
+                catch (MySqlException ex) when (ex.Number == 1406) {//Nome muito longo
+                    MessageBox.Show("O nome deste cliente ultrapassou o limite de 40 caracteres! Por favor, registre um nome menor.");
+                }
+                catch (MySqlException ex) when (ex.Number == 1265) {//Caracter em campo float
+                    MessageBox.Show("Os campos CPF e Telefone aceitam somente números! Por favor, modifique o(s) campo(s) incorreto(s).");
+                }
+                catch (MySqlException ex) when (ex.Number == 1264) {//Ultrapassar 32 bits do float
+                    MessageBox.Show("Os campos CPF ou Telefone ultrapassaram o limite de memória! Por favor, registre um valor menor.");
+                }
+                catch (MySqlException ex) {
+                    MessageBox.Show("Erro desconhecido! Por favor, contate o administrador.");
+                }
+                //close connection
+                this.CloseConnection();
+            }
+
+        }
+
+        //Update serviços
         public void Update(List<string> dadosAtuais, List<string> dadosNovos) {
             //string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
 
@@ -258,9 +300,10 @@ namespace FormularioGrafica {
 
         }
 
+        //Select funcionários
         public bool Select(string nome, string senha) {
             string query = "SELECT Nome, Senha FROM funcionarios " +
-                "WHERE Nome=@Nome AND Senha=@Senha";
+                "WHERE BINARY Nome= BINARY @Nome AND BINARY Senha= BINARY @Senha";
 
             if (this.OpenConnection() == true) {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
@@ -296,6 +339,7 @@ namespace FormularioGrafica {
 
         }
 
+        //Select serviços
         public DataTable Select(string nome, string preco, string tamanhoX, string tamanhoY) {
             DataTable tabela = new DataTable();
             //string query = "SELECT nome,preco,tamanhoX,tamanhoY FROM servicos " +
@@ -316,6 +360,49 @@ namespace FormularioGrafica {
                 cmd.Parameters.AddWithValue("@Preco", preco + '%');
                 cmd.Parameters.AddWithValue("@TamanhoX", tamanhoX + '%');
                 cmd.Parameters.AddWithValue("@TamanhoY", tamanhoY + '%');
+
+                try {
+                    MySqlDataAdapter mySQLadaptador = new MySqlDataAdapter(query, connection);
+                    mySQLadaptador.SelectCommand = cmd;
+                    mySQLadaptador.Fill(tabela);
+
+                }
+                catch (MySqlException ex) when (ex.Number == 1406) {//Nome muito longo
+                    MessageBox.Show("O nome deste serviço ultrapassou o limite de 30 caracteres! Por favor, registre um nome menor.");
+                }
+                catch (MySqlException ex) when (ex.Number == 1292) {//Caracter em campo float
+                    MessageBox.Show("Os campos Preço e Tamanho aceitam somente números! Por favor, modifique o(s) campo(s) incorreto(s).");
+                }
+                catch (MySqlException ex) when (ex.Number == 1264) {//Ultrapassar 32 bits do float
+                    MessageBox.Show("Os campos Preço ou Tamanho ultrapassaram o limite de memória! Por favor, registre um valor menor.");
+                }
+                catch (MySqlException ex) {
+                    MessageBox.Show("Erro desconhecido! Por favor, contate o administrador.");
+                }
+                //close connection
+                this.CloseConnection();
+
+            }
+            return tabela;
+
+        }
+
+        //Select clientes
+        public DataTable Select(string CPF, string nome, string telefone) {
+            DataTable tabela = new DataTable();
+
+            string query = "SELECT * FROM clientes" +
+                " WHERE CPF LIKE @CPF" +
+                " AND Nome LIKE @Nome" +
+                " AND Telefone LIKE @Telefone";
+
+            if (this.OpenConnection() == true) {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                //Adicionar parâmetros
+                cmd.Parameters.AddWithValue("@CPF", CPF + '%');
+                cmd.Parameters.AddWithValue("@Nome", nome + '%');
+                cmd.Parameters.AddWithValue("@Telefone", telefone + '%');
 
                 try {
                     MySqlDataAdapter mySQLadaptador = new MySqlDataAdapter(query, connection);
