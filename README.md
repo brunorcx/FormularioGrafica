@@ -28,7 +28,11 @@
 
 - [ ] Adicionar autocomplete https://www.c-sharpcorner.com/article/autocomplete-textbox-in-C-Sharp/
 
+#Funções Futuras
 
+ - [ ] Ao finalizar um pedido já imprimir O.S. conforme os serviços
+ - [ ] Fazer com que os Arquivos sejam salvos na pasta do cliente
+ - [ ] Enviar arquivos direto para o setor responsavel pela produção
 
 #Nomes
 
