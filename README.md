@@ -13,6 +13,8 @@
 
 #Vendas
 - [ ] Implementar página de vendas
+- [ ] Implementar Impressão
+- [ ] Contador de pedidos
 
 #Banco de dados
 - [x] Implementar conexão com o banco de dados
@@ -26,7 +28,7 @@
 
 #Toques finais
 
-- [ ] Adicionar autocomplete https://www.c-sharpcorner.com/article/autocomplete-textbox-in-C-Sharp/
+- [x] Adicionar autocomplete https://www.c-sharpcorner.com/article/autocomplete-textbox-in-C-Sharp/
 
 #Funções Futuras
 
