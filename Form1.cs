@@ -33,6 +33,11 @@ namespace FormularioGrafica {
             //panelSelect.Height = button1.Height;
             //panelSelect.Top = button1.Top;
 
+            //Atulizar autocomplete
+            if (!pagina11.Visible) {
+                pagina11.ClienteAutoComplete();
+                pagina11.ServicoAutoComplete();
+            }
             //Esconder userControls(páginas)
             pagina11.Show();
             pagina21.Hide();
@@ -62,6 +67,7 @@ namespace FormularioGrafica {
         private void button3_Click(object sender, EventArgs e) {
             //panelSelect.Height = button3.Height;
             //panelSelect.Top = button3.Top;
+
             //Esconder userControls(páginas)
             pagina11.Hide();
             pagina21.Hide();
@@ -92,5 +98,4 @@ namespace FormularioGrafica {
 
 // Site ícones https://www.flaticon.com/free-icon/home_25694
 //Conectar com o banco https://www.guru99.com/c-sharp-access-database.html
-//Bug na pagina um data de entrega sai do lugar
 // this.close() fechar a windows form

@@ -34,7 +34,7 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxServico = new System.Windows.Forms.ComboBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxCliente = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.buttonFinaliza = new System.Windows.Forms.Button();
@@ -177,18 +177,16 @@
             this.checkBox1.Text = "Com Aplicação";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // comboBoxServico
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Constantia", 12F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Item 1",
-            "Item 2 ",
-            "Item 3"});
-            this.comboBox1.Location = new System.Drawing.Point(97, 163);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 27);
-            this.comboBox1.TabIndex = 50;
+            this.comboBoxServico.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxServico.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.comboBoxServico.Font = new System.Drawing.Font("Constantia", 12F);
+            this.comboBoxServico.FormattingEnabled = true;
+            this.comboBoxServico.Location = new System.Drawing.Point(97, 163);
+            this.comboBoxServico.Name = "comboBoxServico";
+            this.comboBoxServico.Size = new System.Drawing.Size(121, 27);
+            this.comboBoxServico.TabIndex = 50;
             // 
             // textBox8
             // 
@@ -312,14 +310,16 @@
             this.label1.TabIndex = 37;
             this.label1.Text = "Cliente:";
             // 
-            // textBox1
+            // textBoxCliente
             // 
-            this.textBox1.Font = new System.Drawing.Font("Constantia", 12F);
-            this.textBox1.Location = new System.Drawing.Point(97, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(600, 27);
-            this.textBox1.TabIndex = 36;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.textBoxCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBoxCliente.Font = new System.Drawing.Font("Constantia", 12F);
+            this.textBoxCliente.Location = new System.Drawing.Point(97, 79);
+            this.textBoxCliente.Name = "textBoxCliente";
+            this.textBoxCliente.Size = new System.Drawing.Size(600, 27);
+            this.textBoxCliente.TabIndex = 36;
+            this.textBoxCliente.Enter += new System.EventHandler(this.textBoxCliente_Enter);
             // 
             // label10
             // 
@@ -547,7 +547,7 @@
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox8);
             this.Controls.Add(this.comboBox7);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxServico);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label8);
@@ -569,10 +569,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxCliente);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.Name = "Pagina1";
             this.Size = new System.Drawing.Size(744, 500);
+            this.Load += new System.EventHandler(this.Pagina1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -591,7 +592,7 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxServico;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -605,7 +606,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxCliente;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button buttonFinaliza;
