@@ -32,6 +32,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
+            this.buttonFechar = new System.Windows.Forms.Button();
+            this.buttonMinimizar = new System.Windows.Forms.Button();
             this.pagina41 = new FormularioGrafica.Pagina4();
             this.pagina31 = new FormularioGrafica.Pagina3();
             this.pagina21 = new FormularioGrafica.Pagina2();
@@ -148,6 +150,36 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "R";
             // 
+            // buttonFechar
+            // 
+            this.buttonFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonFechar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFechar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonFechar.Location = new System.Drawing.Point(1323, 0);
+            this.buttonFechar.Name = "buttonFechar";
+            this.buttonFechar.Size = new System.Drawing.Size(37, 32);
+            this.buttonFechar.TabIndex = 99;
+            this.buttonFechar.Text = "X";
+            this.buttonFechar.UseVisualStyleBackColor = false;
+            this.buttonFechar.Click += new System.EventHandler(this.buttonFechar_Click);
+            // 
+            // buttonMinimizar
+            // 
+            this.buttonMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMinimizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMinimizar.ForeColor = System.Drawing.Color.DarkGreen;
+            this.buttonMinimizar.Location = new System.Drawing.Point(1280, 0);
+            this.buttonMinimizar.Name = "buttonMinimizar";
+            this.buttonMinimizar.Size = new System.Drawing.Size(37, 32);
+            this.buttonMinimizar.TabIndex = 100;
+            this.buttonMinimizar.Text = "-";
+            this.buttonMinimizar.UseVisualStyleBackColor = false;
+            this.buttonMinimizar.Click += new System.EventHandler(this.buttonMinimizar_Click);
+            // 
             // pagina41
             // 
             this.pagina41.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -162,6 +194,7 @@
             // 
             // pagina31
             // 
+            this.pagina31.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pagina31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.pagina31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pagina31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
@@ -173,6 +206,7 @@
             // 
             // pagina21
             // 
+            this.pagina21.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pagina21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.pagina21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pagina21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
@@ -184,6 +218,7 @@
             // 
             // pagina11
             // 
+            this.pagina11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pagina11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.pagina11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pagina11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
@@ -196,8 +231,12 @@
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1360, 728);
+            this.Controls.Add(this.buttonMinimizar);
+            this.Controls.Add(this.buttonFechar);
             this.Controls.Add(this.pagina41);
             this.Controls.Add(this.pagina31);
             this.Controls.Add(this.pagina21);
@@ -206,6 +245,7 @@
             this.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(1358, 726);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -229,6 +269,8 @@
         private Pagina2 pagina21;
         private Pagina3 pagina31;
         private Pagina4 pagina41;
+        private System.Windows.Forms.Button buttonFechar;
+        private System.Windows.Forms.Button buttonMinimizar;
     }
 }
 

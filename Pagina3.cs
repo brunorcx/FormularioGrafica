@@ -105,13 +105,13 @@ namespace FormularioGrafica {
             tamanhoY = textBoxTamanhoYRegistro.Text.Replace(',', '.').Replace(" ", string.Empty);// Aceitar vírgulas
 
             if (preco.Length == 0 && nome.Length == 0 && tamanhoX.Length == 0 && tamanhoY.Length == 0) // Verificar campos em branco
-                MessageBox.Show("Por favor, preencha pelo menos um dos campos.");
+                tabela = dB.Select("%", "", "", "");
             else {
-                dataGridTabelaServicos.Show();
-
                 tabela = dB.Select(nome, preco, tamanhoX, tamanhoY);
-                dataGridTabelaServicos.DataSource = tabela;
             }
+            dataGridTabelaServicos.Show();
+            dataGridTabelaServicos.DataSource = tabela;
+
         }
 
         private void buttonAlterar_Click(object sender, EventArgs e) {

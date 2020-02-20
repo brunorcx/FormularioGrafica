@@ -23,6 +23,7 @@
         /// o conteúdo deste método com o editor de código.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pagina1));
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.labelAtendente = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -35,18 +36,18 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.comboBoxServico = new System.Windows.Forms.ComboBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBoxTamanhoY = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBoxTamanhoX = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxTelefone = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxCPF = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxCliente = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -67,6 +68,9 @@
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.printDocumentPagina1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialogPagina1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDialogPagina1 = new System.Windows.Forms.PrintDialog();
             this.SuspendLayout();
             // 
             // textBox9
@@ -187,14 +191,15 @@
             this.comboBoxServico.Name = "comboBoxServico";
             this.comboBoxServico.Size = new System.Drawing.Size(121, 27);
             this.comboBoxServico.TabIndex = 50;
+            this.comboBoxServico.Leave += new System.EventHandler(this.comboBoxServico_Leave);
             // 
-            // textBox8
+            // textBoxTamanhoY
             // 
-            this.textBox8.Font = new System.Drawing.Font("Constantia", 12F);
-            this.textBox8.Location = new System.Drawing.Point(391, 163);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(49, 27);
-            this.textBox8.TabIndex = 49;
+            this.textBoxTamanhoY.Font = new System.Drawing.Font("Constantia", 12F);
+            this.textBoxTamanhoY.Location = new System.Drawing.Point(391, 163);
+            this.textBoxTamanhoY.Name = "textBoxTamanhoY";
+            this.textBoxTamanhoY.Size = new System.Drawing.Size(49, 27);
+            this.textBoxTamanhoY.TabIndex = 49;
             // 
             // label8
             // 
@@ -228,13 +233,13 @@
             this.label6.Text = "Tamanho:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // textBox6
+            // textBoxTamanhoX
             // 
-            this.textBox6.Font = new System.Drawing.Font("Constantia", 12F);
-            this.textBox6.Location = new System.Drawing.Point(309, 163);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(49, 27);
-            this.textBox6.TabIndex = 45;
+            this.textBoxTamanhoX.Font = new System.Drawing.Font("Constantia", 12F);
+            this.textBoxTamanhoX.Location = new System.Drawing.Point(309, 163);
+            this.textBoxTamanhoX.Name = "textBoxTamanhoX";
+            this.textBoxTamanhoX.Size = new System.Drawing.Size(49, 27);
+            this.textBoxTamanhoX.TabIndex = 45;
             // 
             // label5
             // 
@@ -274,13 +279,13 @@
             this.label3.TabIndex = 41;
             this.label3.Text = "TEL 1:";
             // 
-            // textBox3
+            // textBoxTelefone
             // 
-            this.textBox3.Font = new System.Drawing.Font("Constantia", 12F);
-            this.textBox3.Location = new System.Drawing.Point(319, 117);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(155, 27);
-            this.textBox3.TabIndex = 40;
+            this.textBoxTelefone.Font = new System.Drawing.Font("Constantia", 12F);
+            this.textBoxTelefone.Location = new System.Drawing.Point(319, 117);
+            this.textBoxTelefone.Name = "textBoxTelefone";
+            this.textBoxTelefone.Size = new System.Drawing.Size(155, 27);
+            this.textBoxTelefone.TabIndex = 40;
             // 
             // label2
             // 
@@ -292,13 +297,16 @@
             this.label2.TabIndex = 39;
             this.label2.Text = "CPF/CNPJ:";
             // 
-            // textBox2
+            // textBoxCPF
             // 
-            this.textBox2.Font = new System.Drawing.Font("Constantia", 12F);
-            this.textBox2.Location = new System.Drawing.Point(97, 117);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(160, 27);
-            this.textBox2.TabIndex = 38;
+            this.textBoxCPF.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.textBoxCPF.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBoxCPF.Font = new System.Drawing.Font("Constantia", 12F);
+            this.textBoxCPF.Location = new System.Drawing.Point(97, 117);
+            this.textBoxCPF.Name = "textBoxCPF";
+            this.textBoxCPF.Size = new System.Drawing.Size(160, 27);
+            this.textBoxCPF.TabIndex = 38;
+            this.textBoxCPF.Leave += new System.EventHandler(this.textBoxCPF_Leave);
             // 
             // label1
             // 
@@ -319,7 +327,6 @@
             this.textBoxCliente.Name = "textBoxCliente";
             this.textBoxCliente.Size = new System.Drawing.Size(600, 27);
             this.textBoxCliente.TabIndex = 36;
-            this.textBoxCliente.Enter += new System.EventHandler(this.textBoxCliente_Enter);
             // 
             // label10
             // 
@@ -343,12 +350,15 @@
             // 
             // buttonFinaliza
             // 
+            this.buttonFinaliza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFinaliza.Font = new System.Drawing.Font("Constantia", 9F);
             this.buttonFinaliza.Location = new System.Drawing.Point(592, 407);
             this.buttonFinaliza.Name = "buttonFinaliza";
             this.buttonFinaliza.Size = new System.Drawing.Size(105, 38);
             this.buttonFinaliza.TabIndex = 66;
             this.buttonFinaliza.Text = "Finalizar e Imprimir";
             this.buttonFinaliza.UseVisualStyleBackColor = true;
+            this.buttonFinaliza.Click += new System.EventHandler(this.buttonImprimir_Click);
             // 
             // label12
             // 
@@ -521,6 +531,27 @@
             this.comboBox8.Size = new System.Drawing.Size(121, 27);
             this.comboBox8.TabIndex = 50;
             // 
+            // printDocumentPagina1
+            // 
+            this.printDocumentPagina1.EndPrint += new System.Drawing.Printing.PrintEventHandler(this.printDocumentPagina1_EndPrint);
+            this.printDocumentPagina1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocumentPagina1_PrintPage);
+            // 
+            // printPreviewDialogPagina1
+            // 
+            this.printPreviewDialogPagina1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialogPagina1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialogPagina1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialogPagina1.Document = this.printDocumentPagina1;
+            this.printPreviewDialogPagina1.Enabled = true;
+            this.printPreviewDialogPagina1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialogPagina1.Icon")));
+            this.printPreviewDialogPagina1.Name = "printPreviewDialogPagina1";
+            this.printPreviewDialogPagina1.Visible = false;
+            // 
+            // printDialogPagina1
+            // 
+            this.printDialogPagina1.Document = this.printDocumentPagina1;
+            this.printDialogPagina1.UseEXDialog = true;
+            // 
             // Pagina1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -548,7 +579,7 @@
             this.Controls.Add(this.comboBox8);
             this.Controls.Add(this.comboBox7);
             this.Controls.Add(this.comboBoxServico);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.textBoxTamanhoY);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -556,7 +587,7 @@
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBoxTamanhoX);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label15);
@@ -565,9 +596,9 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBoxTelefone);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxCPF);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxCliente);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
@@ -593,18 +624,18 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ComboBox comboBoxServico;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBoxTamanhoY;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBoxTamanhoX;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxTelefone;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxCPF;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxCliente;
         private System.Windows.Forms.Label label10;
@@ -625,5 +656,8 @@
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox comboBox8;
+        private System.Drawing.Printing.PrintDocument printDocumentPagina1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialogPagina1;
+        private System.Windows.Forms.PrintDialog printDialogPagina1;
     }
 }

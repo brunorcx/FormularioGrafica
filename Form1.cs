@@ -27,6 +27,9 @@ namespace FormularioGrafica {
             //Troca a cor dos icones
             button1.Image = Properties.Resources.online_store_30px_white;
             button2.Image = Properties.Resources.clipboard_30px_yellow;
+
+            WindowState = FormWindowState.Maximized;
+
         }
 
         private void button1_Click(object sender, EventArgs e) {
@@ -92,6 +95,15 @@ namespace FormularioGrafica {
             //Troca a cor dos icones
             button1.Image = Properties.Resources.online_store_30px_yellow;
             button2.Image = Properties.Resources.clipboard_30px_yellow;
+        }
+
+        private void buttonMinimizar_Click(object sender, EventArgs e) {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void buttonFechar_Click(object sender, EventArgs e) {
+            Application.Exit();
+
         }
     }
 }

@@ -66,13 +66,13 @@ namespace FormularioGrafica {
             telefone = textBoxTelefone.Text.Replace(" ", string.Empty);
 
             if (CPF.Length == 0 && nome.Length == 0 && telefone.Length == 0) // Verificar campos em branco
-                MessageBox.Show("Por favor, preencha pelo menos um dos campos.");
+                tabela = dB.Select("%", "", "");
             else {
-                dataGridTabelaClientes.Show();
-
                 tabela = dB.Select(CPF, nome, telefone);
-                dataGridTabelaClientes.DataSource = tabela;
             }
+            dataGridTabelaClientes.Show();
+            dataGridTabelaClientes.DataSource = tabela;
+
         }
 
         private void buttonRemover_Click(object sender, EventArgs e) {
