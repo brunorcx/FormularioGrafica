@@ -23,7 +23,6 @@
         /// o conteúdo deste método com o editor de código.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pagina1));
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.labelAtendente = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -68,9 +67,6 @@
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.printDocumentPagina1 = new System.Drawing.Printing.PrintDocument();
-            this.printPreviewDialogPagina1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.printDialogPagina1 = new System.Windows.Forms.PrintDialog();
             this.SuspendLayout();
             // 
             // textBox9
@@ -531,27 +527,6 @@
             this.comboBox8.Size = new System.Drawing.Size(121, 27);
             this.comboBox8.TabIndex = 50;
             // 
-            // printDocumentPagina1
-            // 
-            this.printDocumentPagina1.EndPrint += new System.Drawing.Printing.PrintEventHandler(this.printDocumentPagina1_EndPrint);
-            this.printDocumentPagina1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocumentPagina1_PrintPage);
-            // 
-            // printPreviewDialogPagina1
-            // 
-            this.printPreviewDialogPagina1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialogPagina1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialogPagina1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialogPagina1.Document = this.printDocumentPagina1;
-            this.printPreviewDialogPagina1.Enabled = true;
-            this.printPreviewDialogPagina1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialogPagina1.Icon")));
-            this.printPreviewDialogPagina1.Name = "printPreviewDialogPagina1";
-            this.printPreviewDialogPagina1.Visible = false;
-            // 
-            // printDialogPagina1
-            // 
-            this.printDialogPagina1.Document = this.printDocumentPagina1;
-            this.printDialogPagina1.UseEXDialog = true;
-            // 
             // Pagina1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -656,8 +631,5 @@
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox comboBox8;
-        private System.Drawing.Printing.PrintDocument printDocumentPagina1;
-        private System.Windows.Forms.PrintPreviewDialog printPreviewDialogPagina1;
-        private System.Windows.Forms.PrintDialog printDialogPagina1;
     }
 }

@@ -1,5 +1,9 @@
-﻿using System;
+﻿using MigraDoc.DocumentObjectModel;
+using MigraDoc.Rendering;
+using PdfSharp.Pdf;
+using System;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -10,7 +14,7 @@ namespace FormularioGrafica {
         private DataTable tabela = new DataTable();
         private AutoCompleteStringCollection textCollection = new AutoCompleteStringCollection();
         private AutoCompleteStringCollection textCollection2 = new AutoCompleteStringCollection();
-        private Bitmap memoryImage;
+        private TratamentoPDF pdf = new TratamentoPDF();
 
         public Pagina1() {
             InitializeComponent();
@@ -47,33 +51,15 @@ namespace FormularioGrafica {
             return textCollection2;
         }
 
-        private void CaptureScreen() {
-            Graphics myGraphics = this.CreateGraphics();
-            Size s = this.Size;
-            memoryImage = new Bitmap(s.Width, s.Height, myGraphics);
-            Graphics memoryGraphics = Graphics.FromImage(memoryImage);
-            memoryGraphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, s);
-        }
-
-        private void textBoxCliente_Enter(object sender, EventArgs e) {
-        }
-
-        private void printDocumentPagina1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e) {
-            e.Graphics.DrawImage(memoryImage, 0, 0);
-            e.Graphics.DrawString(textBoxCliente.Text, new Font("Arial", 40, FontStyle.Regular), Brushes.Red, 100, 100);
-        }
-
         private void buttonImprimir_Click(object sender, EventArgs e) {
-            CaptureScreen();
-            //printPreviewDialogPagina1.ShowDialog();
-            if (printDialogPagina1.ShowDialog() == DialogResult.OK) {
-                printDocumentPagina1.Print();
-            }
-        }
+            pdf.salvarPDF();
+            //imprimirPDF();
 
-        private void printDocumentPagina1_EndPrint(object sender, System.Drawing.Printing.PrintEventArgs e) {
-            System.Threading.Thread.Sleep(2000);
-            MessageBox.Show("Impresão finalizada.");
+            //CaptureScreen();
+            ////printPreviewDialogPagina1.ShowDialog();
+            //if (printDialogPagina1.ShowDialog() == DialogResult.OK) {
+            //    printDocumentPagina1.Print();
+            //}
         }
 
         private void comboBoxServico_Leave(object sender, EventArgs e) {
@@ -91,9 +77,28 @@ namespace FormularioGrafica {
                 textBoxTelefone.Text = tabela.Rows[0][2].ToString();
             }
         }
+
+        //private void imprimirPDF() {
+        //    ProcessStartInfo startInfo = new ProcessStartInfo();
+        //    startInfo.FileName = "SumatraPDF.exe";
+        //    string args = string.Format("-print-to-default \"{0}\" -exit-when-done", "HelloWorld.pdf");
+        //    startInfo.Arguments = args;
+        //    startInfo.CreateNoWindow = true;
+        //    startInfo.ErrorDialog = false;
+        //    startInfo.UseShellExecute = false;
+        //    Process process = Process.Start(startInfo);
+        //    MessageBox.Show("Start Print.");
+        //    //process.Exited += process_Exited;
+        //    while (!process.HasExited) {
+        //        MessageBox.Show("Wait 1 Sec.");
+        //        process.WaitForExit(1000);
+        //    }
+        //    MessageBox.Show("Print Finish.");
+        //} Para adicionar o sumatra arrastar no FomularioGrafica(verde) e mudar para sempre output
+
     }
 }
 
 //https://www.codeproject.com/Questions/1048064/Print-PDF-File-With-Code-In-Windows-Forms
 //http://www.pdfsharp.com/PDFsharp/
-//CPF nome telefone
+//https://docs.microsoft.com/en-us/dotnet/api/system.drawing.printing.printdocument?redirectedfrom=MSDN&view=netframework-4.8
