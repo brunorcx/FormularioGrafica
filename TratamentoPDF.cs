@@ -82,10 +82,19 @@ namespace FormularioGrafica {
             cell.AddParagraph("texto 0");
             //Linha 1
             row = table.AddRow();
+            //row.Borders.Color = Colors.White;
             cell = row.Cells[0];
-            cell.AddParagraph("CLIENTE:");
+            cell.AddParagraph("CLIENTE:   CPF").Format.SpaceAfter = 5;
+            cell.Format.Borders.Bottom.Width = 0.75;
+            //cell.Format.Borders.Width = 4;
+            cell.Format.Borders.DistanceFromLeft = -43.0;
+            cell.Format.Borders.DistanceFromRight = 4;
+            //cell.Format.Borders.DistanceFromRight = -515.0;
+            cell.Format.Borders.Bottom.Color = Colors.DarkRed;
+            cell.AddParagraph("CNPJ:\t\t\t\tFONE:").Format.Borders.Bottom.Color = Colors.White;
             cell.VerticalAlignment = VerticalAlignment.Bottom;
             row.Cells[0].MergeRight = 1;
+
             //cell = row.Cells[1];
             //cell.AddParagraph("texto 1");
             //Linha 2
@@ -97,8 +106,37 @@ namespace FormularioGrafica {
             //Linha 3
             row = table.AddRow();
             cell = row.Cells[0];
-            cell.AddParagraph("3");
-            row.Cells[0].MergeRight = 1;
+            Paragraph paragraph = new Paragraph();
+            FormattedText caixaTrue = new FormattedText();
+            FormattedText caixaFalse = new FormattedText();
+            caixaTrue.AddFormattedText(true ? "\u00fe" : "\u00A8", new Font("Wingdings", 10));
+            caixaFalse.AddFormattedText(false ? "\u00fe" : "\u00A8", new Font("Wingdings", 10));
+            paragraph.Add(caixaTrue);
+            paragraph.AddText("COM APLICAÇÂO\t\t");
+            paragraph.Add(caixaTrue.Clone());
+            paragraph.AddText("SEM APLICAÇÃO");
+            cell.Add(paragraph);
+            //Adicionar paragráfo 2
+            paragraph = new Paragraph();
+            paragraph.Add(caixaFalse.Clone());
+            paragraph.AddText("RETIRADA ADESIVO\t\t");
+            paragraph.Add(caixaFalse.Clone());
+            paragraph.AddText("RETIRADA PLACA");
+
+            cell.Add(paragraph);
+
+            paragraph = new Paragraph();
+            paragraph.AddText("OBS:");
+            paragraph.Format.SpaceAfter = 5;
+            paragraph.Format.Borders.Bottom.Width = 0.75;
+            paragraph.Format.Borders.DistanceFromLeft = -20.0;
+            paragraph.Format.Borders.DistanceFromRight = 4;
+            paragraph.Format.Borders.Bottom.Color = Colors.DarkRed;
+            cell.Add(paragraph);
+
+            cell = row.Cells[1];
+            cell.AddParagraph("TOTAL:").Format.Font.Size = 11;
+
             //Linha 4
             row = table.AddRow();
             row.Shading.Color = Colors.Crimson;
