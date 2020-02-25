@@ -54,7 +54,6 @@ namespace FormularioGrafica {
             style.Font.Color = Colors.DarkBlue;
             style.ParagraphFormat.PageBreakBefore = true;
             //style.ParagraphFormat.SpaceAfter = 6;
-
         }
 
         private static void SimpleTable(Document document) {
@@ -141,9 +140,14 @@ namespace FormularioGrafica {
             row = table.AddRow();
             row.Shading.Color = Colors.Crimson;
             cell = row.Cells[0];
-            cell.AddParagraph("4");
-            cell = row.Cells[1];
-            cell.AddParagraph("texto 4");
+            cell.Format.Font.Color = Colors.White;
+            cell.Format.Font.Name = "Arial";
+            cell.AddParagraph().AddFormattedText("OBS: É NECESSÁRIO A APREENTAÇÃO DESTE PARA O RECEBIMENTO DO MATERIAL.", TextFormat.Bold);
+            cell.AddParagraph("O CLIENTE ASSUME A RESPONSABILIDADE DO PEDIDO APÓS A CONFIRMAÇÃO DO MODELO, E PAGAMENTO " +
+                "SOB O VALOR ASSINADO, APOS A CONFIRMAÇÃO. NÃO TRABALHAMOS COM PROVA DE COR, POR ISSO PODEM OCORRER VARIAÇÕES MÍNIMAS" +
+                "DE COR DURANTE O PROCESSO DE IMPRESSÃO.").Format.Font.Size = 7;
+            row.Cells[0].MergeRight = 1;
+
             //Linha 5
             row = table.AddRow();
             cell = row.Cells[0];
