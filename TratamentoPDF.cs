@@ -22,10 +22,9 @@ namespace FormularioGrafica {
 
             // Add a section to the document
             Section section = document.AddSection();
-
+            section.PageSetup.TopMargin = "0.5cm"; // Diminuir a margem do topo da página
             //Inserir tabela
             SimpleTable(document);
-
             // Add a paragraph to the section
             Paragraph paragraph = section.AddParagraph();
 
@@ -54,41 +53,74 @@ namespace FormularioGrafica {
             style.Font.Bold = true;
             style.Font.Color = Colors.DarkBlue;
             style.ParagraphFormat.PageBreakBefore = true;
-            style.ParagraphFormat.SpaceAfter = 6;
+            //style.ParagraphFormat.SpaceAfter = 6;
 
         }
 
         private static void SimpleTable(Document document) {
-            document.LastSection.AddParagraph("Simple Tables", "Heading2");
+            //document.LastSection.AddParagraph("Simple Tables", "Heading2");
 
             Table table = new Table();
             table.Borders.Width = 0.75;
+            table.Borders.Color = Colors.DarkRed;
+            Column column = table.AddColumn(Unit.FromCentimeter(15));//Primeira coluna
+            //column.Format.Alignment = ParagraphAlignment.Center;
+            table.AddColumn(Unit.FromCentimeter(5));//Segunda coluna
+            //Arrastar tabela
+            table.Rows.LeftIndent = "-2cm";
+            table.Rows.Height = 35;
 
-            Column column = table.AddColumn(Unit.FromCentimeter(2));
-            column.Format.Alignment = ParagraphAlignment.Center;
-
-            table.AddColumn(Unit.FromCentimeter(5));
-
+            //table.Format.SpaceBefore = "-4cm";
+            //Colocar uma border branca e usar row vermelha para completar a linha
+            //Linha 0
             Row row = table.AddRow();
-            row.Shading.Color = Colors.PaleGoldenrod;
             Cell cell = row.Cells[0];
-            cell.AddParagraph("Itemus");
-            cell = row.Cells[1];
-            cell.AddParagraph("Descriptum");
 
+            cell.AddParagraph("ENTRADA:\t\t\tENTREGA:\t\t\tHORA:"); //113 caracteres
+            cell.VerticalAlignment = VerticalAlignment.Bottom;
+            cell = row.Cells[1];
+            cell.AddParagraph("texto 0");
+            //Linha 1
             row = table.AddRow();
             cell = row.Cells[0];
-            cell.AddParagraph("1");
-            cell = row.Cells[1];
-            cell.AddParagraph("texto 1");
-
+            cell.AddParagraph("CLIENTE:");
+            cell.VerticalAlignment = VerticalAlignment.Bottom;
+            row.Cells[0].MergeRight = 1;
+            //cell = row.Cells[1];
+            //cell.AddParagraph("texto 1");
+            //Linha 2
             row = table.AddRow();
             cell = row.Cells[0];
             cell.AddParagraph("2");
             cell = row.Cells[1];
             cell.AddParagraph("texto 2");
+            //Linha 3
+            row = table.AddRow();
+            cell = row.Cells[0];
+            cell.AddParagraph("3");
+            row.Cells[0].MergeRight = 1;
+            //Linha 4
+            row = table.AddRow();
+            row.Shading.Color = Colors.Crimson;
+            cell = row.Cells[0];
+            cell.AddParagraph("4");
+            cell = row.Cells[1];
+            cell.AddParagraph("texto 4");
+            //Linha 5
+            row = table.AddRow();
+            cell = row.Cells[0];
+            cell.AddParagraph("5");
+            cell = row.Cells[1];
+            cell.AddParagraph("texto 5");
+            //Linha 6
+            row = table.AddRow();
+            cell = row.Cells[0];
+            cell.AddParagraph("6");
+            cell = row.Cells[1];
+            cell.AddParagraph("texto 6");
 
-            table.SetEdge(0, 0, 2, 3, Edge.Box, BorderStyle.Single, 1.5, Colors.Black);
+            //table.SetEdge(0, 0, 2, 3, Edge.Box, BorderStyle.Single, 1.5, Colors.DarkRed);
+            //table.LeftPadding = 60;
 
             document.LastSection.Add(table);
         }
@@ -133,3 +165,5 @@ namespace FormularioGrafica {
         }
     }
 }
+
+//http://www.pdfsharp.net/wiki/HelloMigraDoc-sample.ashx
