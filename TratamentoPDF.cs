@@ -31,7 +31,7 @@ namespace FormularioGrafica {
             paragraph.Format.Font.Color = MigraDoc.DocumentObjectModel.Color.FromCmyk(100, 30, 20, 50);
 
             // Add some text to the paragraph
-            paragraph.AddFormattedText("Hello, World!", TextFormat.Bold);
+            //paragraph.AddFormattedText("Hello, World!", TextFormat.Bold);
 
             return document;
         }
@@ -75,10 +75,12 @@ namespace FormularioGrafica {
             Row row = table.AddRow();
             Cell cell = row.Cells[0];
 
-            cell.AddParagraph("ENTRADA:\t\t\tENTREGA:\t\t\tHORA:"); //113 caracteres
+            cell.AddParagraph("ENTRADA:\t\t\t\t\tENTREGA:"); //113 caracteres
             cell.VerticalAlignment = VerticalAlignment.Bottom;
             cell = row.Cells[1];
-            cell.AddParagraph("texto 0");
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph("ATENDENTE \n Nº 0001");
             //Linha 1
             row = table.AddRow();
             //row.Borders.Color = Colors.White;
@@ -99,9 +101,10 @@ namespace FormularioGrafica {
             //Linha 2
             row = table.AddRow();
             cell = row.Cells[0];
-            cell.AddParagraph("2");
+            cell.AddParagraph("Serviço:");
             cell = row.Cells[1];
-            cell.AddParagraph("texto 2");
+            cell.AddParagraph("Valor R$").Format.Alignment = ParagraphAlignment.Center;
+            cell.AddParagraph("100,00").Format.Alignment = ParagraphAlignment.Center;
             //Linha 3
             row = table.AddRow();
             cell = row.Cells[0];
@@ -142,6 +145,8 @@ namespace FormularioGrafica {
             cell = row.Cells[0];
             cell.Format.Font.Color = Colors.White;
             cell.Format.Font.Name = "Arial";
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
             cell.AddParagraph().AddFormattedText("OBS: É NECESSÁRIO A APREENTAÇÃO DESTE PARA O RECEBIMENTO DO MATERIAL.", TextFormat.Bold);
             cell.AddParagraph("O CLIENTE ASSUME A RESPONSABILIDADE DO PEDIDO APÓS A CONFIRMAÇÃO DO MODELO, E PAGAMENTO " +
                 "SOB O VALOR ASSINADO, APOS A CONFIRMAÇÃO. NÃO TRABALHAMOS COM PROVA DE COR, POR ISSO PODEM OCORRER VARIAÇÕES MÍNIMAS" +
@@ -151,15 +156,20 @@ namespace FormularioGrafica {
             //Linha 5
             row = table.AddRow();
             cell = row.Cells[0];
-            cell.AddParagraph("5");
-            cell = row.Cells[1];
-            cell.AddParagraph("texto 5");
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Bottom;
+            cell.AddParagraph("_________________________________").Format.Font.Color = Colors.DarkRed;
+            cell.AddParagraph("CLIENTE");
+            row.Cells[0].MergeRight = 1;
+
             //Linha 6
             row = table.AddRow();
             cell = row.Cells[0];
-            cell.AddParagraph("6");
-            cell = row.Cells[1];
-            cell.AddParagraph("texto 6");
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Center;
+            cell.AddParagraph("ENTRADA\t\t\t\t\t\t\tRESTANTE");
+            cell.AddParagraph("R$ 50,00\t\t\t\t\t\t\tR$ 50,00"); // TODO Colocar uma variavel para indicar  entrade e restante
+            row.Cells[0].MergeRight = 1;
 
             //table.SetEdge(0, 0, 2, 3, Edge.Box, BorderStyle.Single, 1.5, Colors.DarkRed);
             //table.LeftPadding = 60;
