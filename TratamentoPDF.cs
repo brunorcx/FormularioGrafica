@@ -75,7 +75,7 @@ namespace FormularioGrafica {
             table.AddColumn(Unit.FromCentimeter(2));//Decima coluna
             //Arrastar tabela
             table.Rows.LeftIndent = "-2cm";
-            table.Rows.Height = 35;
+            table.Rows.Height = 90;
 
             //table.Format.SpaceBefore = "-4cm";
             //Colocar uma border branca e usar row vermelha para completar a linha
@@ -105,8 +105,6 @@ namespace FormularioGrafica {
             cell.VerticalAlignment = VerticalAlignment.Bottom;
             row.Cells[0].MergeRight = 9;
 
-            //cell = row.Cells[1];
-            //cell.AddParagraph("texto 1");
             //Linha 2
             row = table.AddRow();
             cell = row.Cells[0];
@@ -115,6 +113,7 @@ namespace FormularioGrafica {
             cell.AddParagraph("Valor R$").Format.Alignment = ParagraphAlignment.Center;
             cell.AddParagraph("100,00").Format.Alignment = ParagraphAlignment.Center;
             row.Cells[0].MergeRight = 8;
+
             //Linha 3
             row = table.AddRow();
             cell = row.Cells[0];
@@ -136,7 +135,6 @@ namespace FormularioGrafica {
             paragraph.AddText("RETIRADA PLACA");
 
             cell.Add(paragraph);
-
             paragraph = new Paragraph();
             paragraph.AddText("OBS:");
             paragraph.Format.SpaceAfter = 5;
@@ -145,10 +143,10 @@ namespace FormularioGrafica {
             paragraph.Format.Borders.DistanceFromRight = 4;
             paragraph.Format.Borders.Bottom.Color = Colors.DarkRed;
             cell.Add(paragraph);
-
             cell = row.Cells[9];
             cell.AddParagraph("TOTAL:").Format.Font.Size = 11;
             row.Cells[0].MergeRight = 8;
+
             //Linha 4
             row = table.AddRow();
             row.Shading.Color = Colors.Crimson;
@@ -175,9 +173,7 @@ namespace FormularioGrafica {
             row.Cells[0].MergeRight = 9;
 
             //Linha 6
-
             row = table.AddRow();
-
             row.Shading.Color = Colors.Crimson;
             row.Format.Font.Bold = true;
             row.Format.Font.Color = Colors.White;
@@ -191,6 +187,7 @@ namespace FormularioGrafica {
             cell.AddParagraph("RESTANTE");
             row.Cells[0].MergeRight = 4;
             row.Cells[5].MergeRight = 4;
+            row.Height = 20;
 
             //Linha 7
             row = table.AddRow();
