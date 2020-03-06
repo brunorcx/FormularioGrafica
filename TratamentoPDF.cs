@@ -23,6 +23,7 @@ namespace FormularioGrafica {
             // Add a section to the document
             Section section = document.AddSection();
             section.PageSetup.TopMargin = "0.5cm"; // Diminuir a margem do topo da página
+            section.PageSetup.BottomMargin = "-0.5cm";
             //Inserir tabela
             SimpleTable(document);
             // Add a paragraph to the section
@@ -76,28 +77,34 @@ namespace FormularioGrafica {
             //Arrastar tabela
             table.Rows.LeftIndent = "-2cm";
             table.Rows.Height = 90;
+            table.Format.Font.Size = 14;
+            table.Format.Font.Color = Colors.DarkRed;
 
             //table.Format.SpaceBefore = "-4cm";
             //Colocar uma border branca e usar row vermelha para completar a linha
             //Linha 0
             Row row = table.AddRow();
-            Cell cell = row.Cells[0];
+            row.Height = 70;
 
+            Cell cell = row.Cells[0];
             cell.AddParagraph("ENTRADA:\t\t\t\t\tENTREGA:"); //113 caracteres
             cell.VerticalAlignment = VerticalAlignment.Bottom;
             cell = row.Cells[9];
             cell.Format.Alignment = ParagraphAlignment.Center;
-            cell.VerticalAlignment = VerticalAlignment.Center;
-            cell.AddParagraph("ATENDENTE \n Nº 0001");
+            cell.VerticalAlignment = VerticalAlignment.Top;
+            cell.AddParagraph("PEDIDO");
+            cell.AddParagraph("\n000100");
             row.Cells[0].MergeRight = 8;
             //Linha 1
             row = table.AddRow();
+            row.Height = 60;
+
             //row.Borders.Color = Colors.White;
             cell = row.Cells[0];
             cell.AddParagraph("CLIENTE:   CPF").Format.SpaceAfter = 5;
             cell.Format.Borders.Bottom.Width = 0.75;
             //cell.Format.Borders.Width = 4;
-            cell.Format.Borders.DistanceFromLeft = -43.0;
+            cell.Format.Borders.DistanceFromLeft = -60.0;
             cell.Format.Borders.DistanceFromRight = 4;
             //cell.Format.Borders.DistanceFromRight = -515.0;
             cell.Format.Borders.Bottom.Color = Colors.DarkRed;
@@ -107,21 +114,23 @@ namespace FormularioGrafica {
 
             //Linha 2
             row = table.AddRow();
+            row.Height = 296;
             cell = row.Cells[0];
-            cell.AddParagraph("Serviço:");
+            cell.AddParagraph("SERVIÇO:");
             cell = row.Cells[9];
-            cell.AddParagraph("Valor R$").Format.Alignment = ParagraphAlignment.Center;
+            cell.AddParagraph("VALOR R$").Format.Alignment = ParagraphAlignment.Center;
             cell.AddParagraph("100,00").Format.Alignment = ParagraphAlignment.Center;
             row.Cells[0].MergeRight = 8;
 
             //Linha 3
             row = table.AddRow();
+            row.Height = 60;
             cell = row.Cells[0];
             Paragraph paragraph = new Paragraph();
             FormattedText caixaTrue = new FormattedText();
             FormattedText caixaFalse = new FormattedText();
-            caixaTrue.AddFormattedText(true ? "\u00fe" : "\u00A8", new Font("Wingdings", 10));
-            caixaFalse.AddFormattedText(false ? "\u00fe" : "\u00A8", new Font("Wingdings", 10));
+            caixaTrue.AddFormattedText(true ? "\u00fe" : "\u00A8", new Font("Wingdings", 14));
+            caixaFalse.AddFormattedText(false ? "\u00fe" : "\u00A8", new Font("Wingdings", 14));
             paragraph.Add(caixaTrue);
             paragraph.AddText("COM APLICAÇÂO\t\t");
             paragraph.Add(caixaTrue.Clone());
@@ -130,22 +139,23 @@ namespace FormularioGrafica {
             //Adicionar paragráfo 2
             paragraph = new Paragraph();
             paragraph.Add(caixaFalse.Clone());
-            paragraph.AddText("RETIRADA ADESIVO\t\t");
+            paragraph.AddText("RETIRADA ADESIVO\t");
             paragraph.Add(caixaFalse.Clone());
             paragraph.AddText("RETIRADA PLACA");
 
             cell.Add(paragraph);
             paragraph = new Paragraph();
-            paragraph.AddText("OBS:");
+            paragraph.AddText("\nOBS:");
             paragraph.Format.SpaceAfter = 5;
             paragraph.Format.Borders.Bottom.Width = 0.75;
-            paragraph.Format.Borders.DistanceFromLeft = -20.0;
-            paragraph.Format.Borders.DistanceFromRight = 4;
+            paragraph.Format.Borders.DistanceFromLeft = -28.0;
+            paragraph.Format.Borders.DistanceFromRight = 1;
             paragraph.Format.Borders.Bottom.Color = Colors.DarkRed;
             cell.Add(paragraph);
-            cell = row.Cells[9];
-            cell.AddParagraph("TOTAL:").Format.Font.Size = 11;
-            row.Cells[0].MergeRight = 8;
+            cell = row.Cells[8];
+            cell.AddParagraph("TOTAL:");
+            row.Cells[0].MergeRight = 7;
+            row.Cells[8].MergeRight = 1;
 
             //Linha 4
             row = table.AddRow();
@@ -165,12 +175,21 @@ namespace FormularioGrafica {
             //Linha 5
             row = table.AddRow();
             row.Borders.Top.Clear();
+            row.Borders.Right.Clear();
             cell = row.Cells[0];
             cell.Format.Alignment = ParagraphAlignment.Center;
             cell.VerticalAlignment = VerticalAlignment.Bottom;
-            cell.AddParagraph("_________________________________").Format.Font.Color = Colors.DarkRed;
+            cell.AddParagraph("_________________________________");
+            cell.AddParagraph("FORBRAS");
+            row.Cells[0].MergeRight = 4;
+            row.Cells[5].MergeRight = 4;
+            row.Cells[9].Borders.Right.Color = Colors.DarkRed;
+
+            cell = row.Cells[5];
+            cell.Format.Alignment = ParagraphAlignment.Center;
+            cell.VerticalAlignment = VerticalAlignment.Bottom;
+            cell.AddParagraph("_________________________________");
             cell.AddParagraph("CLIENTE");
-            row.Cells[0].MergeRight = 9;
 
             //Linha 6
             row = table.AddRow();
@@ -196,9 +215,12 @@ namespace FormularioGrafica {
             row.VerticalAlignment = VerticalAlignment.Top;
             row.Borders.Top.Clear();
             cell = row.Cells[0];
-            cell.AddParagraph("R$ 50,00"); // TODO Colocar uma variavel para indicar  entrada e restante
+            cell.AddParagraph("R$ 50,00").Format.Font.Size = 20; // TODO Colocar uma variavel para indicar  entrada e restante
+            cell.AddParagraph("\n\n\nData").Format.Font.Size = 20;
+
             cell = row.Cells[5];
-            cell.AddParagraph("R$ 50,00");
+            cell.AddParagraph("R$ 50,00").Format.Font.Size = 20;
+            cell.AddParagraph("\n\n\nData").Format.Font.Size = 20;
             row.Cells[0].MergeRight = 4;
             row.Cells[5].MergeRight = 4;
             //table.SetEdge(0, 0, 2, 3, Edge.Box, BorderStyle.Single, 1.5, Colors.DarkRed);
