@@ -169,7 +169,7 @@ namespace FormularioGrafica {
             cell.AddParagraph().AddFormattedText("OBS: É NECESSÁRIO A APREENTAÇÃO DESTE PARA O RECEBIMENTO DO MATERIAL.", TextFormat.Bold);
             cell.AddParagraph("O CLIENTE ASSUME A RESPONSABILIDADE DO PEDIDO APÓS A CONFIRMAÇÃO DO MODELO, E PAGAMENTO " +
                 "SOB O VALOR ASSINADO, APOS A CONFIRMAÇÃO. NÃO TRABALHAMOS COM PROVA DE COR, POR ISSO PODEM OCORRER VARIAÇÕES MÍNIMAS" +
-                "DE COR DURANTE O PROCESSO DE IMPRESSÃO.").Format.Font.Size = 7;
+                "DE COR DURANTE O PROCESSO DE IMPRESSÃO.").Format.Font.Size = 10;
             row.Cells[0].MergeRight = 9;
 
             //Linha 5
