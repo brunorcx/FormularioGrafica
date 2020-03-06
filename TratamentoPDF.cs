@@ -168,7 +168,7 @@ namespace FormularioGrafica {
             cell.VerticalAlignment = VerticalAlignment.Center;
             cell.AddParagraph().AddFormattedText("OBS: É NECESSÁRIO A APRESENTAÇÃO DESTE PARA O RECEBIMENTO DO MATERIAL.", TextFormat.Bold);
             cell.AddParagraph("O CLIENTE ASSUME A RESPONSABILIDADE DO PEDIDO APÓS A CONFIRMAÇÃO DO MODELO, E PAGAMENTO " +
-                "SOB O VALOR ASSINADO, APÓS A CONFIRMAÇÃO. NÃO TRABALHAMOS COM PROVA DE COR, POR ISSO PODEM OCORRER VARIAÇÕES MÍNIMAS" +
+                "SOB O VALOR ASSINADO, APÓS A CONFIRMAÇÃO. NÃO TRABALHAMOS COM PROVA DE COR, POR ISSO PODEM OCORRER VARIAÇÕES MÍNIMAS " +
                 "DE COR DURANTE O PROCESSO DE IMPRESSÃO.").Format.Font.Size = 10;
             row.Cells[0].MergeRight = 9;
 
