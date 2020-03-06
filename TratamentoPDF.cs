@@ -166,9 +166,9 @@ namespace FormularioGrafica {
             cell.Format.Font.Name = "Arial";
             cell.Format.Alignment = ParagraphAlignment.Center;
             cell.VerticalAlignment = VerticalAlignment.Center;
-            cell.AddParagraph().AddFormattedText("OBS: É NECESSÁRIO A APREENTAÇÃO DESTE PARA O RECEBIMENTO DO MATERIAL.", TextFormat.Bold);
+            cell.AddParagraph().AddFormattedText("OBS: É NECESSÁRIO A APRESENTAÇÃO DESTE PARA O RECEBIMENTO DO MATERIAL.", TextFormat.Bold);
             cell.AddParagraph("O CLIENTE ASSUME A RESPONSABILIDADE DO PEDIDO APÓS A CONFIRMAÇÃO DO MODELO, E PAGAMENTO " +
-                "SOB O VALOR ASSINADO, APOS A CONFIRMAÇÃO. NÃO TRABALHAMOS COM PROVA DE COR, POR ISSO PODEM OCORRER VARIAÇÕES MÍNIMAS" +
+                "SOB O VALOR ASSINADO, APÓS A CONFIRMAÇÃO. NÃO TRABALHAMOS COM PROVA DE COR, POR ISSO PODEM OCORRER VARIAÇÕES MÍNIMAS" +
                 "DE COR DURANTE O PROCESSO DE IMPRESSÃO.").Format.Font.Size = 10;
             row.Cells[0].MergeRight = 9;
 
@@ -180,7 +180,7 @@ namespace FormularioGrafica {
             cell.Format.Alignment = ParagraphAlignment.Center;
             cell.VerticalAlignment = VerticalAlignment.Bottom;
             cell.AddParagraph("_________________________________");
-            cell.AddParagraph("FORBRAS");
+            cell.AddParagraph("FORBRÁS");
             row.Cells[0].MergeRight = 4;
             row.Cells[5].MergeRight = 4;
             row.Cells[9].Borders.Right.Color = Colors.DarkRed;
