@@ -12,6 +12,14 @@ using System.Threading.Tasks;
 namespace FormularioGrafica {
 
     internal class TratamentoPDF {
+        private static List<string> listaString;
+
+        public TratamentoPDF() {
+        }
+
+        public TratamentoPDF(List<string> listaString) {
+            TratamentoPDF.listaString = listaString;
+        }
 
         private static Document CreateDocument() {
             // Create a new MigraDoc document
@@ -87,7 +95,7 @@ namespace FormularioGrafica {
             row.Height = 70;
 
             Cell cell = row.Cells[0];
-            cell.AddParagraph("ENTRADA:\t\t\t\t\tENTREGA:"); //113 caracteres
+            cell.AddParagraph("ENTRADA: " + listaString[0] + "\t\tENTREGA: " + listaString[1]); //113 caracteres
             cell.VerticalAlignment = VerticalAlignment.Bottom;
             cell = row.Cells[9];
             cell.Format.Alignment = ParagraphAlignment.Center;
@@ -101,14 +109,14 @@ namespace FormularioGrafica {
 
             //row.Borders.Color = Colors.White;
             cell = row.Cells[0];
-            cell.AddParagraph("CLIENTE:   CPF").Format.SpaceAfter = 5;
+            cell.AddParagraph("CLIENTE: " + listaString[2]).Format.SpaceAfter = 5;
             cell.Format.Borders.Bottom.Width = 0.75;
             //cell.Format.Borders.Width = 4;
             cell.Format.Borders.DistanceFromLeft = -60.0;
             cell.Format.Borders.DistanceFromRight = 4;
             //cell.Format.Borders.DistanceFromRight = -515.0;
             cell.Format.Borders.Bottom.Color = Colors.DarkRed;
-            cell.AddParagraph("CNPJ:\t\t\t\tFONE:").Format.Borders.Bottom.Color = Colors.White;
+            cell.AddParagraph("CNPJ: " + listaString[3] + "\t\tFONE: " + listaString[4]).Format.Borders.Bottom.Color = Colors.White;
             cell.VerticalAlignment = VerticalAlignment.Bottom;
             row.Cells[0].MergeRight = 9;
 
@@ -116,7 +124,7 @@ namespace FormularioGrafica {
             row = table.AddRow();
             row.Height = 296;
             cell = row.Cells[0];
-            cell.AddParagraph("SERVIÇO:");
+            cell.AddParagraph("SERVIÇO: " + listaString[5]);
             cell = row.Cells[9];
             cell.AddParagraph("VALOR R$").Format.Alignment = ParagraphAlignment.Center;
             cell.AddParagraph("100,00").Format.Alignment = ParagraphAlignment.Center;
@@ -131,18 +139,34 @@ namespace FormularioGrafica {
             FormattedText caixaFalse = new FormattedText();
             caixaTrue.AddFormattedText(true ? "\u00fe" : "\u00A8", new Font("Wingdings", 14));
             caixaFalse.AddFormattedText(false ? "\u00fe" : "\u00A8", new Font("Wingdings", 14));
-            paragraph.Add(caixaTrue);
+
+            if (listaString[6] == "True")
+                paragraph.Add(caixaTrue);
+            else
+                paragraph.Add(caixaFalse);
             paragraph.AddText("COM APLICAÇÂO\t\t");
-            paragraph.Add(caixaTrue.Clone());
+            //------------------------------------
+            if (listaString[7] == "True")
+                paragraph.Add(caixaTrue.Clone());
+            else
+                paragraph.Add(caixaFalse.Clone());
             paragraph.AddText("SEM APLICAÇÃO");
+            //------------------------------------
             cell.Add(paragraph);
             //Adicionar paragráfo 2
             paragraph = new Paragraph();
-            paragraph.Add(caixaFalse.Clone());
+            if (listaString[8] == "True")
+                paragraph.Add(caixaTrue.Clone());
+            else
+                paragraph.Add(caixaFalse.Clone());
             paragraph.AddText("RETIRADA ADESIVO\t");
-            paragraph.Add(caixaFalse.Clone());
+            //------------------------------------
+            if (listaString[9] == "True")
+                paragraph.Add(caixaTrue.Clone());
+            else
+                paragraph.Add(caixaFalse.Clone());
             paragraph.AddText("RETIRADA PLACA");
-
+            //------------------------------------
             cell.Add(paragraph);
             paragraph = new Paragraph();
             paragraph.AddText("\nOBS:");
@@ -153,7 +177,7 @@ namespace FormularioGrafica {
             paragraph.Format.Borders.Bottom.Color = Colors.DarkRed;
             cell.Add(paragraph);
             cell = row.Cells[8];
-            cell.AddParagraph("TOTAL:");
+            cell.AddParagraph(listaString[10].ToUpper());
             row.Cells[0].MergeRight = 7;
             row.Cells[8].MergeRight = 1;
 
@@ -216,11 +240,11 @@ namespace FormularioGrafica {
             row.Borders.Top.Clear();
             cell = row.Cells[0];
             cell.AddParagraph("R$ 50,00").Format.Font.Size = 20; // TODO Colocar uma variavel para indicar  entrada e restante
-            cell.AddParagraph("\n\n\nData").Format.Font.Size = 20;
+            cell.AddParagraph("\n\n\n" + listaString[0]).Format.Font.Size = 20;
 
             cell = row.Cells[5];
             cell.AddParagraph("R$ 50,00").Format.Font.Size = 20;
-            cell.AddParagraph("\n\n\nData").Format.Font.Size = 20;
+            cell.AddParagraph("\n\n\n" + listaString[1]).Format.Font.Size = 20;
             row.Cells[0].MergeRight = 4;
             row.Cells[5].MergeRight = 4;
             //table.SetEdge(0, 0, 2, 3, Edge.Box, BorderStyle.Single, 1.5, Colors.DarkRed);

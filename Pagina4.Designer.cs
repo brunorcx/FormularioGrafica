@@ -24,6 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.label13 = new System.Windows.Forms.Label();
+            this.comboBoxServico = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label13
@@ -36,11 +37,29 @@
             this.label13.TabIndex = 62;
             this.label13.Text = "Pagina 4";
             // 
+            // comboBoxServico
+            // 
+            this.comboBoxServico.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.comboBoxServico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.comboBoxServico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxServico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxServico.Font = new System.Drawing.Font("Constantia", 12F);
+            this.comboBoxServico.FormattingEnabled = true;
+            this.comboBoxServico.Items.AddRange(new object[] {
+            "Item 1",
+            "Item 2"});
+            this.comboBoxServico.Location = new System.Drawing.Point(312, 160);
+            this.comboBoxServico.MaxLength = 40;
+            this.comboBoxServico.Name = "comboBoxServico";
+            this.comboBoxServico.Size = new System.Drawing.Size(121, 27);
+            this.comboBoxServico.TabIndex = 63;
+            // 
             // Pagina4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.Controls.Add(this.comboBoxServico);
             this.Controls.Add(this.label13);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.Name = "Pagina4";
@@ -53,5 +72,6 @@
         #endregion
 
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox comboBoxServico;
     }
 }

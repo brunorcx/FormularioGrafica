@@ -2,6 +2,7 @@
 using MigraDoc.Rendering;
 using PdfSharp.Pdf;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
@@ -14,11 +15,13 @@ namespace FormularioGrafica {
         private DataTable tabela = new DataTable();
         private AutoCompleteStringCollection textCollection = new AutoCompleteStringCollection();
         private AutoCompleteStringCollection textCollection2 = new AutoCompleteStringCollection();
-        private TratamentoPDF pdf = new TratamentoPDF();
+        private TratamentoPDF pdf;
 
         public Pagina1() {
             InitializeComponent();
             labelAtendente.Text = Login.login;
+            comboBoxDimensoes.Text = "cm";
+            numericUpDownQuantidade.Value = 1;
         }
 
         private void Pagina1_Load(object sender, EventArgs e) {
@@ -51,8 +54,38 @@ namespace FormularioGrafica {
             return textCollection2;
         }
 
+        private decimal somaTotal() {
+            decimal areaBase;
+            decimal areaAtual;
+            decimal dif;
+            decimal total;
+
+            tabela = dB.Select(comboBoxServico.Text, "", "", "");
+
+            areaBase = decimal.Parse(tabela.Rows[0][2].ToString()) * decimal.Parse(tabela.Rows[0][3].ToString());
+            areaAtual = decimal.Parse(textBoxTamanhoX.Text) * decimal.Parse(textBoxTamanhoY.Text);
+            dif = (areaAtual * 100) / areaBase;
+            total = decimal.Parse(tabela.Rows[0][1].ToString()) * (dif / 100) * numericUpDownQuantidade.Value;
+            return total;
+        }
+
         private void buttonImprimir_Click(object sender, EventArgs e) {
+            List<string> listaVenda = new List<string>();
+            listaVenda.Add(dateTimePickerEntrada.Value.ToString());     //0
+            listaVenda.Add(dateTimePickerEntrega.Value.ToString());     //1
+            listaVenda.Add(textBoxCliente.Text);                        //2
+            listaVenda.Add(textBoxCPF.Text);                            //3
+            listaVenda.Add(textBoxTelefone.Text);                       //4
+            listaVenda.Add(comboBoxServico.Text);                       //5
+            listaVenda.Add(checkBoxCAplicacao.Checked.ToString());      //6
+            listaVenda.Add(checkBoxSAplicacao.Checked.ToString());      //7
+            listaVenda.Add(checkBoxRAdesivo.Checked.ToString());        //8
+            listaVenda.Add(checkBoxRPlaca.Checked.ToString());          //9
+            listaVenda.Add(labelTotal.Text);                            //10
+
+            pdf = new TratamentoPDF(listaVenda);//Se quiser imprimir o pdf vazio, basta não enviar uma lista
             pdf.salvarPDF();
+
             //imprimirPDF();
 
             //CaptureScreen();
@@ -62,20 +95,38 @@ namespace FormularioGrafica {
             //}
         }
 
-        private void comboBoxServico_Leave(object sender, EventArgs e) {
-            tabela = dB.Select(comboBoxServico.Text, "", "", "");
-            if (comboBoxServico.Text != String.Empty && tabela.Rows.Count != 0) {
-                textBoxTamanhoX.Text = tabela.Rows[0][2].ToString();
-                textBoxTamanhoY.Text = tabela.Rows[0][3].ToString();
-            }
-        }
-
         private void textBoxCPF_Leave(object sender, EventArgs e) {
             tabela = dB.Select(textBoxCPF.Text, "", "");
             if (textBoxCPF.Text != String.Empty && tabela.Rows.Count != 0) {
                 textBoxCliente.Text = tabela.Rows[0][1].ToString();
                 textBoxTelefone.Text = tabela.Rows[0][2].ToString();
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e) {
+        }
+
+        private void label18_Click(object sender, EventArgs e) {
+        }
+
+        private void comboBoxCor_Leave(object sender, EventArgs e) {
+            if (comboBoxServico.Text != "")
+                labelTotal.Text = "Total:R$ " + somaTotal().ToString();
+        }
+
+        private void numericUpDownQuantidade_ValueChanged(object sender, EventArgs e) {
+            if (comboBoxServico.Text != "")
+                labelTotal.Text = "Total:R$ " + somaTotal().ToString();
+        }
+
+        private void comboBoxServico_TextChanged(object sender, EventArgs e) {
+            tabela = dB.Select(comboBoxServico.Text, "", "", "");
+            if (comboBoxServico.Text != String.Empty && tabela.Rows.Count != 0) {
+                textBoxTamanhoX.Text = tabela.Rows[0][2].ToString();
+                textBoxTamanhoY.Text = tabela.Rows[0][3].ToString();
+            }
+            if (comboBoxServico.Text != "")
+                labelTotal.Text = "Total:R$ " + somaTotal().ToString();
         }
 
         //private void imprimirPDF() {

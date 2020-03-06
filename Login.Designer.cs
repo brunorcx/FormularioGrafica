@@ -62,6 +62,7 @@
             this.textBoxSenha.Size = new System.Drawing.Size(267, 24);
             this.textBoxSenha.TabIndex = 3;
             this.textBoxSenha.Text = "Senha";
+            this.textBoxSenha.UseSystemPasswordChar = true;
             this.textBoxSenha.Enter += new System.EventHandler(this.Senha_Enter);
             this.textBoxSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Senha_KeyDown);
             this.textBoxSenha.Leave += new System.EventHandler(this.Senha_Leave);
