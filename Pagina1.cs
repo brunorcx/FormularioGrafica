@@ -129,6 +129,10 @@ namespace FormularioGrafica {
                 labelTotal.Text = "Total:R$ " + somaTotal().ToString();
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e) {
+
+        }
+
         //private void imprimirPDF() {
         //    ProcessStartInfo startInfo = new ProcessStartInfo();
         //    startInfo.FileName = "SumatraPDF.exe";

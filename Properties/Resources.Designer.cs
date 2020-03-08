@@ -63,6 +63,16 @@ namespace FormularioGrafica.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CABEÇALHO_DA_IMPREÇÃO {
+            get {
+                object obj = ResourceManager.GetObject("CABEÇALHO_DA_IMPREÇÃO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap clipboard_30px_white {
             get {
                 object obj = ResourceManager.GetObject("clipboard_30px_white", resourceCulture);

@@ -85,7 +85,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Constantia", 11F);
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Image = global::FormularioGrafica.Properties.Resources.clipboard_30px_yellow;
             this.button3.Location = new System.Drawing.Point(3, 265);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(146, 75);

@@ -1,4 +1,5 @@
 ﻿using MigraDoc.DocumentObjectModel;
+using MigraDoc.DocumentObjectModel.Shapes;
 using MigraDoc.DocumentObjectModel.Tables;
 using MigraDoc.Rendering;
 using PdfSharp.Pdf;
@@ -8,6 +9,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Font = MigraDoc.DocumentObjectModel.Font;
 
 namespace FormularioGrafica {
 
@@ -91,6 +93,7 @@ namespace FormularioGrafica {
             //table.Format.SpaceBefore = "-4cm";
             //Colocar uma border branca e usar row vermelha para completar a linha
             //Linha 0
+
             Row row = table.AddRow();
             row.Height = 70;
 

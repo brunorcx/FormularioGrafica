@@ -71,6 +71,8 @@
             this.comboBoxDimensoes = new System.Windows.Forms.ComboBox();
             this.labelTotal = new System.Windows.Forms.Label();
             this.numericUpDownQuantidade = new System.Windows.Forms.NumericUpDown();
+            this.checkBox50 = new System.Windows.Forms.CheckBox();
+            this.checkBox100 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantidade)).BeginInit();
             this.SuspendLayout();
             // 
@@ -604,6 +606,30 @@
             this.numericUpDownQuantidade.TabIndex = 71;
             this.numericUpDownQuantidade.ValueChanged += new System.EventHandler(this.numericUpDownQuantidade_ValueChanged);
             // 
+            // checkBox50
+            // 
+            this.checkBox50.AutoSize = true;
+            this.checkBox50.Font = new System.Drawing.Font("Constantia", 12F);
+            this.checkBox50.Location = new System.Drawing.Point(528, 407);
+            this.checkBox50.Name = "checkBox50";
+            this.checkBox50.Size = new System.Drawing.Size(58, 23);
+            this.checkBox50.TabIndex = 54;
+            this.checkBox50.Text = "50%";
+            this.checkBox50.UseVisualStyleBackColor = true;
+            this.checkBox50.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // checkBox100
+            // 
+            this.checkBox100.AutoSize = true;
+            this.checkBox100.Font = new System.Drawing.Font("Constantia", 12F);
+            this.checkBox100.Location = new System.Drawing.Point(528, 436);
+            this.checkBox100.Name = "checkBox100";
+            this.checkBox100.Size = new System.Drawing.Size(64, 23);
+            this.checkBox100.TabIndex = 54;
+            this.checkBox100.Text = "100%";
+            this.checkBox100.UseVisualStyleBackColor = true;
+            this.checkBox100.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Pagina1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -623,6 +649,8 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.dateTimePickerEntrada);
+            this.Controls.Add(this.checkBox100);
+            this.Controls.Add(this.checkBox50);
             this.Controls.Add(this.checkBoxRPlaca);
             this.Controls.Add(this.dateTimePickerEntrega);
             this.Controls.Add(this.checkBoxRAdesivo);
@@ -716,5 +744,7 @@
         private System.Windows.Forms.ComboBox comboBoxDimensoes;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.NumericUpDown numericUpDownQuantidade;
+        private System.Windows.Forms.CheckBox checkBox50;
+        private System.Windows.Forms.CheckBox checkBox100;
     }
 }
