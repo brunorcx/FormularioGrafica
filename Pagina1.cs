@@ -16,6 +16,8 @@ namespace FormularioGrafica {
         private AutoCompleteStringCollection textCollection = new AutoCompleteStringCollection();
         private AutoCompleteStringCollection textCollection2 = new AutoCompleteStringCollection();
         private TratamentoPDF pdf;
+        private decimal somaServico;
+        private List<string> listaServico1;
 
         public Pagina1() {
             InitializeComponent();
@@ -82,7 +84,15 @@ namespace FormularioGrafica {
             listaVenda.Add(checkBoxRAdesivo.Checked.ToString());        //8
             listaVenda.Add(checkBoxRPlaca.Checked.ToString());          //9
             listaVenda.Add(labelTotal.Text);                            //10
+            listaVenda.Add(textBoxTamanhoX.Text);                       //11
+            listaVenda.Add(textBoxTamanhoY.Text);                       //12
+            listaVenda.Add(numericUpDownQuantidade.Value.ToString());   //13
+            listaVenda.Add(somaServico.ToString());                     //14
 
+            if (listaServico1 != null) {
+                //Adiciona lista Servico1
+                listaVenda.AddRange(listaServico1);
+            }
             pdf = new TratamentoPDF(listaVenda);//Se quiser imprimir o pdf vazio, basta não enviar uma lista
             pdf.salvarPDF();
 
@@ -110,13 +120,17 @@ namespace FormularioGrafica {
         }
 
         private void comboBoxCor_Leave(object sender, EventArgs e) {
-            if (comboBoxServico.Text != "")
-                labelTotal.Text = "Total:R$ " + somaTotal().ToString();
+            if (comboBoxServico.Text != "") {
+                somaServico = somaTotal();
+                labelTotal.Text = "Total:R$ " + somaServico.ToString();
+            }
         }
 
         private void numericUpDownQuantidade_ValueChanged(object sender, EventArgs e) {
-            if (comboBoxServico.Text != "")
-                labelTotal.Text = "Total:R$ " + somaTotal().ToString();
+            if (comboBoxServico.Text != "") {
+                somaServico = somaTotal();
+                labelTotal.Text = "Total:R$ " + somaServico.ToString();
+            }
         }
 
         private void comboBoxServico_TextChanged(object sender, EventArgs e) {
@@ -125,8 +139,29 @@ namespace FormularioGrafica {
                 textBoxTamanhoX.Text = tabela.Rows[0][2].ToString();
                 textBoxTamanhoY.Text = tabela.Rows[0][3].ToString();
             }
-            if (comboBoxServico.Text != "")
-                labelTotal.Text = "Total:R$ " + somaTotal().ToString();
+            if (comboBoxServico.Text != "") {
+                somaServico = somaTotal();
+                labelTotal.Text = "Total:R$ " + somaServico.ToString();
+            }
+        }
+
+        private void buttonServico2_Click(object sender, EventArgs e) {
+            if (comboBoxServico.Text != "") {
+                listaServico1 = new List<string>();
+                //Adicionar a listade serviços
+                listaServico1.Add(comboBoxServico.Text);//15
+                listaServico1.Add(numericUpDownQuantidade.Value.ToString());//16
+                listaServico1.Add(textBoxTamanhoX.Text);//17
+                listaServico1.Add(textBoxTamanhoY.Text);//18
+                listaServico1.Add(somaServico.ToString());//19
+                //Resetar textos
+                comboBoxServico.SelectedItem = null;
+                textBoxTamanhoX.ResetText();
+                textBoxTamanhoY.ResetText();
+                numericUpDownQuantidade.Value = 1;
+                labelTotal.ResetText();
+            }
+
         }
 
         //private void imprimirPDF() {

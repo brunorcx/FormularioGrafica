@@ -620,7 +620,7 @@ namespace FormularioGrafica {
                 process.Close();
             }
             catch (IOException ex) {
-                MessageBox.Show("Error, não é possível restaurar!");
+                MessageBox.Show("Erro, não é possível restaurar!");
             }
         }
     }

@@ -71,6 +71,9 @@
             this.comboBoxDimensoes = new System.Windows.Forms.ComboBox();
             this.labelTotal = new System.Windows.Forms.Label();
             this.numericUpDownQuantidade = new System.Windows.Forms.NumericUpDown();
+            this.buttonServico2 = new System.Windows.Forms.Button();
+            this.buttonServico3 = new System.Windows.Forms.Button();
+            this.buttonServico4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantidade)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,9 +127,9 @@
             this.label11.Font = new System.Drawing.Font("Constantia", 12F);
             this.label11.Location = new System.Drawing.Point(14, 377);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(78, 19);
+            this.label11.Size = new System.Drawing.Size(89, 19);
             this.label11.TabIndex = 58;
-            this.label11.Text = "Endereço:";
+            this.label11.Text = "SomaTotal:";
             // 
             // textBox5
             // 
@@ -134,6 +137,7 @@
             this.textBox5.Font = new System.Drawing.Font("Constantia", 12F);
             this.textBox5.Location = new System.Drawing.Point(98, 374);
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(599, 27);
             this.textBox5.TabIndex = 57;
             // 
@@ -509,13 +513,13 @@
             // 
             // label21
             // 
-            this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Constantia", 12F);
-            this.label21.Location = new System.Drawing.Point(224, 258);
+            this.label21.Location = new System.Drawing.Point(238, 258);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(38, 19);
             this.label21.TabIndex = 44;
             this.label21.Text = "Cor:";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // comboBoxCor
             // 
@@ -588,7 +592,7 @@
             // 
             this.labelTotal.AutoSize = true;
             this.labelTotal.Font = new System.Drawing.Font("Constantia", 12F);
-            this.labelTotal.Location = new System.Drawing.Point(468, 258);
+            this.labelTotal.Location = new System.Drawing.Point(610, 258);
             this.labelTotal.Name = "labelTotal";
             this.labelTotal.Size = new System.Drawing.Size(80, 19);
             this.labelTotal.TabIndex = 70;
@@ -604,13 +608,62 @@
             this.numericUpDownQuantidade.TabIndex = 71;
             this.numericUpDownQuantidade.ValueChanged += new System.EventHandler(this.numericUpDownQuantidade_ValueChanged);
             // 
+            // buttonServico2
+            // 
+            this.buttonServico2.AutoSize = true;
+            this.buttonServico2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonServico2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonServico2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonServico2.Font = new System.Drawing.Font("Constantia", 8F);
+            this.buttonServico2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.buttonServico2.Location = new System.Drawing.Point(415, 255);
+            this.buttonServico2.Name = "buttonServico2";
+            this.buttonServico2.Size = new System.Drawing.Size(61, 25);
+            this.buttonServico2.TabIndex = 101;
+            this.buttonServico2.Text = "Serviço 2";
+            this.buttonServico2.UseVisualStyleBackColor = false;
+            this.buttonServico2.Click += new System.EventHandler(this.buttonServico2_Click);
+            // 
+            // buttonServico3
+            // 
+            this.buttonServico3.AutoSize = true;
+            this.buttonServico3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonServico3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonServico3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonServico3.Font = new System.Drawing.Font("Constantia", 8F);
+            this.buttonServico3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.buttonServico3.Location = new System.Drawing.Point(480, 255);
+            this.buttonServico3.Name = "buttonServico3";
+            this.buttonServico3.Size = new System.Drawing.Size(61, 25);
+            this.buttonServico3.TabIndex = 102;
+            this.buttonServico3.Text = "Serviço 3";
+            this.buttonServico3.UseVisualStyleBackColor = false;
+            // 
+            // buttonServico4
+            // 
+            this.buttonServico4.AutoSize = true;
+            this.buttonServico4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonServico4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonServico4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonServico4.Font = new System.Drawing.Font("Constantia", 8F);
+            this.buttonServico4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.buttonServico4.Location = new System.Drawing.Point(545, 255);
+            this.buttonServico4.Name = "buttonServico4";
+            this.buttonServico4.Size = new System.Drawing.Size(62, 25);
+            this.buttonServico4.TabIndex = 103;
+            this.buttonServico4.Text = "Serviço 4";
+            this.buttonServico4.UseVisualStyleBackColor = false;
+            // 
             // Pagina1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.Controls.Add(this.numericUpDownQuantidade);
             this.Controls.Add(this.labelTotal);
+            this.Controls.Add(this.buttonServico4);
+            this.Controls.Add(this.buttonServico3);
+            this.Controls.Add(this.buttonServico2);
+            this.Controls.Add(this.numericUpDownQuantidade);
             this.Controls.Add(this.comboBoxDimensoes);
             this.Controls.Add(this.checkBoxSAplicacao);
             this.Controls.Add(this.buttonFinaliza);
@@ -716,5 +769,8 @@
         private System.Windows.Forms.ComboBox comboBoxDimensoes;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.NumericUpDown numericUpDownQuantidade;
+        private System.Windows.Forms.Button buttonServico2;
+        private System.Windows.Forms.Button buttonServico3;
+        private System.Windows.Forms.Button buttonServico4;
     }
 }
