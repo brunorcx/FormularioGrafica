@@ -638,6 +638,7 @@
             this.buttonServico3.TabIndex = 102;
             this.buttonServico3.Text = "Serviço 3";
             this.buttonServico3.UseVisualStyleBackColor = false;
+            this.buttonServico3.Click += new System.EventHandler(this.buttonServico3_Click);
             // 
             // buttonServico4
             // 
@@ -653,6 +654,7 @@
             this.buttonServico4.TabIndex = 103;
             this.buttonServico4.Text = "Serviço 4";
             this.buttonServico4.UseVisualStyleBackColor = false;
+            this.buttonServico4.Click += new System.EventHandler(this.buttonServico4_Click);
             // 
             // Pagina1
             // 

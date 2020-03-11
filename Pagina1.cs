@@ -18,6 +18,8 @@ namespace FormularioGrafica {
         private TratamentoPDF pdf;
         private decimal somaServico;
         private List<string> listaServico1;
+        private List<string> listaServico2;
+        private List<string> listaServico3;
 
         public Pagina1() {
             InitializeComponent();
@@ -92,6 +94,12 @@ namespace FormularioGrafica {
             if (listaServico1 != null) {
                 //Adiciona lista Servico1
                 listaVenda.AddRange(listaServico1);
+                if (listaServico2 != null) {
+                    listaVenda.AddRange(listaServico2);
+                    if (listaServico3 != null) {
+                        listaVenda.AddRange(listaServico3);
+                    }
+                }
             }
             pdf = new TratamentoPDF(listaVenda);//Se quiser imprimir o pdf vazio, basta não enviar uma lista
             pdf.salvarPDF();
@@ -160,11 +168,65 @@ namespace FormularioGrafica {
                 textBoxTamanhoY.ResetText();
                 numericUpDownQuantidade.Value = 1;
                 labelTotal.ResetText();
+
+                MessageBox.Show("Primeiro serviço salvo com sucesso!");
             }
 
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e) {
+        }
+
+        private void buttonServico3_Click(object sender, EventArgs e) {
+            if (comboBoxServico.Text != "") {
+                if (listaServico1 == null) {
+                    MessageBox.Show("Por favor, preencha o serviço 2.");
+                }
+                else {
+                    listaServico2 = new List<string>();
+                    //Adicionar a listade serviços
+                    listaServico2.Add(comboBoxServico.Text);//20
+                    listaServico2.Add(numericUpDownQuantidade.Value.ToString());//21
+                    listaServico2.Add(textBoxTamanhoX.Text);//22
+                    listaServico2.Add(textBoxTamanhoY.Text);//23
+                    listaServico2.Add(somaServico.ToString());//24
+                    //Resetar textos
+                    comboBoxServico.SelectedItem = null;
+                    textBoxTamanhoX.ResetText();
+                    textBoxTamanhoY.ResetText();
+                    numericUpDownQuantidade.Value = 1;
+                    labelTotal.ResetText();
+
+                    MessageBox.Show("Segundo serviço salvo com sucesso!");
+
+                }
+            }
+        }
+
+        private void buttonServico4_Click(object sender, EventArgs e) {
+            if (comboBoxServico.Text != "") {
+                if (listaServico2 == null) {
+                    MessageBox.Show("Por favor, preencha o serviço 3.");
+                }
+                else {
+                    listaServico3 = new List<string>();
+                    //Adicionar a listade serviços
+                    listaServico3.Add(comboBoxServico.Text);//20
+                    listaServico3.Add(numericUpDownQuantidade.Value.ToString());//21
+                    listaServico3.Add(textBoxTamanhoX.Text);//22
+                    listaServico3.Add(textBoxTamanhoY.Text);//23
+                    listaServico3.Add(somaServico.ToString());//24
+                    //Resetar textos
+                    comboBoxServico.SelectedItem = null;
+                    textBoxTamanhoX.ResetText();
+                    textBoxTamanhoY.ResetText();
+                    numericUpDownQuantidade.Value = 1;
+                    labelTotal.ResetText();
+
+                    MessageBox.Show("Terceiro serviço salvo com sucesso!");
+
+                }
+            }
         }
 
         //private void imprimirPDF() {

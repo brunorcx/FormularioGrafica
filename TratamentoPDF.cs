@@ -141,12 +141,12 @@ namespace FormularioGrafica {
                 row.Cells[0].AddParagraph("\nVias\t1º\t2º\t3º\t4º\tTAMANHO:" + listaString[17] + "x" + listaString[18]);
                 if (listaString.Count > 20) {//Serviço 3
                     row.Cells[0].AddParagraph("\nSERVIÇO: " + listaString[20]);
-                    row.Cells[7].AddParagraph("\n\nQUANTIDADE:" + listaString[21]);
+                    row.Cells[7].AddParagraph("\n\n\nQUANTIDADE:" + listaString[21]);
                     row.Cells[0].AddParagraph("\nVias\t1º\t2º\t3º\t4º\tTAMANHO:" + listaString[22] + "x" + listaString[23]);
                 }
                 if (listaString.Count > 25) {//Serviço 4
                     row.Cells[0].AddParagraph("\nSERVIÇO: " + listaString[25]);
-                    row.Cells[7].AddParagraph("\n\nQUANTIDADE:" + listaString[26]);
+                    row.Cells[7].AddParagraph("\n\n\nQUANTIDADE:" + listaString[26]);
                     row.Cells[0].AddParagraph("\nVias\t1º\t2º\t3º\t4º\tTAMANHO:" + listaString[27] + "x" + listaString[28]);
                 }
             }
