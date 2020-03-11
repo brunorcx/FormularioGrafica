@@ -38,8 +38,10 @@
             this.pagina31 = new FormularioGrafica.Pagina3();
             this.pagina21 = new FormularioGrafica.Pagina2();
             this.pagina11 = new FormularioGrafica.Pagina1();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox7
@@ -69,7 +71,7 @@
             this.button4.Font = new System.Drawing.Font("Constantia", 11F);
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(3, 336);
+            this.button4.Location = new System.Drawing.Point(3, 345);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(146, 75);
             this.button4.TabIndex = 35;
@@ -115,7 +117,6 @@
             // 
             // button1
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Constantia", 11F);
             this.button1.ForeColor = System.Drawing.Color.White;
@@ -189,6 +190,7 @@
             this.pagina41.Location = new System.Drawing.Point(149, 0);
             this.pagina41.Margin = new System.Windows.Forms.Padding(0);
             this.pagina41.Name = "pagina41";
+            this.pagina41.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.pagina41.Size = new System.Drawing.Size(1211, 728);
             this.pagina41.TabIndex = 36;
             // 
@@ -201,6 +203,7 @@
             this.pagina31.Location = new System.Drawing.Point(149, 0);
             this.pagina31.Margin = new System.Windows.Forms.Padding(0);
             this.pagina31.Name = "pagina31";
+            this.pagina31.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.pagina31.Size = new System.Drawing.Size(1211, 728);
             this.pagina31.TabIndex = 35;
             // 
@@ -213,6 +216,7 @@
             this.pagina21.Location = new System.Drawing.Point(149, 0);
             this.pagina21.Margin = new System.Windows.Forms.Padding(0);
             this.pagina21.Name = "pagina21";
+            this.pagina21.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.pagina21.Size = new System.Drawing.Size(1211, 728);
             this.pagina21.TabIndex = 34;
             // 
@@ -225,8 +229,19 @@
             this.pagina11.Location = new System.Drawing.Point(149, 0);
             this.pagina11.Margin = new System.Windows.Forms.Padding(0);
             this.pagina11.Name = "pagina11";
+            this.pagina11.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.pagina11.Size = new System.Drawing.Size(1211, 728);
             this.pagina11.TabIndex = 33;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Location = new System.Drawing.Point(149, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1, 728);
+            this.pictureBox1.TabIndex = 101;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -235,6 +250,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1360, 728);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonMinimizar);
             this.Controls.Add(this.buttonFechar);
             this.Controls.Add(this.pagina41);
@@ -242,6 +258,7 @@
             this.Controls.Add(this.pagina21);
             this.Controls.Add(this.pagina11);
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -252,6 +269,7 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -271,6 +289,7 @@
         private Pagina4 pagina41;
         private System.Windows.Forms.Button buttonFechar;
         private System.Windows.Forms.Button buttonMinimizar;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

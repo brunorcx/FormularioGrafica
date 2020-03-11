@@ -25,8 +25,10 @@ namespace FormularioGrafica {
             pagina41.Hide();
 
             //Troca a cor dos icones
-            button1.Image = Properties.Resources.online_store_30px_white;
-            button2.Image = Properties.Resources.clipboard_30px_yellow;
+            button1.Image = Properties.Resources.online_store_30px_yellow;
+            button2.Image = Properties.Resources.clipboard_30px_white;
+            button3.Image = Properties.Resources.clipboard_30px_white;
+            button3.Image = Properties.Resources.clipboard_30px_white;
 
             WindowState = FormWindowState.Maximized;
 
@@ -48,8 +50,15 @@ namespace FormularioGrafica {
             pagina41.Hide();
 
             //Troca a cor dos icones
-            button1.Image = Properties.Resources.online_store_30px_white;
-            button2.Image = Properties.Resources.clipboard_30px_yellow;
+            button1.Image = Properties.Resources.online_store_30px_yellow;
+            button2.Image = Properties.Resources.clipboard_30px_white;
+            button3.Image = Properties.Resources.clipboard_30px_white;
+            button3.Image = Properties.Resources.clipboard_30px_white;
+            //Mostrar borda
+            button1.FlatAppearance.BorderSize = 1;
+            button2.FlatAppearance.BorderSize = 0;
+            button3.FlatAppearance.BorderSize = 0;
+            button4.FlatAppearance.BorderSize = 0;
         }
 
         private void button2_Click(object sender, EventArgs e) {
@@ -63,8 +72,15 @@ namespace FormularioGrafica {
             pagina41.Hide();
 
             //Troca a cor dos icones
-            button1.Image = Properties.Resources.online_store_30px_yellow;
-            button2.Image = Properties.Resources.clipboard_30px_white;
+            button1.Image = Properties.Resources.online_store_30px_white;
+            button2.Image = Properties.Resources.clipboard_30px_yellow;
+            button3.Image = Properties.Resources.clipboard_30px_white;
+            button3.Image = Properties.Resources.clipboard_30px_white;
+            //Mostrar borda
+            button1.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.BorderSize = 1;
+            button3.FlatAppearance.BorderSize = 0;
+            button4.FlatAppearance.BorderSize = 0;
         }
 
         private void button3_Click(object sender, EventArgs e) {
@@ -78,8 +94,15 @@ namespace FormularioGrafica {
             pagina41.Hide();
 
             //Troca a cor dos icones
-            button1.Image = Properties.Resources.online_store_30px_yellow;
-            button2.Image = Properties.Resources.clipboard_30px_yellow;
+            button1.Image = Properties.Resources.online_store_30px_white;
+            button2.Image = Properties.Resources.clipboard_30px_white;
+            button3.Image = Properties.Resources.clipboard_30px_yellow;
+
+            //Mostrar borda
+            button1.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.BorderSize = 0;
+            button3.FlatAppearance.BorderSize = 1;
+            button4.FlatAppearance.BorderSize = 0;
         }
 
         private void button4_Click(object sender, EventArgs e) {
@@ -93,8 +116,15 @@ namespace FormularioGrafica {
             pagina41.Show();
 
             //Troca a cor dos icones
-            button1.Image = Properties.Resources.online_store_30px_yellow;
-            button2.Image = Properties.Resources.clipboard_30px_yellow;
+            button1.Image = Properties.Resources.online_store_30px_white;
+            button2.Image = Properties.Resources.clipboard_30px_white;
+            button3.Image = Properties.Resources.clipboard_30px_white;
+
+            //Mostrar borda
+            button1.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.BorderSize = 0;
+            button3.FlatAppearance.BorderSize = 0;
+            button4.FlatAppearance.BorderSize = 1;
         }
 
         private void buttonMinimizar_Click(object sender, EventArgs e) {

@@ -155,6 +155,7 @@ namespace FormularioGrafica {
             if (comboBoxServico.Text != "") {
                 somaServico = somaTotal();
                 labelTotal.Text = "Total:R$ " + somaServico.ToString();
+                labelSomaTotal.Text = "Soma Total:R$ " + somaServicoTotal.ToString();
             }
         }
 
@@ -176,6 +177,7 @@ namespace FormularioGrafica {
                 //Salvar os preços
                 somaServicoTotal += somaServico;
 
+                labelSomaTotal.Text = "Soma Total:R$ " + somaServicoTotal.ToString();
                 MessageBox.Show("Primeiro serviço salvo com sucesso!");
             }
 
@@ -206,6 +208,7 @@ namespace FormularioGrafica {
                     //Salvar os preços
                     somaServicoTotal += somaServico;
 
+                    labelSomaTotal.Text = "Soma Total:R$ " + somaServicoTotal.ToString();
                     MessageBox.Show("Segundo serviço salvo com sucesso!");
 
                 }
@@ -234,6 +237,7 @@ namespace FormularioGrafica {
                     //Salvar os preços
                     somaServicoTotal += somaServico;
 
+                    labelSomaTotal.Text = "Soma Total:R$ " + somaServicoTotal.ToString();
                     MessageBox.Show("Terceiro serviço salvo com sucesso!");
 
                 }
@@ -241,7 +245,6 @@ namespace FormularioGrafica {
         }
 
         private void dateTimePickerEntrada_ValueChanged(object sender, EventArgs e) {
-
         }
 
         //private void imprimirPDF() {
