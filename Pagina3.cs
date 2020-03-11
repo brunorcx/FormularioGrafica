@@ -50,6 +50,7 @@ namespace FormularioGrafica {
             textBoxNovoPreco.Hide();
             textBoxNTamanhoX.Hide();
             textBoxNTamanhoY.Hide();
+            pictureBox2.Hide();
 
             nome = textBoxNomeRegistro.Text.Trim();
             preco = textBoxPrecoRegistro.Text.Replace(',', '.').Replace(" ", string.Empty);// Aceitar vírgulas
@@ -74,6 +75,7 @@ namespace FormularioGrafica {
             textBoxNovoPreco.Hide();
             textBoxNTamanhoX.Hide();
             textBoxNTamanhoY.Hide();
+            pictureBox2.Hide();
 
             nome = textBoxNomeRegistro.Text.Trim();
             preco = textBoxPrecoRegistro.Text.Replace(',', '.').Replace(" ", string.Empty);// Aceitar vírgulas
@@ -98,6 +100,7 @@ namespace FormularioGrafica {
             textBoxNovoPreco.Hide();
             textBoxNTamanhoX.Hide();
             textBoxNTamanhoY.Hide();
+            pictureBox2.Hide();
 
             nome = textBoxNomeRegistro.Text.Trim();
             preco = textBoxPrecoRegistro.Text.Replace(',', '.').Replace(" ", string.Empty);// Aceitar vírgulas
@@ -126,6 +129,7 @@ namespace FormularioGrafica {
             textBoxNovoPreco.Show();
             textBoxNTamanhoX.Show();
             textBoxNTamanhoY.Show();
+            pictureBox2.Show();
 
             List<string> dadosNovos = new List<string>();
             List<string> dadosAtuais = new List<string>();

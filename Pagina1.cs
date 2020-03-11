@@ -240,6 +240,10 @@ namespace FormularioGrafica {
             }
         }
 
+        private void dateTimePickerEntrada_ValueChanged(object sender, EventArgs e) {
+
+        }
+
         //private void imprimirPDF() {
         //    ProcessStartInfo startInfo = new ProcessStartInfo();
         //    startInfo.FileName = "SumatraPDF.exe";

@@ -38,6 +38,7 @@ namespace FormularioGrafica {
             textBoxNovoCPF.Hide();
             textBoxNovoNome.Hide();
             textBoxNovoTelefone.Hide();
+            pictureBox2.Hide();
 
             nome = textBoxNome.Text.Trim();
             CPF = textBoxCPF.Text.Replace(" ", string.Empty);
@@ -60,6 +61,7 @@ namespace FormularioGrafica {
             textBoxNovoCPF.Hide();
             textBoxNovoNome.Hide();
             textBoxNovoTelefone.Hide();
+            pictureBox2.Hide();
 
             nome = textBoxNome.Text.Trim();
             CPF = textBoxCPF.Text.Replace(" ", string.Empty);
@@ -83,6 +85,7 @@ namespace FormularioGrafica {
             textBoxNovoCPF.Hide();
             textBoxNovoNome.Hide();
             textBoxNovoTelefone.Hide();
+            pictureBox2.Hide();
 
             nome = textBoxNome.Text.Trim();
             CPF = textBoxCPF.Text.Replace(" ", string.Empty);
@@ -106,6 +109,7 @@ namespace FormularioGrafica {
             textBoxNovoCPF.Show();
             textBoxNovoNome.Show();
             textBoxNovoTelefone.Show();
+            pictureBox2.Show();
 
             string novoNome;
             string novoCPF;
