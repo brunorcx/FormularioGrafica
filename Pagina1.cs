@@ -20,6 +20,7 @@ namespace FormularioGrafica {
         private List<string> listaServico1;
         private List<string> listaServico2;
         private List<string> listaServico3;
+        private decimal somaServicoTotal;
 
         public Pagina1() {
             InitializeComponent();
@@ -101,6 +102,10 @@ namespace FormularioGrafica {
                     }
                 }
             }
+            //Salvar os preços
+            somaServicoTotal += somaServico;
+            listaVenda.Add(somaServicoTotal.ToString());
+
             pdf = new TratamentoPDF(listaVenda);//Se quiser imprimir o pdf vazio, basta não enviar uma lista
             pdf.salvarPDF();
 
@@ -168,6 +173,8 @@ namespace FormularioGrafica {
                 textBoxTamanhoY.ResetText();
                 numericUpDownQuantidade.Value = 1;
                 labelTotal.ResetText();
+                //Salvar os preços
+                somaServicoTotal += somaServico;
 
                 MessageBox.Show("Primeiro serviço salvo com sucesso!");
             }
@@ -196,6 +203,8 @@ namespace FormularioGrafica {
                     textBoxTamanhoY.ResetText();
                     numericUpDownQuantidade.Value = 1;
                     labelTotal.ResetText();
+                    //Salvar os preços
+                    somaServicoTotal += somaServico;
 
                     MessageBox.Show("Segundo serviço salvo com sucesso!");
 
@@ -211,17 +220,19 @@ namespace FormularioGrafica {
                 else {
                     listaServico3 = new List<string>();
                     //Adicionar a listade serviços
-                    listaServico3.Add(comboBoxServico.Text);//20
-                    listaServico3.Add(numericUpDownQuantidade.Value.ToString());//21
-                    listaServico3.Add(textBoxTamanhoX.Text);//22
-                    listaServico3.Add(textBoxTamanhoY.Text);//23
-                    listaServico3.Add(somaServico.ToString());//24
+                    listaServico3.Add(comboBoxServico.Text);//25
+                    listaServico3.Add(numericUpDownQuantidade.Value.ToString());//26
+                    listaServico3.Add(textBoxTamanhoX.Text);//27
+                    listaServico3.Add(textBoxTamanhoY.Text);//28
+                    listaServico3.Add(somaServico.ToString());//29
                     //Resetar textos
                     comboBoxServico.SelectedItem = null;
                     textBoxTamanhoX.ResetText();
                     textBoxTamanhoY.ResetText();
                     numericUpDownQuantidade.Value = 1;
                     labelTotal.ResetText();
+                    //Salvar os preços
+                    somaServicoTotal += somaServico;
 
                     MessageBox.Show("Terceiro serviço salvo com sucesso!");
 
