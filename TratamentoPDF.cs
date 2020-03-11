@@ -133,35 +133,30 @@ namespace FormularioGrafica {
             //VERIFICAR O LIMITE DO NOME DO SERVIÇO E MUDAR MAXIUM LENGTH NO TEXTBOX
             //Serviço 1]
             cell.AddParagraph("SERVIÇO: " + listaString[5]);
-            row.Cells[7].AddParagraph("QUANTIDADE:" + listaString[13]);
-            //cell.AddParagraph("\t\tQUANTIDADE:" + listaString[13]);
+            row.Cells[7].AddParagraph("QUANTIDADE:" + listaString[13]).Format.Alignment = ParagraphAlignment.Center;
             cell.AddParagraph("Vias\t1º\t2º\t3º\t4º\tTAMANHO:" + listaString[11] + "x" + listaString[12]);
+            row.Cells[8].AddParagraph("\t" + listaString[10].Replace("Total:R$ ", "R$") + "\n\n\n");
             if (listaString.Count > 16) {  //Serviço 2
                 row.Cells[0].AddParagraph("\nSERVIÇO: " + listaString[15]);
-                row.Cells[7].AddParagraph("\n\nQUANTIDADE:" + listaString[16]);
+                row.Cells[7].AddParagraph("\n\nQUANTIDADE:" + listaString[16]).Format.Alignment = ParagraphAlignment.Center;
                 row.Cells[0].AddParagraph("\nVias\t1º\t2º\t3º\t4º\tTAMANHO:" + listaString[17] + "x" + listaString[18]);
-                row.Cells[9].AddParagraph("R$" + listaString[19] + "\n\n");
+                row.Cells[8].AddParagraph("\tR$" + listaString[19] + "\n\n\n");
                 if (listaString.Count > 21) {//Serviço 3
                     row.Cells[0].AddParagraph("\nSERVIÇO: " + listaString[20]);
-                    row.Cells[7].AddParagraph("\n\n\nQUANTIDADE:" + listaString[21]);
+                    row.Cells[7].AddParagraph("\n\n\nQUANTIDADE:" + listaString[21]).Format.Alignment = ParagraphAlignment.Center;
                     row.Cells[0].AddParagraph("\nVias\t1º\t2º\t3º\t4º\tTAMANHO:" + listaString[22] + "x" + listaString[23]);
-                    row.Cells[9].AddParagraph("R$" + listaString[24] + "\n\n\n");
-
+                    row.Cells[8].AddParagraph("\n\tR$" + listaString[24] + "\n\n\n");
                 }
                 if (listaString.Count > 26) {//Serviço 4
                     row.Cells[0].AddParagraph("\nSERVIÇO: " + listaString[25]);
-                    row.Cells[7].AddParagraph("\n\n\nQUANTIDADE:" + listaString[26]);
+                    row.Cells[7].AddParagraph("\n\n\nQUANTIDADE:" + listaString[26]).Format.Alignment = ParagraphAlignment.Center;
                     row.Cells[0].AddParagraph("\nVias\t1º\t2º\t3º\t4º\tTAMANHO:" + listaString[27] + "x" + listaString[28]);
-                    row.Cells[9].AddParagraph("R$" + listaString[29]);
+                    row.Cells[8].AddParagraph("\n\tR$" + listaString[29]);
                 }
             }
-            cell = row.Cells[9];
-            // Preço do serviço
-            cell.AddParagraph(listaString[10].Replace("Total:R$ ", "R$")).Format.Alignment = ParagraphAlignment.Left;
-            cell = row.Cells[7];
 
             row.Cells[0].MergeRight = 6;
-            row.Cells[7].MergeRight = 1;
+            row.Cells[8].MergeRight = 1;
             row.Cells[9].Borders.Right.Color = Colors.DarkRed;
 
             //Linha 3
@@ -211,7 +206,7 @@ namespace FormularioGrafica {
             paragraph.Format.Borders.Bottom.Color = Colors.DarkRed;
             cell.Add(paragraph);
             cell = row.Cells[8];
-            cell.AddParagraph(listaString[listaString.Count - 1].ToUpper());
+            cell.AddParagraph("\nTOTAL: R$" + listaString[listaString.Count - 1].ToUpper()).Format.Alignment = ParagraphAlignment.Center;
             row.Cells[0].MergeRight = 7;
             row.Cells[8].MergeRight = 1;
 
