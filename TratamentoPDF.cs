@@ -125,32 +125,38 @@ namespace FormularioGrafica {
 
             //Linha 2
             row = table.AddRow();
+            row.Borders.Right.Clear();
             row.Height = 296;
             cell = row.Cells[0];
             //COLOCAR QUANTIDADE EM OUTRA COLUNA
             //VERIFICAR O LIMITE DO NOME DO SERVIÇO E MUDAR MAXIUM LENGTH NO TEXTBOX
             //Serviço 1]
             cell.AddParagraph("SERVIÇO: " + listaString[5]);
-            cell.AddParagraph("\t\tQUANTIDADE:" + listaString[13]);
-            cell.AddParagraph("\nVias\t1º\t2º\t3º\t4º\tTAMANHO:" + listaString[11] + "x" + listaString[12]);
+            row.Cells[7].AddParagraph("QUANTIDADE:" + listaString[13]);
+            //cell.AddParagraph("\t\tQUANTIDADE:" + listaString[13]);
+            cell.AddParagraph("Vias\t1º\t2º\t3º\t4º\tTAMANHO:" + listaString[11] + "x" + listaString[12]);
             if (listaString.Count > 15) {  //Serviço 2
-                cell.AddParagraph("\nSERVIÇO: " + listaString[15]);
-                cell.AddParagraph("\t\tQUANTIDADE:" + listaString[16]);
-                cell.AddParagraph("\nVias\t1º\t2º\t3º\t4º\tTAMANHO:" + listaString[17] + "x" + listaString[18]);
+                row.Cells[0].AddParagraph("\nSERVIÇO: " + listaString[15]);
+                row.Cells[7].AddParagraph("\n\nQUANTIDADE:" + listaString[16]);
+                row.Cells[0].AddParagraph("\nVias\t1º\t2º\t3º\t4º\tTAMANHO:" + listaString[17] + "x" + listaString[18]);
                 if (listaString.Count > 20) {//Serviço 3
-                    cell.AddParagraph("\nSERVIÇO: " + listaString[20]);
-                    cell.AddParagraph("\t\tQUANTIDADE:" + listaString[21]);
-                    cell.AddParagraph("\nVias\t1º\t2º\t3º\t4º\tTAMANHO:" + listaString[22] + "x" + listaString[23]);
+                    row.Cells[0].AddParagraph("\nSERVIÇO: " + listaString[20]);
+                    row.Cells[7].AddParagraph("\n\nQUANTIDADE:" + listaString[21]);
+                    row.Cells[0].AddParagraph("\nVias\t1º\t2º\t3º\t4º\tTAMANHO:" + listaString[22] + "x" + listaString[23]);
                 }
                 if (listaString.Count > 25) {//Serviço 4
-                    cell.AddParagraph("\nSERVIÇO: " + listaString[25]);
-                    cell.AddParagraph("\t\tQUANTIDADE:" + listaString[26]);
-                    cell.AddParagraph("\nVias\t1º\t2º\t3º\t4º\tTAMANHO:" + listaString[27] + "x" + listaString[28]);
+                    row.Cells[0].AddParagraph("\nSERVIÇO: " + listaString[25]);
+                    row.Cells[7].AddParagraph("\n\nQUANTIDADE:" + listaString[26]);
+                    row.Cells[0].AddParagraph("\nVias\t1º\t2º\t3º\t4º\tTAMANHO:" + listaString[27] + "x" + listaString[28]);
                 }
             }
             cell = row.Cells[9];
             cell.AddParagraph("R$100,00").Format.Alignment = ParagraphAlignment.Center;
-            row.Cells[0].MergeRight = 8;
+            cell = row.Cells[7];
+
+            row.Cells[0].MergeRight = 6;
+            row.Cells[7].MergeRight = 1;
+            row.Cells[9].Borders.Right.Color = Colors.DarkRed;
 
             //Linha 3
             row = table.AddRow();
