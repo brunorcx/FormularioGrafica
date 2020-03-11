@@ -98,6 +98,7 @@ namespace FormularioGrafica {
             row.Height = 70;
 
             Cell cell = row.Cells[0];
+            cell.AddImage("../../Resources/imagens/CabecalhoForbras.png");
             cell.AddParagraph("ENTRADA: " + listaString[0] + "\t\tENTREGA: " + listaString[1]); //113 caracteres
             cell.VerticalAlignment = VerticalAlignment.Bottom;
             cell = row.Cells[9];
