@@ -582,14 +582,13 @@
             // buttonProxServico
             // 
             this.buttonProxServico.AutoSize = true;
-            this.buttonProxServico.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonProxServico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.buttonProxServico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProxServico.Font = new System.Drawing.Font("Constantia", 8F);
+            this.buttonProxServico.Font = new System.Drawing.Font("Constantia", 9F);
             this.buttonProxServico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.buttonProxServico.Location = new System.Drawing.Point(510, 208);
+            this.buttonProxServico.Location = new System.Drawing.Point(519, 201);
             this.buttonProxServico.Name = "buttonProxServico";
-            this.buttonProxServico.Size = new System.Drawing.Size(96, 25);
+            this.buttonProxServico.Size = new System.Drawing.Size(103, 27);
             this.buttonProxServico.TabIndex = 101;
             this.buttonProxServico.Text = "Próximo Serviço";
             this.buttonProxServico.UseVisualStyleBackColor = false;
@@ -598,14 +597,13 @@
             // buttonAntServico
             // 
             this.buttonAntServico.AutoSize = true;
-            this.buttonAntServico.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonAntServico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.buttonAntServico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAntServico.Font = new System.Drawing.Font("Constantia", 8F);
+            this.buttonAntServico.Font = new System.Drawing.Font("Constantia", 9F);
             this.buttonAntServico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.buttonAntServico.Location = new System.Drawing.Point(409, 207);
+            this.buttonAntServico.Location = new System.Drawing.Point(409, 201);
             this.buttonAntServico.Name = "buttonAntServico";
-            this.buttonAntServico.Size = new System.Drawing.Size(95, 25);
+            this.buttonAntServico.Size = new System.Drawing.Size(104, 27);
             this.buttonAntServico.TabIndex = 102;
             this.buttonAntServico.Text = "Serviço Anterior";
             this.buttonAntServico.UseVisualStyleBackColor = false;
@@ -633,7 +631,7 @@
             // 
             this.labelNumServico.AutoSize = true;
             this.labelNumServico.Font = new System.Drawing.Font("Constantia", 12F);
-            this.labelNumServico.Location = new System.Drawing.Point(617, 208);
+            this.labelNumServico.Location = new System.Drawing.Point(625, 209);
             this.labelNumServico.Name = "labelNumServico";
             this.labelNumServico.Size = new System.Drawing.Size(73, 19);
             this.labelNumServico.TabIndex = 106;

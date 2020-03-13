@@ -151,6 +151,22 @@ namespace FormularioGrafica {
                 pdf = new TratamentoPDF(listaVenda);//Se quiser imprimir o pdf vazio, basta não enviar uma lista
                 pdf.salvarPDF();
             }
+            //Resetar todas as listas
+            listaServico1.Clear();
+            listaServico2.Clear();
+            listaServico3.Clear();
+            listaServico4.Clear();
+
+            //Resetar controlador de número de serviços
+            numServicos = 0;
+
+            //Resetar textos
+            labelNumServico.Text = "Serviço: 1";
+            comboBoxServico.SelectedItem = null;
+            textBoxTamanhoX.ResetText();
+            textBoxTamanhoY.ResetText();
+            numericUpDownQuantidade.Value = 1;
+            labelTotal.Text = "Total:R$ 0";
         }
 
         private void textBoxCPF_Leave(object sender, EventArgs e) {
@@ -301,23 +317,6 @@ namespace FormularioGrafica {
         private void dateTimePickerEntrada_ValueChanged(object sender, EventArgs e) {
         }
 
-        //private void imprimirPDF() {
-        //    ProcessStartInfo startInfo = new ProcessStartInfo();
-        //    startInfo.FileName = "SumatraPDF.exe";
-        //    string args = string.Format("-print-to-default \"{0}\" -exit-when-done", "HelloWorld.pdf");
-        //    startInfo.Arguments = args;
-        //    startInfo.CreateNoWindow = true;
-        //    startInfo.ErrorDialog = false;
-        //    startInfo.UseShellExecute = false;
-        //    Process process = Process.Start(startInfo);
-        //    MessageBox.Show("Start Print.");
-        //    //process.Exited += process_Exited;
-        //    while (!process.HasExited) {
-        //        MessageBox.Show("Wait 1 Sec.");
-        //        process.WaitForExit(1000);
-        //    }
-        //    MessageBox.Show("Print Finish.");
-        //} Para adicionar o sumatra arrastar no FomularioGrafica(verde) e mudar para sempre output
         private int numeroServico(bool aumentar) {
             if (numServicos <= 3 && aumentar)
                 numServicos++;
@@ -340,11 +339,20 @@ namespace FormularioGrafica {
         }
 
         private void carregaServico(List<string> listaServico) {
-            comboBoxServico.Text = listaServico[0];
-            numericUpDownQuantidade.Value = int.Parse(listaServico[1]);
-            textBoxTamanhoX.Text = listaServico[2];
-            textBoxTamanhoY.Text = listaServico[3];
-            labelTotal.Text = "Total:R$ " + listaServico[4];
+            if (listaServico.Count == 0) {
+                comboBoxServico.SelectedItem = null;
+                textBoxTamanhoX.ResetText();
+                textBoxTamanhoY.ResetText();
+                numericUpDownQuantidade.Value = 1;
+                labelTotal.Text = "Total:R$ 0";
+            }
+            else {
+                comboBoxServico.Text = listaServico[0];
+                numericUpDownQuantidade.Value = int.Parse(listaServico[1]);
+                textBoxTamanhoX.Text = listaServico[2];
+                textBoxTamanhoY.Text = listaServico[3];
+                labelTotal.Text = "Total:R$ " + listaServico[4];
+            }
         }
     }
 }
