@@ -68,11 +68,11 @@
             this.comboBoxDimensoes = new System.Windows.Forms.ComboBox();
             this.labelTotal = new System.Windows.Forms.Label();
             this.numericUpDownQuantidade = new System.Windows.Forms.NumericUpDown();
-            this.buttonServico2 = new System.Windows.Forms.Button();
-            this.buttonServico3 = new System.Windows.Forms.Button();
-            this.buttonServico4 = new System.Windows.Forms.Button();
+            this.buttonProxServico = new System.Windows.Forms.Button();
+            this.buttonAntServico = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.labelNumServico = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -524,7 +524,7 @@
             this.textBoxDescricao.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBoxDescricao.BackColor = System.Drawing.SystemColors.MenuBar;
             this.textBoxDescricao.Font = new System.Drawing.Font("Constantia", 12F);
-            this.textBoxDescricao.Location = new System.Drawing.Point(98, 237);
+            this.textBoxDescricao.Location = new System.Drawing.Point(97, 234);
             this.textBoxDescricao.MaxLength = 110;
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.Size = new System.Drawing.Size(600, 27);
@@ -564,7 +564,7 @@
             // 
             this.labelTotal.AutoSize = true;
             this.labelTotal.Font = new System.Drawing.Font("Constantia", 12F);
-            this.labelTotal.Location = new System.Drawing.Point(610, 209);
+            this.labelTotal.Location = new System.Drawing.Point(15, 272);
             this.labelTotal.Name = "labelTotal";
             this.labelTotal.Size = new System.Drawing.Size(80, 19);
             this.labelTotal.TabIndex = 70;
@@ -580,53 +580,37 @@
             this.numericUpDownQuantidade.TabIndex = 71;
             this.numericUpDownQuantidade.ValueChanged += new System.EventHandler(this.numericUpDownQuantidade_ValueChanged);
             // 
-            // buttonServico2
+            // buttonProxServico
             // 
-            this.buttonServico2.AutoSize = true;
-            this.buttonServico2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonServico2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.buttonServico2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonServico2.Font = new System.Drawing.Font("Constantia", 8F);
-            this.buttonServico2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.buttonServico2.Location = new System.Drawing.Point(415, 204);
-            this.buttonServico2.Name = "buttonServico2";
-            this.buttonServico2.Size = new System.Drawing.Size(61, 25);
-            this.buttonServico2.TabIndex = 101;
-            this.buttonServico2.Text = "Serviço 2";
-            this.buttonServico2.UseVisualStyleBackColor = false;
-            this.buttonServico2.Click += new System.EventHandler(this.buttonServico2_Click);
+            this.buttonProxServico.AutoSize = true;
+            this.buttonProxServico.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonProxServico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonProxServico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProxServico.Font = new System.Drawing.Font("Constantia", 8F);
+            this.buttonProxServico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.buttonProxServico.Location = new System.Drawing.Point(510, 208);
+            this.buttonProxServico.Name = "buttonProxServico";
+            this.buttonProxServico.Size = new System.Drawing.Size(96, 25);
+            this.buttonProxServico.TabIndex = 101;
+            this.buttonProxServico.Text = "Próximo Serviço";
+            this.buttonProxServico.UseVisualStyleBackColor = false;
+            this.buttonProxServico.Click += new System.EventHandler(this.buttonProxServico_Click);
             // 
-            // buttonServico3
+            // buttonAntServico
             // 
-            this.buttonServico3.AutoSize = true;
-            this.buttonServico3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonServico3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.buttonServico3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonServico3.Font = new System.Drawing.Font("Constantia", 8F);
-            this.buttonServico3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.buttonServico3.Location = new System.Drawing.Point(480, 204);
-            this.buttonServico3.Name = "buttonServico3";
-            this.buttonServico3.Size = new System.Drawing.Size(61, 25);
-            this.buttonServico3.TabIndex = 102;
-            this.buttonServico3.Text = "Serviço 3";
-            this.buttonServico3.UseVisualStyleBackColor = false;
-            this.buttonServico3.Click += new System.EventHandler(this.buttonServico3_Click);
-            // 
-            // buttonServico4
-            // 
-            this.buttonServico4.AutoSize = true;
-            this.buttonServico4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonServico4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.buttonServico4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonServico4.Font = new System.Drawing.Font("Constantia", 8F);
-            this.buttonServico4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.buttonServico4.Location = new System.Drawing.Point(545, 206);
-            this.buttonServico4.Name = "buttonServico4";
-            this.buttonServico4.Size = new System.Drawing.Size(62, 25);
-            this.buttonServico4.TabIndex = 103;
-            this.buttonServico4.Text = "Serviço 4";
-            this.buttonServico4.UseVisualStyleBackColor = false;
-            this.buttonServico4.Click += new System.EventHandler(this.buttonServico4_Click);
+            this.buttonAntServico.AutoSize = true;
+            this.buttonAntServico.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonAntServico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonAntServico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAntServico.Font = new System.Drawing.Font("Constantia", 8F);
+            this.buttonAntServico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.buttonAntServico.Location = new System.Drawing.Point(409, 207);
+            this.buttonAntServico.Name = "buttonAntServico";
+            this.buttonAntServico.Size = new System.Drawing.Size(95, 25);
+            this.buttonAntServico.TabIndex = 102;
+            this.buttonAntServico.Text = "Serviço Anterior";
+            this.buttonAntServico.UseVisualStyleBackColor = false;
+            this.buttonAntServico.Click += new System.EventHandler(this.buttonAntServico_Click);
             // 
             // pictureBox1
             // 
@@ -646,15 +630,25 @@
             this.pictureBox2.TabIndex = 105;
             this.pictureBox2.TabStop = false;
             // 
+            // labelNumServico
+            // 
+            this.labelNumServico.AutoSize = true;
+            this.labelNumServico.Font = new System.Drawing.Font("Constantia", 12F);
+            this.labelNumServico.Location = new System.Drawing.Point(617, 208);
+            this.labelNumServico.Name = "labelNumServico";
+            this.labelNumServico.Size = new System.Drawing.Size(73, 19);
+            this.labelNumServico.TabIndex = 106;
+            this.labelNumServico.Text = "Serviço: 1";
+            // 
             // Pagina1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.Controls.Add(this.labelNumServico);
             this.Controls.Add(this.labelTotal);
-            this.Controls.Add(this.buttonServico4);
-            this.Controls.Add(this.buttonServico3);
-            this.Controls.Add(this.buttonServico2);
+            this.Controls.Add(this.buttonAntServico);
+            this.Controls.Add(this.buttonProxServico);
             this.Controls.Add(this.numericUpDownQuantidade);
             this.Controls.Add(this.comboBoxDimensoes);
             this.Controls.Add(this.checkBoxSAplicacao);
@@ -759,10 +753,10 @@
         private System.Windows.Forms.ComboBox comboBoxDimensoes;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.NumericUpDown numericUpDownQuantidade;
-        private System.Windows.Forms.Button buttonServico2;
-        private System.Windows.Forms.Button buttonServico3;
-        private System.Windows.Forms.Button buttonServico4;
+        private System.Windows.Forms.Button buttonProxServico;
+        private System.Windows.Forms.Button buttonAntServico;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label labelNumServico;
     }
 }
