@@ -84,50 +84,73 @@ namespace FormularioGrafica {
             listaVenda.Add(textBoxCliente.Text);                        //2
             listaVenda.Add(textBoxCPF.Text);                            //3
             listaVenda.Add(textBoxTelefone.Text);                       //4
-            listaVenda.Add(comboBoxServico.Text);                       //5
-            listaVenda.Add(checkBoxCAplicacao.Checked.ToString());      //6
-            listaVenda.Add(checkBoxSAplicacao.Checked.ToString());      //7
-            listaVenda.Add(checkBoxRAdesivo.Checked.ToString());        //8
-            listaVenda.Add(checkBoxRPlaca.Checked.ToString());          //9
-            listaVenda.Add(labelTotal.Text);                            //10
-            listaVenda.Add(textBoxTamanhoX.Text);                       //11
-            listaVenda.Add(textBoxTamanhoY.Text);                       //12
-            listaVenda.Add(numericUpDownQuantidade.Value.ToString());   //13
-            listaVenda.Add(somaServico.ToString());                     //14
-
-            if (listaServico1.Count != 0) {
-                //Adiciona lista Servico1
-                listaVenda.AddRange(listaServico1);
-                if (listaServico2.Count != 0) {
-                    listaVenda.AddRange(listaServico2);
-                    if (listaServico3.Count != 0) {
-                        listaVenda.AddRange(listaServico3);
-                        if (listaServico4.Count != 0) {
-                            listaVenda[5] = listaServico4[0];
-                            listaVenda[13] = listaServico4[1];
-                            listaVenda[11] = listaServico4[2];
-                            listaVenda[12] = listaServico4[3];
-                            listaVenda[14] = listaServico4[4];
-                        }
-                    }
+            listaVenda.Add(checkBoxCAplicacao.Checked.ToString());      //5
+            listaVenda.Add(checkBoxSAplicacao.Checked.ToString());      //6
+            listaVenda.Add(checkBoxRAdesivo.Checked.ToString());        //7
+            listaVenda.Add(checkBoxRPlaca.Checked.ToString());          //8
+            //Adicionar Serviços
+            if (comboBoxServico.Text == "")
+                MessageBox.Show("Por favor, selecione um serviço.");
+            else {
+                if (listaServico1.Count == 0) {
+                    listaServico1 = adicionaServico(listaServico1);
                 }
+                else if (listaServico2.Count == 0 && comboBoxServico.Text != listaServico1[0]) {
+                    listaServico2 = adicionaServico(listaServico2);
+                }
+                else if (listaServico3.Count == 0 && comboBoxServico.Text != listaServico1[0] && comboBoxServico.Text != listaServico2[0]) {
+                    listaServico3 = adicionaServico(listaServico3);
+                }
+                else if (listaServico4.Count == 0 && comboBoxServico.Text != listaServico1[0] && comboBoxServico.Text != listaServico2[0] && comboBoxServico.Text != listaServico3[0]) {
+                    listaServico4 = adicionaServico(listaServico4);
+                }
+
+                listaVenda.AddRange(listaServico1);//9
+                listaVenda.AddRange(listaServico2);//14
+                listaVenda.AddRange(listaServico3);//19
+                listaVenda.AddRange(listaServico4);//24
+
+                //Salvar os preços
+                decimal preco1;
+                decimal preco2;
+                decimal preco3;
+                decimal preco4;
+
+                //Try catchs para soma total ##############
+                try {
+                    preco1 = decimal.Parse(listaServico1[4]);
+                }
+                catch (Exception) {
+                    preco1 = 0;
+                }
+                try {
+                    preco2 = decimal.Parse(listaServico2[4]);
+                }
+                catch (Exception) {
+                    preco2 = 0;
+                }
+                try {
+                    preco3 = decimal.Parse(listaServico3[4]);
+                }
+                catch (Exception) {
+                    preco3 = 0;
+                }
+                try {
+                    preco4 = decimal.Parse(listaServico4[4]);
+                }
+                catch (Exception) {
+                    preco4 = 0;
+                }
+                //Fim try catchs para soma total ##############
+
+                somaServicoTotal = preco1 + preco2 + preco3 + preco4;
+
+                listaVenda.Add(somaServicoTotal.ToString());
+                labelSomaTotal.Text = "SomaTotal:R$ " + somaServicoTotal.ToString();
+
+                pdf = new TratamentoPDF(listaVenda);//Se quiser imprimir o pdf vazio, basta não enviar uma lista
+                pdf.salvarPDF();
             }
-            //Salvar os preços
-            if (numServicos == 1)
-                somaServicoTotal = decimal.Parse(listaServico1[4]);
-            else if (numServicos == 2)
-                somaServicoTotal = decimal.Parse(listaServico1[4]) + decimal.Parse(listaServico2[4]);
-            else if (numServicos == 3)
-                somaServicoTotal = decimal.Parse(listaServico1[4]) + decimal.Parse(listaServico2[4]) + decimal.Parse(listaServico3[4]);
-
-            somaServicoTotal += somaServico;
-            listaVenda.Add(somaServicoTotal.ToString());
-            //VERIFICAR ERRO DE SOMA QUANDO IMPRIMIR VÁRIAS VEZES
-            labelSomaTotal.Text = "SomaTotal:R$ " + somaServicoTotal.ToString();
-
-            pdf = new TratamentoPDF(listaVenda);//Se quiser imprimir o pdf vazio, basta não enviar uma lista
-            pdf.salvarPDF();
-
         }
 
         private void textBoxCPF_Leave(object sender, EventArgs e) {
@@ -178,90 +201,56 @@ namespace FormularioGrafica {
             else if (numServicos <= 3) {
                 //Controle do próximo serviço
                 numServicos = numeroServico(true);
-                labelNumServico.Text = "Serviço: " + (numServicos + 1).ToString();
-                if (numServicos == 1) {
-                    listaServico1.Clear();
+                if (numServicos == 4)
+                    numServicos = 3;
+                else {
+                    labelNumServico.Text = "Serviço: " + (numServicos + 1).ToString();
+                    if (numServicos == 1) {
+                        listaServico1 = adicionaServico(listaServico1);
 
-                    //Adicionar a listade serviços
-                    listaServico1.Add(comboBoxServico.Text);//15
-                    listaServico1.Add(numericUpDownQuantidade.Value.ToString());//16
-                    listaServico1.Add(textBoxTamanhoX.Text);//17
-                    listaServico1.Add(textBoxTamanhoY.Text);//18
-                    listaServico1.Add(somaServico.ToString());//19
+                        if (listaServico2.Count != 0) {
+                            carregaServico(listaServico2);
+                            carregarValores = true;
+                        }
+                    }
+                    else if (numServicos == 2) {
+                        listaServico2 = adicionaServico(listaServico2);
 
-                    if (listaServico2.Count != 0) {
-                        comboBoxServico.Text = listaServico2[0];
-                        numericUpDownQuantidade.Value = int.Parse(listaServico2[1]);
-                        textBoxTamanhoX.Text = listaServico2[2];
-                        textBoxTamanhoY.Text = listaServico2[3];
-                        labelTotal.Text = listaServico2[4];
-                        carregarValores = true;
+                        if (listaServico3.Count != 0) {
+                            carregaServico(listaServico3);
+                            carregarValores = true;
+                        }
+                    }
+                    else if (numServicos == 3) {
+                        listaServico3 = adicionaServico(listaServico3);
+
+                        if (listaServico4.Count != 0) {
+                            carregaServico(listaServico4);
+                            carregarValores = true;
+                        }
                     }
 
-                }
-                else if (numServicos == 2) {
-                    listaServico2.Clear();
-
-                    //Adicionar a listade serviços
-                    listaServico2.Add(comboBoxServico.Text);//20
-                    listaServico2.Add(numericUpDownQuantidade.Value.ToString());//21
-                    listaServico2.Add(textBoxTamanhoX.Text);//22
-                    listaServico2.Add(textBoxTamanhoY.Text);//23
-                    listaServico2.Add(somaServico.ToString());//24
-
-                    if (listaServico3.Count != 0) {
-                        comboBoxServico.Text = listaServico3[0];
-                        numericUpDownQuantidade.Value = int.Parse(listaServico3[1]);
-                        textBoxTamanhoX.Text = listaServico3[2];
-                        textBoxTamanhoY.Text = listaServico3[3];
-                        labelTotal.Text = "Total:R$ " + listaServico3[4];
-                        carregarValores = true;
+                    //Resetar textos
+                    if (!carregarValores) {
+                        comboBoxServico.SelectedItem = null;
+                        textBoxTamanhoX.ResetText();
+                        textBoxTamanhoY.ResetText();
+                        numericUpDownQuantidade.Value = 1;
+                        labelTotal.Text = "Total:R$ 0";
                     }
+                    //Salvar os preços
+                    if (numServicos == 1)
+                        somaServicoTotal = decimal.Parse(listaServico1[4]);
+                    else if (numServicos == 2)
+                        somaServicoTotal = decimal.Parse(listaServico1[4]) + decimal.Parse(listaServico2[4]);
+                    else if (numServicos == 3)
+                        somaServicoTotal = decimal.Parse(listaServico1[4]) + decimal.Parse(listaServico2[4]) + decimal.Parse(listaServico3[4]);
 
+                    labelSomaTotal.Text = "SomaTotal:R$ " + somaServicoTotal.ToString();
+
+                    carregarValores = false;
                 }
-                else if (numServicos == 3) {
-                    listaServico3.Clear();
-
-                    //Adicionar a listade serviços
-                    listaServico3.Add(comboBoxServico.Text);//25
-                    listaServico3.Add(numericUpDownQuantidade.Value.ToString());//26
-                    listaServico3.Add(textBoxTamanhoX.Text);//27
-                    listaServico3.Add(textBoxTamanhoY.Text);//28
-                    listaServico3.Add(somaServico.ToString());//29
-
-                    if (listaServico4.Count != 0) {
-                        comboBoxServico.Text = listaServico4[0];
-                        numericUpDownQuantidade.Value = int.Parse(listaServico4[1]);
-                        textBoxTamanhoX.Text = listaServico4[2];
-                        textBoxTamanhoY.Text = listaServico4[3];
-                        labelTotal.Text = "Total:R$ " + listaServico4[4];
-                        carregarValores = true;
-                    }
-
-                }
-
-                //Resetar textos
-                if (!carregarValores) {
-                    comboBoxServico.SelectedItem = null;
-                    textBoxTamanhoX.ResetText();
-                    textBoxTamanhoY.ResetText();
-                    numericUpDownQuantidade.Value = 1;
-                    labelTotal.Text = "Total:R$ 0";
-                }
-                //Salvar os preços
-                if (numServicos == 1)
-                    somaServicoTotal = decimal.Parse(listaServico1[4]);
-                else if (numServicos == 2)
-                    somaServicoTotal = decimal.Parse(listaServico1[4]) + decimal.Parse(listaServico2[4]);
-                else if (numServicos == 3)
-                    somaServicoTotal = decimal.Parse(listaServico1[4]) + decimal.Parse(listaServico2[4]) + decimal.Parse(listaServico3[4]);
-
-                labelSomaTotal.Text = "SomaTotal:R$ " + somaServicoTotal.ToString();
-
-                carregarValores = false;
             }
-            else
-                numServicos = 3;
 
         }
 
@@ -273,50 +262,26 @@ namespace FormularioGrafica {
                 if (numServicos == 0) {
                     //Salvar lista 1
                     if (comboBoxServico.Text != "") {
-                        listaServico2[0] = comboBoxServico.Text;
-                        listaServico2[1] = numericUpDownQuantidade.Value.ToString();
-                        listaServico2[2] = textBoxTamanhoX.Text;
-                        listaServico2[3] = textBoxTamanhoY.Text;
-                        listaServico2[4] = labelTotal.Text;
+                        listaServico2 = adicionaServico(listaServico2);
                     }
-                    comboBoxServico.Text = listaServico1[0];
-                    numericUpDownQuantidade.Value = int.Parse(listaServico1[1]);
-                    textBoxTamanhoX.Text = listaServico1[2];
-                    textBoxTamanhoY.Text = listaServico1[3];
-                    labelTotal.Text = "Total:R$ " + listaServico1[4];
+                    //Carregar os valores dos textboxes
+                    carregaServico(listaServico1);
                 }
                 else if (numServicos == 1) {
                     //Salvar lista 2
                     if (comboBoxServico.Text != "") {
-                        listaServico3[0] = comboBoxServico.Text;
-                        listaServico3[1] = numericUpDownQuantidade.Value.ToString();
-                        listaServico3[2] = textBoxTamanhoX.Text;
-                        listaServico3[3] = textBoxTamanhoY.Text;
-                        listaServico3[4] = labelTotal.Text;
+                        listaServico3 = adicionaServico(listaServico3);
                     }
 
-                    comboBoxServico.Text = listaServico2[0];
-                    numericUpDownQuantidade.Value = int.Parse(listaServico2[1]);
-                    textBoxTamanhoX.Text = listaServico2[2];
-                    textBoxTamanhoY.Text = listaServico2[3];
-                    labelTotal.Text = "Total:R$ " + listaServico2[4];
+                    carregaServico(listaServico2);
                 }
                 else if (numServicos == 2) {
                     //Salvar lista 3
                     if (comboBoxServico.Text != "") {
-                        listaServico4.Clear();
-                        listaServico4.Add(comboBoxServico.Text);
-                        listaServico4.Add(numericUpDownQuantidade.Value.ToString());
-                        listaServico4.Add(textBoxTamanhoX.Text);
-                        listaServico4.Add(textBoxTamanhoY.Text);
-                        listaServico4.Add(somaServico.ToString());
+                        listaServico4 = adicionaServico(listaServico4);
                     }
-                    comboBoxServico.Text = listaServico3[0];
-                    numericUpDownQuantidade.Value = int.Parse(listaServico3[1]);
-                    textBoxTamanhoX.Text = listaServico3[2];
-                    textBoxTamanhoY.Text = listaServico3[3];
-                    labelTotal.Text = "Total:R$ " + listaServico3[4];
 
+                    carregaServico(listaServico3);
                 }
 
                 //Salvar os preços
@@ -362,6 +327,25 @@ namespace FormularioGrafica {
             return numServicos;
         }
 
+        private List<string> adicionaServico(List<string> listaServico) {
+            listaServico.Clear();
+
+            listaServico.Add(comboBoxServico.Text);//10
+            listaServico.Add(numericUpDownQuantidade.Value.ToString());//11
+            listaServico.Add(textBoxTamanhoX.Text);//12
+            listaServico.Add(textBoxTamanhoY.Text);//13
+            listaServico.Add(somaServico.ToString());//14
+
+            return listaServico;
+        }
+
+        private void carregaServico(List<string> listaServico) {
+            comboBoxServico.Text = listaServico[0];
+            numericUpDownQuantidade.Value = int.Parse(listaServico[1]);
+            textBoxTamanhoX.Text = listaServico[2];
+            textBoxTamanhoY.Text = listaServico[3];
+            labelTotal.Text = "Total:R$ " + listaServico[4];
+        }
     }
 }
 
