@@ -196,7 +196,6 @@
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Constantia", 12F);
             this.label8.Location = new System.Drawing.Point(365, 141);
             this.label8.Name = "label8";

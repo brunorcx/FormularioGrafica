@@ -23,6 +23,7 @@ namespace FormularioGrafica {
         private List<string> listaServico4 = new List<string>();
         private decimal somaServicoTotal;
         private int numServicos;
+        private bool carregarValores;
 
         public Pagina1() {
             InitializeComponent();
@@ -171,12 +172,12 @@ namespace FormularioGrafica {
         }
 
         private void buttonProxServico_Click(object sender, EventArgs e) {
-            numServicos = numeroServico(true);
             if (comboBoxServico.Text == "") {
                 MessageBox.Show("Por favor, preencha o serviço " + (numServicos + 1).ToString());
             }
             else if (numServicos <= 3) {
                 //Controle do próximo serviço
+                numServicos = numeroServico(true);
                 labelNumServico.Text = "Serviço: " + (numServicos + 1).ToString();
                 if (numServicos == 1) {
                     listaServico1.Clear();
@@ -187,6 +188,16 @@ namespace FormularioGrafica {
                     listaServico1.Add(textBoxTamanhoX.Text);//17
                     listaServico1.Add(textBoxTamanhoY.Text);//18
                     listaServico1.Add(somaServico.ToString());//19
+
+                    if (listaServico2.Count != 0) {
+                        comboBoxServico.Text = listaServico2[0];
+                        numericUpDownQuantidade.Value = int.Parse(listaServico2[1]);
+                        textBoxTamanhoX.Text = listaServico2[2];
+                        textBoxTamanhoY.Text = listaServico2[3];
+                        labelTotal.Text = listaServico2[4];
+                        carregarValores = true;
+                    }
+
                 }
                 else if (numServicos == 2) {
                     listaServico2.Clear();
@@ -197,6 +208,15 @@ namespace FormularioGrafica {
                     listaServico2.Add(textBoxTamanhoX.Text);//22
                     listaServico2.Add(textBoxTamanhoY.Text);//23
                     listaServico2.Add(somaServico.ToString());//24
+
+                    if (listaServico3.Count != 0) {
+                        comboBoxServico.Text = listaServico3[0];
+                        numericUpDownQuantidade.Value = int.Parse(listaServico3[1]);
+                        textBoxTamanhoX.Text = listaServico3[2];
+                        textBoxTamanhoY.Text = listaServico3[3];
+                        labelTotal.Text = "Total:R$ " + listaServico3[4];
+                        carregarValores = true;
+                    }
 
                 }
                 else if (numServicos == 3) {
@@ -209,13 +229,25 @@ namespace FormularioGrafica {
                     listaServico3.Add(textBoxTamanhoY.Text);//28
                     listaServico3.Add(somaServico.ToString());//29
 
+                    if (listaServico4.Count != 0) {
+                        comboBoxServico.Text = listaServico4[0];
+                        numericUpDownQuantidade.Value = int.Parse(listaServico4[1]);
+                        textBoxTamanhoX.Text = listaServico4[2];
+                        textBoxTamanhoY.Text = listaServico4[3];
+                        labelTotal.Text = "Total:R$ " + listaServico4[4];
+                        carregarValores = true;
+                    }
+
                 }
+
                 //Resetar textos
-                comboBoxServico.SelectedItem = null;
-                textBoxTamanhoX.ResetText();
-                textBoxTamanhoY.ResetText();
-                numericUpDownQuantidade.Value = 1;
-                labelTotal.Text = "Total:R$ 0";
+                if (!carregarValores) {
+                    comboBoxServico.SelectedItem = null;
+                    textBoxTamanhoX.ResetText();
+                    textBoxTamanhoY.ResetText();
+                    numericUpDownQuantidade.Value = 1;
+                    labelTotal.Text = "Total:R$ 0";
+                }
                 //Salvar os preços
                 if (numServicos == 1)
                     somaServicoTotal = decimal.Parse(listaServico1[4]);
@@ -225,6 +257,8 @@ namespace FormularioGrafica {
                     somaServicoTotal = decimal.Parse(listaServico1[4]) + decimal.Parse(listaServico2[4]) + decimal.Parse(listaServico3[4]);
 
                 labelSomaTotal.Text = "SomaTotal:R$ " + somaServicoTotal.ToString();
+
+                carregarValores = false;
             }
             else
                 numServicos = 3;
@@ -234,6 +268,8 @@ namespace FormularioGrafica {
         private void buttonAntServico_Click(object sender, EventArgs e) {
             numServicos = numeroServico(false);
             if (numServicos >= 0) {
+                //Controle do serviço anterior
+                labelNumServico.Text = "Serviço: " + (numServicos + 1).ToString();
                 if (numServicos == 0) {
                     //Salvar lista 1
                     if (comboBoxServico.Text != "") {
@@ -247,7 +283,7 @@ namespace FormularioGrafica {
                     numericUpDownQuantidade.Value = int.Parse(listaServico1[1]);
                     textBoxTamanhoX.Text = listaServico1[2];
                     textBoxTamanhoY.Text = listaServico1[3];
-                    labelTotal.Text = listaServico1[4];
+                    labelTotal.Text = "Total:R$ " + listaServico1[4];
                 }
                 else if (numServicos == 1) {
                     //Salvar lista 2
@@ -263,7 +299,7 @@ namespace FormularioGrafica {
                     numericUpDownQuantidade.Value = int.Parse(listaServico2[1]);
                     textBoxTamanhoX.Text = listaServico2[2];
                     textBoxTamanhoY.Text = listaServico2[3];
-                    labelTotal.Text = listaServico2[4];
+                    labelTotal.Text = "Total:R$ " + listaServico2[4];
                 }
                 else if (numServicos == 2) {
                     //Salvar lista 3
@@ -279,7 +315,7 @@ namespace FormularioGrafica {
                     numericUpDownQuantidade.Value = int.Parse(listaServico3[1]);
                     textBoxTamanhoX.Text = listaServico3[2];
                     textBoxTamanhoY.Text = listaServico3[3];
-                    labelTotal.Text = listaServico3[4];
+                    labelTotal.Text = "Total:R$ " + listaServico3[4];
 
                 }
 
