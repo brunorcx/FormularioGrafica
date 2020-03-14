@@ -151,6 +151,7 @@
             this.checkBoxRPlaca.TabIndex = 54;
             this.checkBoxRPlaca.Text = "Retirada de Placa";
             this.checkBoxRPlaca.UseVisualStyleBackColor = true;
+            this.checkBoxRPlaca.CheckedChanged += new System.EventHandler(this.checkBoxRPlaca_CheckedChanged);
             // 
             // dateTimePickerEntrega
             // 

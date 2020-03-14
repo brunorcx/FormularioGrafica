@@ -25,13 +25,12 @@ namespace FormularioGrafica {
             pagina41.Hide();
 
             //Troca a cor dos icones
-            button1.Image = Properties.Resources.online_store_30px_yellow;
-            button2.Image = Properties.Resources.clipboard_30px_white;
-            button3.Image = Properties.Resources.clipboard_30px_white;
-            button3.Image = Properties.Resources.clipboard_30px_white;
+            button1.Image = Properties.Resources.online_store_30px_ligth;
+            button2.Image = Properties.Resources.user_account_30px_dark;
+            button3.Image = Properties.Resources.clipboard_30px_dark;
+            //button3.Image = Properties.Resources.clipboard_30px_white;
 
             WindowState = FormWindowState.Maximized;
-
         }
 
         private void button1_Click(object sender, EventArgs e) {
@@ -50,10 +49,10 @@ namespace FormularioGrafica {
             pagina41.Hide();
 
             //Troca a cor dos icones
-            button1.Image = Properties.Resources.online_store_30px_yellow;
-            button2.Image = Properties.Resources.clipboard_30px_white;
-            button3.Image = Properties.Resources.clipboard_30px_white;
-            button3.Image = Properties.Resources.clipboard_30px_white;
+            button1.Image = Properties.Resources.online_store_30px_ligth;
+            button2.Image = Properties.Resources.user_account_30px_dark;
+            button3.Image = Properties.Resources.clipboard_30px_dark;
+            //button3.Image = Properties.Resources.clipboard_30px_white;
             //Mostrar borda
             button1.FlatAppearance.BorderSize = 1;
             button2.FlatAppearance.BorderSize = 0;
@@ -72,10 +71,10 @@ namespace FormularioGrafica {
             pagina41.Hide();
 
             //Troca a cor dos icones
-            button1.Image = Properties.Resources.online_store_30px_white;
-            button2.Image = Properties.Resources.clipboard_30px_yellow;
-            button3.Image = Properties.Resources.clipboard_30px_white;
-            button3.Image = Properties.Resources.clipboard_30px_white;
+            button1.Image = Properties.Resources.online_store_30px_dark;
+            button2.Image = Properties.Resources.user_account_30px_ligth;
+            button3.Image = Properties.Resources.clipboard_30px_dark;
+            //button3.Image = Properties.Resources.clipboard_30px_white;
             //Mostrar borda
             button1.FlatAppearance.BorderSize = 0;
             button2.FlatAppearance.BorderSize = 1;
@@ -94,9 +93,10 @@ namespace FormularioGrafica {
             pagina41.Hide();
 
             //Troca a cor dos icones
-            button1.Image = Properties.Resources.online_store_30px_white;
-            button2.Image = Properties.Resources.clipboard_30px_white;
-            button3.Image = Properties.Resources.clipboard_30px_yellow;
+            button1.Image = Properties.Resources.online_store_30px_dark;
+            button2.Image = Properties.Resources.user_account_30px_dark;
+            button3.Image = Properties.Resources.clipboard_30px_ligth;
+            //button3.Image = Properties.Resources.clipboard_30px_white;
 
             //Mostrar borda
             button1.FlatAppearance.BorderSize = 0;
@@ -116,9 +116,10 @@ namespace FormularioGrafica {
             pagina41.Show();
 
             //Troca a cor dos icones
-            button1.Image = Properties.Resources.online_store_30px_white;
-            button2.Image = Properties.Resources.clipboard_30px_white;
-            button3.Image = Properties.Resources.clipboard_30px_white;
+            button1.Image = Properties.Resources.online_store_30px_dark;
+            button2.Image = Properties.Resources.user_account_30px_dark;
+            button3.Image = Properties.Resources.clipboard_30px_dark;
+            //button3.Image = Properties.Resources.clipboard_30px_white;
 
             //Mostrar borda
             button1.FlatAppearance.BorderSize = 0;
@@ -133,7 +134,6 @@ namespace FormularioGrafica {
 
         private void buttonFechar_Click(object sender, EventArgs e) {
             Application.Exit();
-
         }
     }
 }

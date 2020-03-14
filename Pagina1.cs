@@ -354,6 +354,10 @@ namespace FormularioGrafica {
                 labelTotal.Text = "Total:R$ " + listaServico[4];
             }
         }
+
+        private void checkBoxRPlaca_CheckedChanged(object sender, EventArgs e) {
+
+        }
     }
 }
 

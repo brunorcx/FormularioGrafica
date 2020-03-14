@@ -169,5 +169,23 @@
   <ItemGroup>
     <None Include="Resources\imagens\CabecalhoForbras.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icones\user_account_30px_ligth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icones\clipboard_30px_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icones\clipboard_30px_ligth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icones\online_store_30px_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icones\online_store_30px_ligth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icones\user_account_30px_dark.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

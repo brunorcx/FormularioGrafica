@@ -121,16 +121,34 @@
   <data name="CabecalhoForbras" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagens\CabecalhoForbras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="clipboard_30px_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icones\clipboard_30px_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clipboard_30px_ligth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icones\clipboard_30px_ligth.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="clipboard_30px_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icones\clipboard_30px_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="clipboard_30px_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icones\clipboard_30px_yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="online_store_30px_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icones\online_store_30px_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="online_store_30px_ligth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icones\online_store_30px_ligth.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="online_store_30px_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icones\online_store_30px_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="online_store_30px_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icones\online_store_30px_yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_account_30px_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icones\user_account_30px_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_account_30px_ligth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icones\user_account_30px_ligth.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

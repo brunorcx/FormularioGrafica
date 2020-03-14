@@ -73,6 +73,26 @@ namespace FormularioGrafica.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap clipboard_30px_dark {
+            get {
+                object obj = ResourceManager.GetObject("clipboard_30px_dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clipboard_30px_ligth {
+            get {
+                object obj = ResourceManager.GetObject("clipboard_30px_ligth", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap clipboard_30px_white {
             get {
                 object obj = ResourceManager.GetObject("clipboard_30px_white", resourceCulture);
@@ -93,6 +113,26 @@ namespace FormularioGrafica.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap online_store_30px_dark {
+            get {
+                object obj = ResourceManager.GetObject("online_store_30px_dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap online_store_30px_ligth {
+            get {
+                object obj = ResourceManager.GetObject("online_store_30px_ligth", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap online_store_30px_white {
             get {
                 object obj = ResourceManager.GetObject("online_store_30px_white", resourceCulture);
@@ -106,6 +146,26 @@ namespace FormularioGrafica.Properties {
         internal static System.Drawing.Bitmap online_store_30px_yellow {
             get {
                 object obj = ResourceManager.GetObject("online_store_30px_yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_account_30px_dark {
+            get {
+                object obj = ResourceManager.GetObject("user_account_30px_dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_account_30px_ligth {
+            get {
+                object obj = ResourceManager.GetObject("user_account_30px_ligth", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
