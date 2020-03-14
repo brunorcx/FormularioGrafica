@@ -21,6 +21,10 @@ namespace FormularioGrafica {
         private List<string> listaServico2 = new List<string>();
         private List<string> listaServico3 = new List<string>();
         private List<string> listaServico4 = new List<string>();
+        private List<string> papelCor1 = new List<string>();
+        private List<string> papelCor2 = new List<string>();
+        private List<string> papelCor3 = new List<string>();
+        private List<string> papelCor4 = new List<string>();
         private decimal somaServicoTotal;
         private int numServicos;
         private bool carregarValores;
@@ -79,6 +83,13 @@ namespace FormularioGrafica {
 
         private void buttonImprimir_Click(object sender, EventArgs e) {
             List<string> listaVenda = new List<string>();
+            List<string> listaPapelCor = new List<string>();
+            List<string> listaTempAtual = new List<string>();
+            listaTempAtual = adicionaServico(listaTempAtual);
+            listaTempAtual.Add(comboBoxPapel.Text);
+            listaTempAtual.Add(comboBoxCor.Text);
+            //Adicionar vias na listaTempAtual
+
             listaVenda.Add(dateTimePickerEntrada.Value.ToString());     //0
             listaVenda.Add(dateTimePickerEntrega.Value.ToString());     //1
             listaVenda.Add(textBoxCliente.Text);                        //2
@@ -94,22 +105,32 @@ namespace FormularioGrafica {
             else {
                 if (listaServico1.Count == 0) {
                     listaServico1 = adicionaServico(listaServico1);
+                    papelCor1 = adicionaPapelCor(papelCor1);
                 }
-                else if (listaServico2.Count == 0 && comboBoxServico.Text != listaServico1[0]) {
+                else if (listaServico2.Count == 0 && !compararListaServico(listaServico1, papelCor1, listaTempAtual)) {
                     listaServico2 = adicionaServico(listaServico2);
+                    papelCor2 = adicionaPapelCor(papelCor2);
                 }
-                else if (listaServico3.Count == 0 && comboBoxServico.Text != listaServico1[0] && comboBoxServico.Text != listaServico2[0]) {
+                else if (listaServico3.Count == 0 && !compararListaServico(listaServico1, papelCor1, listaTempAtual) && !compararListaServico(listaServico2, papelCor2, listaTempAtual)) {
                     listaServico3 = adicionaServico(listaServico3);
+                    papelCor3 = adicionaPapelCor(papelCor3);
                 }
-                else if (listaServico4.Count == 0 && comboBoxServico.Text != listaServico1[0] && comboBoxServico.Text != listaServico2[0] && comboBoxServico.Text != listaServico3[0]) {
+                else if (listaServico4.Count == 0 && !compararListaServico(listaServico1, papelCor1, listaTempAtual) && !compararListaServico(listaServico2, papelCor2, listaTempAtual) && !compararListaServico(listaServico3, papelCor3, listaTempAtual)) {
                     listaServico4 = adicionaServico(listaServico4);
+                    papelCor4 = adicionaPapelCor(papelCor4);
                 }
+
+                // comboBoxServico.Text != listaServico1[0]
 
                 listaVenda.AddRange(listaServico1);//9
                 listaVenda.AddRange(listaServico2);//14
                 listaVenda.AddRange(listaServico3);//19
                 listaVenda.AddRange(listaServico4);//24
-
+                //Papel Cor
+                listaPapelCor.AddRange(papelCor1);//0
+                listaPapelCor.AddRange(papelCor2);//2
+                listaPapelCor.AddRange(papelCor3);//4
+                listaPapelCor.AddRange(papelCor4);//6
                 //Salvar os preços
                 decimal preco1;
                 decimal preco2;
@@ -148,25 +169,33 @@ namespace FormularioGrafica {
                 listaVenda.Add(somaServicoTotal.ToString());
                 labelSomaTotal.Text = "SomaTotal:R$ " + somaServicoTotal.ToString();
 
-                pdf = new TratamentoPDF(listaVenda);//Se quiser imprimir o pdf vazio, basta não enviar uma lista
+                pdf = new TratamentoPDF(listaVenda, listaPapelCor);//Se quiser imprimir o pdf vazio, basta não enviar uma lista
                 pdf.salvarPDF();
+
+                //Resetar todas as listas
+                listaServico1.Clear();
+                listaServico2.Clear();
+                listaServico3.Clear();
+                listaServico4.Clear();
+
+                papelCor1.Clear();
+                papelCor2.Clear();
+                papelCor3.Clear();
+                papelCor4.Clear();
+                //Resetar controlador de número de serviços
+                numServicos = 0;
+
+                //Resetar textos
+                labelNumServico.Text = "Serviço: 1";
+                comboBoxServico.SelectedItem = null;
+                textBoxTamanhoX.ResetText();
+                textBoxTamanhoY.ResetText();
+                numericUpDownQuantidade.Value = 1;
+                labelTotal.Text = "Total:R$ 0";
+                comboBoxPapel.SelectedItem = null;
+                comboBoxCor.SelectedItem = null;
+                labelSomaTotal.Text = "SomaTotal:R$ 0";
             }
-            //Resetar todas as listas
-            listaServico1.Clear();
-            listaServico2.Clear();
-            listaServico3.Clear();
-            listaServico4.Clear();
-
-            //Resetar controlador de número de serviços
-            numServicos = 0;
-
-            //Resetar textos
-            labelNumServico.Text = "Serviço: 1";
-            comboBoxServico.SelectedItem = null;
-            textBoxTamanhoX.ResetText();
-            textBoxTamanhoY.ResetText();
-            numericUpDownQuantidade.Value = 1;
-            labelTotal.Text = "Total:R$ 0";
         }
 
         private void textBoxCPF_Leave(object sender, EventArgs e) {
@@ -223,25 +252,28 @@ namespace FormularioGrafica {
                     labelNumServico.Text = "Serviço: " + (numServicos + 1).ToString();
                     if (numServicos == 1) {
                         listaServico1 = adicionaServico(listaServico1);
-
+                        papelCor1 = adicionaPapelCor(papelCor1);
                         if (listaServico2.Count != 0) {
                             carregaServico(listaServico2);
+                            carregaPapelCor(papelCor2);
                             carregarValores = true;
                         }
                     }
                     else if (numServicos == 2) {
                         listaServico2 = adicionaServico(listaServico2);
-
+                        papelCor2 = adicionaPapelCor(papelCor2);
                         if (listaServico3.Count != 0) {
                             carregaServico(listaServico3);
+                            carregaPapelCor(papelCor3);
                             carregarValores = true;
                         }
                     }
                     else if (numServicos == 3) {
                         listaServico3 = adicionaServico(listaServico3);
-
+                        papelCor3 = adicionaPapelCor(papelCor3);
                         if (listaServico4.Count != 0) {
                             carregaServico(listaServico4);
+                            carregaPapelCor(papelCor4);
                             carregarValores = true;
                         }
                     }
@@ -253,6 +285,8 @@ namespace FormularioGrafica {
                         textBoxTamanhoY.ResetText();
                         numericUpDownQuantidade.Value = 1;
                         labelTotal.Text = "Total:R$ 0";
+                        comboBoxPapel.SelectedItem = null;
+                        comboBoxCor.SelectedItem = null;
                     }
                     //Salvar os preços
                     if (numServicos == 1)
@@ -279,25 +313,31 @@ namespace FormularioGrafica {
                     //Salvar lista 1
                     if (comboBoxServico.Text != "") {
                         listaServico2 = adicionaServico(listaServico2);
+                        papelCor2 = adicionaPapelCor(papelCor2);
                     }
                     //Carregar os valores dos textboxes
                     carregaServico(listaServico1);
+                    carregaPapelCor(papelCor1);
                 }
                 else if (numServicos == 1) {
                     //Salvar lista 2
                     if (comboBoxServico.Text != "") {
                         listaServico3 = adicionaServico(listaServico3);
+                        papelCor3 = adicionaPapelCor(papelCor3);
                     }
 
                     carregaServico(listaServico2);
+                    carregaPapelCor(papelCor2);
                 }
                 else if (numServicos == 2) {
                     //Salvar lista 3
                     if (comboBoxServico.Text != "") {
                         listaServico4 = adicionaServico(listaServico4);
+                        papelCor4 = adicionaPapelCor(papelCor4);
                     }
 
                     carregaServico(listaServico3);
+                    carregaPapelCor(papelCor3);
                 }
 
                 //Salvar os preços
@@ -353,6 +393,45 @@ namespace FormularioGrafica {
                 textBoxTamanhoY.Text = listaServico[3];
                 labelTotal.Text = "Total:R$ " + listaServico[4];
             }
+        }
+
+        private List<string> adicionaPapelCor(List<string> listaPapelCor) {
+            listaPapelCor.Clear();
+
+            listaPapelCor.Add(comboBoxPapel.Text);
+            listaPapelCor.Add(comboBoxCor.Text);
+
+            return listaPapelCor;
+        }
+
+        private void carregaPapelCor(List<string> listaPapelCor) {
+            if (listaPapelCor.Count == 0) {
+                comboBoxPapel.SelectedItem = null;
+                comboBoxCor.SelectedItem = null;
+            }
+            else {
+                comboBoxPapel.Text = listaPapelCor[0];
+                comboBoxCor.Text = listaPapelCor[1];
+            }
+        }
+
+        private bool compararListaServico(List<string> listaServico1, List<string> listaPapelCor, List<string> listaServico2) {
+            if (listaServico1[0] != listaServico2[0])
+                return false;
+            else if (listaServico1[1] != listaServico2[1])
+                return false;
+            else if (listaServico1[2] != listaServico2[2])
+                return false;
+            else if (listaServico1[3] != listaServico2[3])
+                return false;
+            else if (listaServico1[4] != listaServico2[4])
+                return false;
+            else if (listaPapelCor[0] != listaServico2[5])
+                return false;
+            else if (listaPapelCor[1] != listaServico2[6])
+                return false;
+
+            return true;
         }
     }
 }

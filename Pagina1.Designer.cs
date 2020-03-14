@@ -59,7 +59,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.comboBoxPapel = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.comboBoxCor = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -357,9 +357,11 @@
             this.comboBox2.Font = new System.Drawing.Font("Constantia", 12F);
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "Item 1",
-            "Item 2 ",
-            "Item 3"});
+            "Branca",
+            "Amarela",
+            "Azul",
+            "Rosa",
+            "Verde"});
             this.comboBox2.Location = new System.Drawing.Point(97, 171);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(95, 27);
@@ -380,9 +382,11 @@
             this.comboBox3.Font = new System.Drawing.Font("Constantia", 12F);
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
-            "Item 1",
-            "Item 2 ",
-            "Item 3"});
+            "Branca",
+            "Amarela",
+            "Azul",
+            "Rosa",
+            "Verde"});
             this.comboBox3.Location = new System.Drawing.Point(218, 171);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(95, 27);
@@ -403,9 +407,11 @@
             this.comboBox4.Font = new System.Drawing.Font("Constantia", 12F);
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Items.AddRange(new object[] {
-            "Item 1",
-            "Item 2 ",
-            "Item 3"});
+            "Branca",
+            "Amarela",
+            "Azul",
+            "Rosa",
+            "Verde"});
             this.comboBox4.Location = new System.Drawing.Point(344, 171);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(95, 27);
@@ -427,9 +433,11 @@
             this.comboBox5.Font = new System.Drawing.Font("Constantia", 12F);
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Items.AddRange(new object[] {
-            "Item 1",
-            "Item 2 ",
-            "Item 3"});
+            "Branca",
+            "Amarela",
+            "Azul",
+            "Rosa",
+            "Verde"});
             this.comboBox5.Location = new System.Drawing.Point(472, 171);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(95, 27);
@@ -450,9 +458,11 @@
             this.comboBox6.Font = new System.Drawing.Font("Constantia", 12F);
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Items.AddRange(new object[] {
-            "Item 1",
-            "Item 2 ",
-            "Item 3"});
+            "Branca",
+            "Amarela",
+            "Azul",
+            "Rosa",
+            "Verde"});
             this.comboBox6.Location = new System.Drawing.Point(602, 173);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(95, 27);
@@ -468,19 +478,22 @@
             this.label20.TabIndex = 44;
             this.label20.Text = "Papel:";
             // 
-            // comboBox7
+            // comboBoxPapel
             // 
-            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox7.Font = new System.Drawing.Font("Constantia", 12F);
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Items.AddRange(new object[] {
-            "Item 1",
-            "Item 2 ",
-            "Item 3"});
-            this.comboBox7.Location = new System.Drawing.Point(97, 204);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(121, 27);
-            this.comboBox7.TabIndex = 50;
+            this.comboBoxPapel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPapel.Font = new System.Drawing.Font("Constantia", 12F);
+            this.comboBoxPapel.FormattingEnabled = true;
+            this.comboBoxPapel.Items.AddRange(new object[] {
+            "Sulfite 75g",
+            "Sulfite 180g",
+            "Couchê 115g",
+            "Couchê 230g",
+            "Autocotiativo",
+            "Triplex"});
+            this.comboBoxPapel.Location = new System.Drawing.Point(97, 204);
+            this.comboBoxPapel.Name = "comboBoxPapel";
+            this.comboBoxPapel.Size = new System.Drawing.Size(121, 27);
+            this.comboBoxPapel.TabIndex = 50;
             // 
             // label21
             // 
@@ -498,9 +511,10 @@
             this.comboBoxCor.Font = new System.Drawing.Font("Constantia", 12F);
             this.comboBoxCor.FormattingEnabled = true;
             this.comboBoxCor.Items.AddRange(new object[] {
-            "Item 1",
-            "Item 2 ",
-            "Item 3"});
+            "1/0",
+            "1/1",
+            "4/0",
+            "4/4"});
             this.comboBoxCor.Location = new System.Drawing.Point(282, 204);
             this.comboBoxCor.Name = "comboBoxCor";
             this.comboBoxCor.Size = new System.Drawing.Size(121, 27);
@@ -667,7 +681,7 @@
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBoxCor);
-            this.Controls.Add(this.comboBox7);
+            this.Controls.Add(this.comboBoxPapel);
             this.Controls.Add(this.comboBoxServico);
             this.Controls.Add(this.textBoxTamanhoY);
             this.Controls.Add(this.label8);
@@ -741,7 +755,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox comboBoxPapel;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox comboBoxCor;
         private System.Windows.Forms.Label label22;
