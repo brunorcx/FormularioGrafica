@@ -15,6 +15,10 @@
 - [ ] Implementar página de vendas
 - [ ] Implementar Impressão
 - [ ] Contador de pedidos
+- [ ] Não finalizar venda se faltar informações
+   - [ ] Sem aplicação ou com aplicação
+   - [ ] Descrição do serviço
+   - [ ] Cliente
 
 #Banco de dados
 - [x] Implementar conexão com o banco de dados
