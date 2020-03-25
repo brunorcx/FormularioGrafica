@@ -33,7 +33,7 @@
             this.button_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.button_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Login.Location = new System.Drawing.Point(202, 208);
+            this.button_Login.Location = new System.Drawing.Point(237, 208);
             this.button_Login.Name = "button_Login";
             this.button_Login.Size = new System.Drawing.Size(267, 34);
             this.button_Login.TabIndex = 0;
@@ -45,7 +45,7 @@
             // 
             this.textBoxUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUsuario.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBoxUsuario.Location = new System.Drawing.Point(202, 122);
+            this.textBoxUsuario.Location = new System.Drawing.Point(237, 122);
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(267, 24);
             this.textBoxUsuario.TabIndex = 2;
@@ -57,7 +57,7 @@
             // 
             this.textBoxSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSenha.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBoxSenha.Location = new System.Drawing.Point(202, 163);
+            this.textBoxSenha.Location = new System.Drawing.Point(237, 163);
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.Size = new System.Drawing.Size(267, 24);
             this.textBoxSenha.TabIndex = 3;
