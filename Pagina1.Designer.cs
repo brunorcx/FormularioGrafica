@@ -247,13 +247,13 @@
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Constantia", 12F);
             this.label3.Location = new System.Drawing.Point(530, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 19);
             this.label3.TabIndex = 41;
             this.label3.Text = "TEL 1:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // textBoxTelefone
             // 
@@ -267,13 +267,13 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Constantia", 12F);
-            this.label2.Location = new System.Drawing.Point(272, 80);
+            this.label2.Location = new System.Drawing.Point(266, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 19);
             this.label2.TabIndex = 39;
             this.label2.Text = "CPF/CNPJ:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // textBoxCPF
             // 
@@ -290,13 +290,13 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Constantia", 12F);
-            this.label1.Location = new System.Drawing.Point(14, 82);
+            this.label1.Location = new System.Drawing.Point(27, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 19);
             this.label1.TabIndex = 37;
             this.label1.Text = "Cliente:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // textBoxCliente
             // 
@@ -524,13 +524,13 @@
             // 
             // label22
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Constantia", 12F);
-            this.label22.Location = new System.Drawing.Point(15, 242);
+            this.label22.Font = new System.Drawing.Font("Constantia", 11F);
+            this.label22.Location = new System.Drawing.Point(19, 238);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(81, 19);
+            this.label22.Size = new System.Drawing.Size(76, 19);
             this.label22.TabIndex = 37;
             this.label22.Text = "Descrição:";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // textBoxDescricao
             // 
@@ -657,6 +657,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.Controls.Add(this.label22);
             this.Controls.Add(this.labelNumServico);
             this.Controls.Add(this.labelTotal);
             this.Controls.Add(this.buttonAntServico);
@@ -701,7 +702,6 @@
             this.Controls.Add(this.textBoxTelefone);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxCPF);
-            this.Controls.Add(this.label22);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxDescricao);
             this.Controls.Add(this.textBoxCliente);
